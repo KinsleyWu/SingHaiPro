@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+    body{
+        /*min-width: 1200px;*/
+        width: 100%;
+        height: 100%;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    .header{
+        height: 85px;
+        width: auto;
+        background: #fff;
+        line-height: 85px;
+        padding: 0 18px 0 13px;
+        clear: both;
+        z-index: 900;
+        box-shadow: 0 4px 8px 0 rgba(7,17,27,.1);
+    }
+    .header .right{
+        float: right;
+    }
+    .brand{
+        margin-top: 15px;
+    }
+    .brand a img{
+    }
+    .greet{
+        display: inline-block;
+        color: #f8d098;
+        margin-right: 24px;
+    }
+    .header-img{
+        margin: 0 12px;
+    }
+    .header-ul{
+        float: right;
+    }
+    .header-ul li{
+        float: left;
+    }
+
+    .content{
+        background: #f7fbff;
+        clear: both;
+    }
+    .left{
+        float: left;
+        width: 170px;
+        height: 800px;
+        background: url(img/bg.png);
+        background-size: cover;
+        padding-top: 27px;
+    }
+    .control{
+        margin: 0 auto;
+        text-align: center;
+    }
+    .instructions{
+        display: inline-block;
+        color: #fff;
+        margin-top: 12px;
+    }
+    .control-logo img{
+        width: 62px;
+        height: 62px;
+    }
+    .right{
+        float: right;
+        wdith: 100%;
+    }
+    .navbar-nav li a {
+        line-height: 80px;
+        height: 80px;
+        padding-top: 0;
+        display: inline;
+    }
+    .container{
+        margin-left: 13px;
+        width: 100%
+    }
+    .nav>li>a {
+        padding: 10px 0px;
+    }
+    .navbar-right{
+        margin-right: 18px;
+    }
+    .line:after {content: "|";color: rgb(99,129,174)} {
+        border-right: 1px solid #6381b6;
+    }
+</style>
+<body>
+<div>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-orange">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"></button>
+                    <a class="navbar-brand brand"><img src="img/brand.png" alt=""></a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="greet" style="color:#f8d098">您好！David！</a></li>
+                    <li><a class="line" href=""><img class="header-img" src="img/personal.png" alt=""></a></li>
+                    <li><a class="line" href=""><img class="header-img" src="img/setting.png" alt=""></a></li>
+                    <li><a class="line" href=""><img class="header-img" src="img/exit.png" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+</body>
+</html>
