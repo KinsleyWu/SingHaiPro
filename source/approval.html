@@ -39,9 +39,6 @@
         height: 80px;
         line-height: 80px;
     }
-    nav{
-        padding-right: 53px;
-    }
     .header .right{
         float: right;
     }
@@ -53,13 +50,13 @@
     .greet{
         display: inline-block;
         color: #f8d098;
-        margin-right: 24px;
     }
     .header-img{
         margin: 0 12px;
     }
     .header-ul{
         float: right;
+        position: relative;
     }
     .header-ul li{
         float: left;
@@ -115,6 +112,9 @@
         line-height: 85px;
         margin-right: 35px;
     }
+    .header-ul li:last-child{
+        margin-right: 0px;
+    }
     .img-wrapper{
         text-align: center;
         width:40px;
@@ -132,8 +132,89 @@
         margin-top: 85px;
         width: 100%;
         height: 100%;
+        display: flex;
+        padding: 12px 44px 0 0;
     }
-    @media screen and (max-width: 767px) {
+    .left-content{
+        flex:0 0 13%;
+    }
+    .right-content{
+        flex: 1;
+    }
+    .main{
+        background: #f7fbff;
+        height: 100%;
+    }
+    .tb-h{
+        background: #97c4de;
+        height: 42px;
+        color: #000;
+    }
+    .table tbody .tb-content td:nth-child(odd){
+        background: #e3eff4;
+    }
+    .table tbody .tb-content td:nth-child(even){
+        background: #fff;
+    }
+    .table tbody .tb-content-d:nth-child(odd){
+        background: #e3eff4;
+    }
+    .table tbody .tb-content-d:nth-child(even){
+        background: #fff;
+    }
+    .table{
+        width: 1115px;
+    }
+    .table .tb-content td{
+        vertical-align: middle;
+    }
+    .form-control{
+        height:25px;
+    }
+    .agree{
+        width: 94px;
+        text-shadow: 0 1px 0 #fff;
+        border-color: #ccc;
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: left;
+        white-space: nowrap;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        background-color: #fff;
+        background-image: url("img/agree.png");
+        background-repeat: no-repeat;
+        background-position: 58px 5px;
+    }
+    .reject{
+        width: 94px;
+        text-shadow: 0 1px 0 #fff;
+        border-color: #ccc;
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: left;
+        white-space: nowrap;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        background-color: #fff;
+        background-image: url("img/reject.png");
+        background-repeat: no-repeat;
+        background-position: 60px 7px;
+    }
+    .table-bordered>tbody>tr>td{
+        border: 1px solid #92d5f4;
+    }
+    @media screen and (max-width: 768px) {
         .content{
             margin-top: -41px;
         }
@@ -141,19 +222,22 @@
             margin-top: 0;
         }
     }
-    @media screen and (min-width:768px) and (max-width: 991px) {
-        .content{
-            margin-top: -41px;
-        }
-    }
     @media screen and (min-width: 992px) {
         .content{
-            margin-top: -41px;
+            margin-top: -12px;
+        }
+        .header-ul{
+            right: 145px;
+        }
+    }
+    @media screen and (min-width:768px) and (max-width: 991px) {
+        .header-ul{
+            right: 0px;
         }
     }
 </style>
 <body>
-<div>
+<div class="main">
     <header class="navbar">
         <nav class="navbar navbar-default  navbar-orange">
             <div class="container">
@@ -166,7 +250,7 @@
                     </button>
                     <a class="navbar-brand brand"><img src="img/brand.png" alt=""></a>
                 </div>
-                <div class="collapse navbar-collapse" id="header-settings">
+                <div class="collapse navbar-collapse visible-lg-block" id="header-settings">
                     <div class="header-section">
                         <span class="greet">Hello! David (Class1 crew)</span>
                         <span class="logout">logout</span>
@@ -197,7 +281,7 @@
                                     <span class="header-text">Personal Center</span>
                                 </a>
                             </li>
-                            <li style="margin-right: 145px">
+                            <li>
                                 <a>
                                     <div class="img-wrapper">
                                         <img src="img/approval-setting.png" alt="">
@@ -211,8 +295,243 @@
             </div>
         </nav>
     </header>
-</div>
-<div class="content clearfix">
+    <div class="content clearfix">
+        <div class="left-content"></div>
+        <div class="right-content">
+            <table class="table table-bordered">
+                <thead>
+                <tr class="tb-h">
+                    <td colspan="6">Alex.Dave 9.11</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="tb-content">
+                    <td>OUNTER ID</td>
+                    <td><input type="text" class="form-control"></td>
+                    <td>OUTER TYPE</td>
+                    <td><input type="text" class="form-control"></td>
+                    <td>STATU</td>
+                    <td><input type="text" class="form-control" placeholder="YIHUN"></td>
+                </tr>
+                <tr class="tb-content">
+                    <td>PROVENCE</td>
+                    <td>
+                        <select class="form-control">
+                            <option value=""></option>
+                        </select>
+                    </td>
+                    <td>HIALING</td>
+                    <td>
+                        <select class="form-control">
+                        <option value=""></option>
+                        </select>
+                    </td>
+                    <td>DISPITCH</td>
+                    <td>
+                        <select class="form-control">
+                            <option value=""></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="tb-content">
+                    <td>DISPATCH DA</td>
+                    <td>
+                        <select class="form-control">
+                            <option value=""></option>
+                        </select>
+                    </td>
+                    <td>DAYS</td>
+                    <td>
+                        <input type="text" class="form-control">
+                    </td>
+                    <td>COUNTRY</td>
+                    <td>
+                        <select class="form-control">
+                            <option value=""></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="tb-content">
+                    <td>REASON</td>
+                    <td>
+                        <input type="text" class="form-control">
+                    </td>
+                    <td>PHONE</td>
+                    <td>
+                        <select class="form-control">
+                            <option value=""></option>
+                        </select>
+                    </td>
+                    <td>BIANHAO</td>
+                    <td>
+                        <select class="form-control">
+                            <option value=""></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="tb-content">
+                    <td>HETONG</td>
+                    <td>
+                        <input type="text" class="form-control">
+                    </td>
+                    <td>IANDINGDATE</td>
+                    <td>
+                        <select class="form-control">
+                            <option value=""></option>
+                        </select>
+                    </td>
+                    <td>HTTONGNUM</td>
+                    <td>
+                        <input type="text" class="form-control">
+                    </td>
+                </tr>
+                <tr class="tb-content">
+                    <td>ADDRESS</td>
+                    <td>
+                        ZHENSGHIGONG
+                    </td>
+                    <td>IANDINGDATE</td>
+                    <td>
+                        1998-03-14
+                    </td>
+                    <td>HTTONGNUM</td>
+                    <td>
+                        0010187677
+                    </td>
+                </tr>
+                <tr class="tb-content">
+                    <td>ADDRESS</td>
+                    <td>
+                        <input type="text" class="form-control" placeholder="KUNMINGDAY">
+                    </td>
+                    <td>ADDRESS</td>
+                    <td COLSPAN="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td>ADDRESS</td>
+                    <td colspan="5"></td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <input class="agree" type="button" value="AGREE">
+                        <input class="reject" type="button" value="REJECT">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table table-bordered" style="margin-top: 16px">
+                <thead>
+                <tr class="tb-h">
+                    <td>OPERA</td>
+                    <td>NUMBER</td>
+                    <td>APPLY DATE</td>
+                    <td>WHAT</td>
+                    <td>SOURCE</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="tb-content-d">
+                    <td>
+                        <img src="img/save.png" alt="">
+                        <img src="img/edit.png" alt="">
+                        <img src="img/upload.png" alt="">
+                        <img src="img/reject.png" alt="">
+                    </td>
+                    <td>AB00001</td>
+                    <td>2017-03-23</td>
+                    <td>They had entered the country and had applied for</td>
+                    <td>HDDU/2773./DD</td>
+                </tr>
+                <tr class="tb-content-d">
+                    <td>
+                        <img src="img/save.png" alt="">
+                        <img src="img/edit.png" alt="">
+                        <img src="img/upload.png" alt="">
+                        <img src="img/reject.png" alt="">
+                    </td>
+                    <td>CD00002</td>
+                    <td>2017-04-23</td>
+                    <td>They had entered the country and had applied for</td>
+                    <td>HDDU/2773./DD</td>
+                </tr>
+                <tr class="tb-content-d">
+                    <td>
+                        <img src="img/save.png" alt="">
+                        <img src="img/edit.png" alt="">
+                        <img src="img/upload.png" alt="">
+                        <img src="img/reject.png" alt="">
+                    </td>
+                    <td>CD00002</td>
+                    <td>2017-04-23</td>
+                    <td>They had entered the country and had applied for</td>
+                    <td>HDDU/2773./DD</td>
+                </tr>
+                <tr class="tb-content-d">
+                    <td>
+                        <img src="img/save.png" alt="">
+                        <img src="img/edit.png" alt="">
+                        <img src="img/upload.png" alt="">
+                        <img src="img/reject.png" alt="">
+                    </td>
+                    <td>CD00002</td>
+                    <td>2017-04-23</td>
+                    <td>They had entered the country and had applied for</td>
+                    <td>HDDU/2773./DD</td>
+                </tr>
+                <tr class="tb-content-d">
+                    <td>
+                        <img src="img/save.png" alt="">
+                        <img src="img/edit.png" alt="">
+                        <img src="img/upload.png" alt="">
+                        <img src="img/reject.png" alt="">
+                    </td>
+                    <td>CD00002</td>
+                    <td>2017-04-23</td>
+                    <td>They had entered the country and had applied for</td>
+                    <td>HDDU/2773./DD</td>
+                </tr>
+                <tr class="tb-content-d">
+                    <td>
+                        <img src="img/save.png" alt="">
+                        <img src="img/edit.png" alt="">
+                        <img src="img/upload.png" alt="">
+                        <img src="img/reject.png" alt="">
+                    </td>
+                    <td>CD00002</td>
+                    <td>2017-04-23</td>
+                    <td>They had entered the country and had applied for</td>
+                    <td>HDDU/2773./DD</td>
+                </tr>
+                <tr class="tb-content-d">
+                    <td>
+                        <img src="img/save.png" alt="">
+                        <img src="img/edit.png" alt="">
+                        <img src="img/upload.png" alt="">
+                        <img src="img/reject.png" alt="">
+                    </td>
+                    <td>CD00002</td>
+                    <td>2017-04-23</td>
+                    <td>They had entered the country and had applied for</td>
+                    <td>HDDU/2773./DD</td>
+                </tr>
+                <tr class="tb-content-d">
+                    <td>
+                        <img src="img/save.png" alt="">
+                        <img src="img/edit.png" alt="">
+                        <img src="img/upload.png" alt="">
+                        <img src="img/reject.png" alt="">
+                    </td>
+                    <td>CD00002</td>
+                    <td>2017-04-23</td>
+                    <td>They had entered the country and had applied for</td>
+                    <td>HDDU/2773./DD</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 
 </body>
