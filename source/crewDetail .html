@@ -16,16 +16,16 @@
 		.table_thead_td {
 			background-color: #96c5df;
 		}
-		
+
 		.table_tbody_th {
 			background-color: #e4f1f5;
 		}
-		
+
 		th {
 			font-size: 12px;
 			border: 1.5px solid #bbe3f3;
 		}
-		
+
 		td {
 			font-size: 12px;
 			border: 1.5px solid #bbe3f3;
@@ -35,63 +35,69 @@
 
 	<body>
 		<div>
-			<header class="navbar">
-				<nav class="navbar navbar-default  navbar-orange">
-					<div class="container">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-settings" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-							<a class="navbar-brand brand"><img src="img/brand.png" alt=""></a>
-						</div>
-						<div class="collapse navbar-collapse visible-lg-block" id="header-settings">
-							<div class="header-section">
-								<span class="greet">Hello! David (Class1 crew)</span>
-								<span class="logout">logout</span>
-							</div>
-							<div style="float: right;">
-								<ul class="clearfix header-ul">
-									<li>
-										<a>
-											<div class="img-wrapper">
-												<img src="img/approval-home.png" alt="">
-											</div>
-											<span class="header-text">Home</span>
-										</a>
-									</li>
-									<li>
-										<a>
-											<div class="img-wrapper">
-												<img src="img/approval-crew.png" alt="">
-											</div>
-											<span class="header-text" style="color: #e4a24e">Crew management</span>
-										</a>
-									</li>
-									<li>
-										<a>
-											<div class="img-wrapper">
-												<img src="img/approval-personal.png" alt="">
-											</div>
-											<span class="header-text">Personal Center</span>
-										</a>
-									</li>
-									<li>
-										<a>
-											<div class="img-wrapper">
-												<img src="img/approval-setting.png" alt="">
-											</div>
-											<span class="header-text">Settings</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</nav>
-			</header>
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand brand"><img src="img/brand.png" alt=""></a>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav" style="margin-left: 9.5%">
+                                <li>
+                                    <a>
+                                        <div class="img-wrapper">
+                                            <img src="img/approval-home.png" alt="">
+                                        </div>
+                                        <span class="header-text">Home</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div class="img-wrapper">
+                                            <img src="img/approval-crew.png" alt="">
+                                        </div>
+                                        <span class="header-text" >Crew management</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div class="img-wrapper">
+                                            <img src="img/approval-personal.png" alt="">
+                                        </div>
+                                        <span class="header-text">Personal Center</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <div class="img-wrapper">
+                                            <img src="img/approval-setting.png" alt="">
+                                        </div>
+                                        <span class="header-text">Settings</span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li> <span class="greet">Hello! David (Class1 crew)</span></li>
+                                <li>
+                                    <span class="logout">logout</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+            </nav>
 		</div>
 		<div id="div_slideBar" class="col-md-2">
 			<div id="thediv" class="sidebar">
@@ -178,7 +184,7 @@
 								<span>social security</span>
 							</li>
 							<li>
-								<span>Evaluation</a>
+								<span>Evaluation</span>
 							</li>
 							<li>
 								<span>Work experience</span>
@@ -192,7 +198,7 @@
 						</ul>
 					</li>
 				</ul>
-				<img id="img_show_slideBar" src="img/go.png" style="float: left;">
+				<img id="img_show_slideBar" src="img/back.png" style="float: left;">
 			</div>
 		</div>
 		<div id="table_detail" class="col-md-9" style="padding-right: 0; z-index: -999; padding-left: 40px;">
@@ -608,6 +614,7 @@
 						$('#table_detail').addClass('col-md-11');
 						//$('#div_slideBar').removeClass('col-md-2');
 						//$('#div_slideBar').addClass('col-md-1');
+                        $('#img_show_slideBar').attr('src', 'img/icon_sidebar_go.png');
 					}
 				} else {
 					odiv.style.left = odiv.offsetLeft + speed + 'px';
