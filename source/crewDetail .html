@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>船员详情</title>
+	</head>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/sidbar.css" />
+	<link rel="stylesheet" href="css/head.css" />
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+		.table_thead_td {
+			background-color: #96c5df;
+		}
+		
+		.table_tbody_th {
+			background-color: #e4f1f5;
+		}
+		
+		th {
+			font-size: 12px;
+			border: 1.5px solid #bbe3f3;
+		}
+		
+		td {
+			font-size: 12px;
+			border: 1.5px solid #bbe3f3;
+			color: #585858;
+		}
+	</style>
+
+	<body>
+		<div>
+			<nav class="navbar navbar-default">
+				<div class="container">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand brand"><img src="img/brand.png" alt=""></a>
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav" style="margin-left: 9.5%">
+								<li>
+									<a>
+										<div class="img-wrapper">
+											<img src="img/approval-home.png" alt="">
+										</div>
+										<span class="header-text">Home</span>
+									</a>
+								</li>
+								<li>
+									<a>
+										<div class="img-wrapper">
+											<img src="img/approval-crew.png" alt="">
+										</div>
+										<span class="header-text" >Crew management</span>
+									</a>
+								</li>
+								<li>
+									<a>
+										<div class="img-wrapper">
+											<img src="img/approval-personal.png" alt="">
+										</div>
+										<span class="header-text">Personal Center</span>
+									</a>
+								</li>
+								<li>
+									<a>
+										<div class="img-wrapper">
+											<img src="img/approval-setting.png" alt="">
+										</div>
+										<span class="header-text">Settings</span>
+									</a>
+								</li>
+							</ul>
+
+							<ul class="nav navbar-nav navbar-right">
+								<li> <span class="greet">Hello! David (Class1 crew)</span></li>
+								<li>
+									<span class="logout">logout</span>
+								</li>
+							</ul>
+						</div>
+						<!-- /.navbar-collapse -->
+					</div>
+					<!-- /.container-fluid -->
+				</div>
+			</nav>
+		</div>
+		<div id="div_slideBar" class="col-md-2">
+			<div id="thediv" class="sidebar">
+				<ul style="float: left; width: 180px;">
+					<li class="title"><span>Requistion</span><span class="arrow"></span>
+						<ul class="in-sidebar">
+							<li>
+								<span>social security</span>
+							</li>
+							<li>
+								<span>Evaluation</span>
+							</li>
+							<li>
+								<span>Work experience</span>
+							</li>
+							<li>
+								<span>training record</span>
+							</li>
+							<li>
+								<span>payment record</span>
+							</li>
+						</ul>
+					</li>
+					<li class="title"><span>Report Forms</span><span class="arrow"></span>
+						<ul class="in-sidebar">
+							<li>
+								<span>social security</span>
+							</li>
+							<li>
+								<span>Evaluation</span>
+							</li>
+							<li>
+								<span>Work experience</span>
+							</li>
+							<li>
+								<span>training record</span>
+							</li>
+							<li>
+								<span>payment record</span>
+							</li>
+						</ul>
+					</li>
+					<li class="title"><span>Outgoing</span><span class="arrow"></span>
+						<ul class="in-sidebar">
+							<li>
+								<span>social security</span>
+							</li>
+							<li>
+								<span>Evaluation</span>
+							</li>
+							<li>
+								<span>Work experience</span>
+							</li>
+							<li>
+								<span>training record</span>
+							</li>
+							<li>
+								<span>payment record</span>
+							</li>
+						</ul>
+					</li>
+					<li class="title"><span>Expencse</span><span class="arrow"></span>
+						<ul class="in-sidebar">
+							<li>
+								<span>social security</span>
+							</li>
+							<li>
+								<span>Evaluation</span>
+							</li>
+							<li>
+								<span>Work experience</span>
+							</li>
+							<li>
+								<span>training record</span>
+							</li>
+							<li>
+								<span>payment record</span>
+							</li>
+						</ul>
+					</li>
+					<li class="title"><span>Leave</span><span class="arrow"></span>
+						<ul class="in-sidebar">
+							<li>
+								<span>social security</span>
+							</li>
+							<li>
+								<span>Evaluation</span>
+							</li>
+							<li>
+								<span>Work experience</span>
+							</li>
+							<li>
+								<span>training record</span>
+							</li>
+							<li>
+								<span>payment record</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<img id="img_show_slideBar" src="img/go.png" style="float: left;">
+			</div>
+		</div>
+		<div id="table_detail" class="col-md-9" style="padding-right: 0; z-index: -999; padding-left: 40px;">
+			<table class="table table-condensed" cellpadding="5">
+				<thead>
+					<tr>
+						<td colspan="7" class="table_thead_td">
+							Alex.Dave 9.11
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="table_tbody_th">
+							NUMBER
+						</th>
+						<td>
+							0000001
+						</td>
+						<th class="table_tbody_th">
+							NAME
+						</th>
+						<td>
+							Alex.Dave
+						</td>
+						<th class="table_tbody_th">
+							NATIONAL
+						</th>
+						<td>
+							CHINA
+						</td>
+						<td rowspan="8" style="text-align: center;">
+							<div>
+								<img src="img/1.jpg" />
+								<div style="text-align: center;">
+									<a style="float: left;">DOWN</a>
+									<a style="float: right;">ENLARGE</a>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th class="table_tbody_th">
+							AGE
+						</th>
+						<td>
+							35
+						</td>
+						<th class="table_tbody_th">
+							ID
+						</th>
+						<td>
+							41263516269027280
+						</td>
+						<th class="table_tbody_th">
+							HUNYIN
+						</th>
+						<td>
+							YIHUN
+						</td>
+					</tr>
+					<tr>
+						<th class="table_tbody_th">
+							HAILING
+						</th>
+						<td>
+							15
+						</td>
+						<th class="table_tbody_th">
+							HIALING
+						</th>
+						<td>
+							20
+						</td>
+						<th class="table_tbody_th">
+							ZHIWEI
+						</th>
+						<td>
+							WUZHIWEI
+						</td>
+					</tr>
+					<tr>
+						<th class="table_tbody_th">
+							CHUSHENG
+						</th>
+						<td>
+							1973-03-24
+						</td>
+						<th class="table_tbody_th">
+							AILIID
+						</th>
+						<td>
+							3/11
+						</td>
+						<th class="table_tbody_th">
+							CHUANDONG
+						</th>
+						<td>
+							3.11/990
+						</td>
+					</tr>
+					<tr>
+						<th class="table_tbody_th">
+							ZHUZHIDIAN
+						</th>
+						<td>
+							021-0292-8374
+						</td>
+						<th class="table_tbody_th">
+							PHONE
+						</th>
+						<td>
+							15273845289
+						</td>
+						<th class="table_tbody_th">
+							BIANHAO
+						</th>
+						<td>
+							937474774
+						</td>
+					</tr>
+					<tr>
+						<th class="table_tbody_th">
+							HETONG
+						</th>
+						<td>
+							ZHENGSHIGONG
+						</td>
+						<th class="table_tbody_th">
+							IANDINGDATE
+						</th>
+						<td>
+							1998-03-14
+						</td>
+						<th class="table_tbody_th">
+							HTTONGNUM
+						</th>
+						<td>
+							0010187677
+						</td>
+					</tr>
+					<tr>
+						<th class="table_tbody_th">
+							ADDRESS
+						</th>
+						<td>
+							KUNMINGDAY
+						</td>
+						<th class="table_tbody_th">
+							REMARKS
+						</th>
+						<td colspan="3">
+							STYP-SSOOSSBOOJ 182766/63788 BOOK JPY
+						</td>
+					</tr>
+					<tr>
+						<th class="table_tbody_th">
+							ADDRESS
+						</th>
+						<td colspan="5">
+							TODAYISGOODDAY
+						</td>
+						<tr>
+				</tbody>
+			</table>
+			<table class="table table-condensed" cellpadding="5">
+				<thead>
+					<tr>
+						<td colspan="6" style="background-color: #96c5df;">
+							XUEXIJINGLI
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="table_tbody_th">
+							IYEYUANXIAO
+						</th>
+						<td>
+							QINGHUADAXUE
+						</td>
+						<th class="table_tbody_th">
+							NIAN
+						</th>
+						<td>
+							1999-07-01
+						</td>
+						<th class="table_tbody_th">
+							ZHUANYA
+						</th>
+						<td>
+							HAIYANGGONGCHE
+						</td>
+					</tr>
+					<tr>
+						<th class="table_tbody_th">
+							GONGZUODATE
+						</th>
+						<td>
+							1999-03-24
+						</td>
+						<th class="table_tbody_th">
+							SUOZAICHENGSHI
+						</th>
+						<td>
+							BEIJING
+						</td>
+						<th class="table_tbody_th">
+							ZHUANYA
+						</th>
+						<td>
+							HAIYANGGONGCHE
+						</td>
+					</tr>
+					<tr>
+						<th class="table_tbody_th">
+							EMAIL
+						</th>
+						<td>
+							1XDHH@.COM
+						</td>
+						<th class="table_tbody_th">
+							SHENGAO
+						</th>
+						<td>
+							180CM
+						</td>
+						<th class="table_tbody_th">
+							TIZHONG
+						</th>
+						<td>
+							65KG
+						</td>
+					</tr>
+					<tr>
+						<th class="table_tbody_th">
+							SIZE
+						</th>
+						<td>
+							40
+						</td>
+						<th class="table_tbody_th">
+							XUEXING
+						</th>
+						<td>
+							O
+						</td>
+						<th class="table_tbody_th">
+							TIZHONG
+						</th>
+						<td>
+							65KG
+						</td>
+					</tr>
+					<tr>
+						<th class="table_tbody_th">
+							IYEYUANXIAO
+						</th>
+						<td>
+							QINGHUADAXUE
+						</td>
+						<th class="table_tbody_th">
+							NIAN
+						</th>
+						<td>
+							1999-07-01
+						</td>
+						<th class="table_tbody_th">
+							ZHUANYA
+						</th>
+						<td>
+							HAIYANGGONGCHE
+						</td>
+					</tr>
+					<tr>
+						<th class="table_tbody_th">
+							GONGZUODATE
+						</th>
+						<td>
+							1999-03-24
+						</td>
+						<th class="table_tbody_th">
+							SUOZAICHENGSHI
+						</th>
+						<td>
+							BEIJING
+						</td>
+						<th class="table_tbody_th">
+							ZHUANYA
+						</th>
+						<td>
+							HAIYANGGONGCHE
+						</td>
+					</tr>
+					<tr>
+						<th class="table_tbody_th">
+							EMAIL
+						</th>
+						<td>
+							1XDHH@.COM
+						</td>
+						<th class="table_tbody_th">
+							SHENGAO
+						</th>
+						<td>
+							180CM
+						</td>
+						<th class="table_tbody_th">
+							TIZHONG
+						</th>
+						<td>
+							65KG
+						</td>
+					</tr>
+					<tr>
+						<th class="table_tbody_th">
+							SIZE
+						</th>
+						<td>
+							40
+						</td>
+						<th class="table_tbody_th">
+							XUEXING
+						</th>
+						<td>
+							O
+						</td>
+						<th class="table_tbody_th">
+							TIZHONG
+						</th>
+						<td>
+							65KG
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-1" style="border: 2px solid #8fc9e1; text-align: center; padding-left: 0; padding-right: 0;">
+			<div style="font-size: 12px; padding-top: 10px; padding-bottom: 10px; background-color: #cfe6f5;">
+				<span>BASIC</span>
+				<hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+				<span>WORK</span>
+				<hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+				<span>CERT</span>
+				<hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+				<span>TRAIN</span>
+				<hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+				<span>FAMILY</span>
+				<hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+				<span>SKILLS</span>
+				<hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+				<span>ETC.</span>
+				<hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+				<span>CERT</span>
+				<hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+				<span>TRAIN</span>
+				<hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+				<span>FAMILY</span>
+				<hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+				<span>BACK</span>
+			</div>
+		</div>
+	</body>
+	<script type="application/javascript">
+		window.onload = function() {
+			/**
+			 * 边菜单栏动作
+			 */
+			var clicked = null;
+			$('.title').click(function() {
+				if(clicked == this) {
+					if($(clicked).children('ul').slideUp().end().children('.arrow').hasClass('arrow-up')) {
+						$(clicked).children('ul').slideUp().end().children('.arrow').removeClass('arrow-up');
+					} else {
+						$(this).children('ul').slideToggle().end().children('.arrow').addClass('arrow-up');
+					}
+				} else {
+					$(clicked).children('ul').slideUp().end().children('.arrow').removeClass('arrow-up');
+					$(this).children('ul').slideToggle().end().children('.arrow').addClass('arrow-up');
+				}
+				clicked = this;
+			});
+			$('.title > ul').click(function() {
+				return false; // 阻止事件冒泡
+			});
+		};
+
+		var img_show_slideBar = document.getElementById('img_show_slideBar');
+		var odiv = document.getElementById('thediv');
+		img_show_slideBar.onclick = function() {
+			if(-180 == odiv.offsetLeft) {
+				$('#table_detail').removeClass('col-md-11');
+				$('#table_detail').addClass('col-md-9');
+				//$('#div_slideBar').removeClass('col-md-1');
+				//$('#div_slideBar').addClass('col-md-2');
+				startmove(0, 5);
+			} else {
+				startmove(-180, -10);
+			}
+		}
+
+		var timer = null;
+
+		function startmove(target, speed) {
+			var odiv = document.getElementById('thediv');
+			clearInterval(timer);
+			timer = setInterval(function() {
+				if(odiv.offsetLeft == target) {
+					clearInterval(timer);
+					if(target == -180) {
+						$('#table_detail').removeClass('col-md-9');
+						$('#table_detail').addClass('col-md-11');
+						//$('#div_slideBar').removeClass('col-md-2');
+						//$('#div_slideBar').addClass('col-md-1');
+					}
+				} else {
+					odiv.style.left = odiv.offsetLeft + speed + 'px';
+				}
+			}, 10)
+		}
+	</script>
+
+</html>

@@ -1,0 +1,151 @@
+body{
+    width: 100%;
+    height: 100%;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+.header{
+    height: 85px;
+    width: auto;
+    background: #fff;
+    line-height: 85px;
+    padding: 0 18px 0 13px;
+    clear: both;
+    z-index: 900;
+    box-shadow: 0 4px 8px 0 rgba(7,17,27,.1);
+}
+i{
+    font-style: normal;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #1a4692;
+}
+header{
+    height: 80px;
+    line-height: 80px;
+}
+.header .right{
+    float: right;
+}
+.brand{
+    margin-top: 15px;
+}
+.brand a img{
+}
+.greet{
+    display: inline-block;
+    color: #f8d098;
+}
+.header-img{
+    margin: 0 12px;
+}
+.control-logo img{
+    width: 50%;
+}
+.container{
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%
+}
+.nav li div{
+    height: 40px;
+}
+
+.header-span{
+    /*display: block;*/
+}
+.header-section{
+    float: right;
+}
+.logout{
+    color: #67abd9;
+    font-size: 14px;
+    margin-left: 25px;
+}
+.greet{
+    font-size: 14px;
+    color: #f6c384;
+}
+.header-ul a{
+    display: inline-block;
+}
+.header-ul li{
+    height: 85px;
+    line-height: 85px;
+    margin-right: 35px;
+}
+.header-ul li:last-child{
+    margin-right: 0px;
+}
+.img-wrapper{
+    text-align: center;
+    width:40px;
+    height: 48px;
+    margin:0 auto;
+}
+.header-text{
+    display: block;
+    line-height: 100%;
+    color: #1a4692;
+    margin-top: 10px;
+    text-align: center;
+}
+.content{
+    background: #f7fbff;
+    margin-top: 85px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 12px 44px 0 0;
+}
+.left-content{
+    flex:0 0 180px;
+}
+.right-content{
+    flex: 1;
+}
+.main{
+    background: #f7fbff;
+}
+.tb-h{
+    background: #97c4de;
+    height: 42px;
+    color: #000;
+    width: 100%;
+}
+.tb-content{
+    height: 28px;
+}
+.tb-content:nth-child(odd){
+    background: #e3eff4;
+}
+.tb-content:nth-child(even){
+    background: #fff;
+}
+.table{
+    width: 1115px;
+}
+.navbar-right{
+    height: 96px;
+    line-height: 96px;
+}
+@media screen and (max-width: 768px) {
+    .content{
+        margin-top: -41px;
+    }
+    .brand {
+        margin-top: 0;
+    }
+}
+@media screen and (min-width: 992px) {
+    .content{
+        margin-top: -12px;
+    }
+    .header-ul{
+        right: 145px;
+    }
+}
+@media screen and (min-width:768px) and (max-width: 991px) {
+    .header-ul{
+        right: 0px;
+    }
+}

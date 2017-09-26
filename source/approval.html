@@ -8,89 +8,22 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="common/base.css">
+    <link rel="stylesheet" href="css/sidbar.css" />
+    <link rel="stylesheet" href="css/head.css" />
     <link rel="stylesheet" href="common/reset.css">
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
 <style type="text/css">
-    body{
-        /*min-width: 1200px;*/
-        width: 100%;
-        height: 100%;
-        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    }
-    .header{
-        height: 85px;
-        width: auto;
-        background: #fff;
-        line-height: 85px;
-        padding: 0 18px 0 13px;
-        clear: both;
-        z-index: 900;
-        box-shadow: 0 4px 8px 0 rgba(7,17,27,.1);
-    }
-    i{
-        font-style: normal;
-        font-size: 14px;
-        margin-top: 10px;
-        color: #1a4692;
-    }
-    header{
-        height: 80px;
-        line-height: 80px;
-    }
-    .header .right{
-        float: right;
-    }
-    .brand{
-        margin-top: 15px;
-    }
-    .brand a img{
-    }
-    .greet{
-        display: inline-block;
-        color: #f8d098;
-    }
-    .header-img{
-        margin: 0 12px;
-    }
     .header-ul{
         float: right;
         position: relative;
     }
-    .header-ul li{
-        float: left;
-    }
     .control-logo img{
         width: 50%;
     }
-    .navbar-nav li a {
-        line-height: 80px;
-        height: 80px;
-        padding-top: 0;
-        display: inline-block;
-    }
-    .container{
-        padding-left: 13px;
-        width: 100%
-    }
-    .nav>li>a {
-        padding: 10px 0px;
-        display: inline-block;
-    }
     .nav li div{
-        height: 85px;
-    }
-
-
-    .nav>li{
-        display: inline-block;
-        text-align: center;
-        margin-right: 50px;
-        font-size: 0;
-    }
-    .header-span{
-        /*display: block;*/
+        height: 40px;
     }
     .header-section{
         float: right;
@@ -132,14 +65,16 @@
         margin-top: 85px;
         width: 100%;
         height: 100%;
-        display: flex;
-        padding: 12px 44px 0 0;
+        padding-top: 12px;
+        padding-right: 22px;
     }
     .left-content{
-        flex:0 0 13%;
+        /*flex:0 0 13%;*/
+        z-index:999;
     }
     .right-content{
         flex: 1;
+        z-index: 1;
     }
     .main{
         background: #f7fbff;
@@ -163,7 +98,8 @@
         background: #fff;
     }
     .table{
-        width: 1115px;
+        width: 100%;
+        max-width: 100%;
     }
     .table .tb-content td{
         vertical-align: middle;
@@ -237,26 +173,25 @@
     }
 </style>
 <body>
-<div class="main">
-    <header class="navbar">
-        <nav class="navbar navbar-default  navbar-orange">
+<div class=".container-fluid">
+    <div>
+        <nav class="navbar navbar-default">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-settings" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand brand"><img src="img/brand.png" alt=""></a>
-                </div>
-                <div class="collapse navbar-collapse visible-lg-block" id="header-settings">
-                    <div class="header-section">
-                        <span class="greet">Hello! David (Class1 crew)</span>
-                        <span class="logout">logout</span>
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand brand"><img src="img/brand.png" alt=""></a>
                     </div>
-                    <div style="float: right;">
-                        <ul class="clearfix header-ul">
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav" style="margin-left: 9.5%">
                             <li>
                                 <a>
                                     <div class="img-wrapper">
@@ -270,7 +205,7 @@
                                     <div class="img-wrapper">
                                         <img src="img/approval-crew.png" alt="">
                                     </div>
-                                    <span class="header-text" style="color: #e4a24e">Crew management</span>
+                                    <span class="header-text" >Crew management</span>
                                 </a>
                             </li>
                             <li>
@@ -290,249 +225,396 @@
                                 </a>
                             </li>
                         </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li> <span class="greet">Hello! David (Class1 crew)</span></li>
+                            <li>
+                                <span class="logout">logout</span>
+                            </li>
+                        </ul>
                     </div>
+                    <!-- /.navbar-collapse -->
                 </div>
+                <!-- /.container-fluid -->
             </div>
         </nav>
-    </header>
-    <div class="content clearfix">
-        <div class="left-content"></div>
-        <div class="right-content">
-            <table class="table table-bordered">
-                <thead>
-                <tr class="tb-h">
-                    <td colspan="6">Alex.Dave 9.11</td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="tb-content">
-                    <td>OUNTER ID</td>
-                    <td><input type="text" class="form-control"></td>
-                    <td>OUTER TYPE</td>
-                    <td><input type="text" class="form-control"></td>
-                    <td>STATU</td>
-                    <td><input type="text" class="form-control" placeholder="YIHUN"></td>
-                </tr>
-                <tr class="tb-content">
-                    <td>PROVENCE</td>
-                    <td>
-                        <select class="form-control">
-                            <option value=""></option>
-                        </select>
-                    </td>
-                    <td>HIALING</td>
-                    <td>
-                        <select class="form-control">
-                        <option value=""></option>
-                        </select>
-                    </td>
-                    <td>DISPITCH</td>
-                    <td>
-                        <select class="form-control">
-                            <option value=""></option>
-                        </select>
-                    </td>
-                </tr>
-                <tr class="tb-content">
-                    <td>DISPATCH DA</td>
-                    <td>
-                        <select class="form-control">
-                            <option value=""></option>
-                        </select>
-                    </td>
-                    <td>DAYS</td>
-                    <td>
-                        <input type="text" class="form-control">
-                    </td>
-                    <td>COUNTRY</td>
-                    <td>
-                        <select class="form-control">
-                            <option value=""></option>
-                        </select>
-                    </td>
-                </tr>
-                <tr class="tb-content">
-                    <td>REASON</td>
-                    <td>
-                        <input type="text" class="form-control">
-                    </td>
-                    <td>PHONE</td>
-                    <td>
-                        <select class="form-control">
-                            <option value=""></option>
-                        </select>
-                    </td>
-                    <td>BIANHAO</td>
-                    <td>
-                        <select class="form-control">
-                            <option value=""></option>
-                        </select>
-                    </td>
-                </tr>
-                <tr class="tb-content">
-                    <td>HETONG</td>
-                    <td>
-                        <input type="text" class="form-control">
-                    </td>
-                    <td>IANDINGDATE</td>
-                    <td>
-                        <select class="form-control">
-                            <option value=""></option>
-                        </select>
-                    </td>
-                    <td>HTTONGNUM</td>
-                    <td>
-                        <input type="text" class="form-control">
-                    </td>
-                </tr>
-                <tr class="tb-content">
-                    <td>ADDRESS</td>
-                    <td>
-                        ZHENSGHIGONG
-                    </td>
-                    <td>IANDINGDATE</td>
-                    <td>
-                        1998-03-14
-                    </td>
-                    <td>HTTONGNUM</td>
-                    <td>
-                        0010187677
-                    </td>
-                </tr>
-                <tr class="tb-content">
-                    <td>ADDRESS</td>
-                    <td>
-                        <input type="text" class="form-control" placeholder="KUNMINGDAY">
-                    </td>
-                    <td>ADDRESS</td>
-                    <td COLSPAN="3">
-                    </td>
-                </tr>
-                <tr>
-                    <td>ADDRESS</td>
-                    <td colspan="5"></td>
-                </tr>
-                <tr>
-                    <td colspan="6">
-                        <input class="agree" type="button" value="AGREE">
-                        <input class="reject" type="button" value="REJECT">
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            <table class="table table-bordered" style="margin-top: 16px">
-                <thead>
-                <tr class="tb-h">
-                    <td>OPERA</td>
-                    <td>NUMBER</td>
-                    <td>APPLY DATE</td>
-                    <td>WHAT</td>
-                    <td>SOURCE</td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="tb-content-d">
-                    <td>
-                        <img src="img/save.png" alt="">
-                        <img src="img/edit.png" alt="">
-                        <img src="img/upload.png" alt="">
-                        <img src="img/reject.png" alt="">
-                    </td>
-                    <td>AB00001</td>
-                    <td>2017-03-23</td>
-                    <td>They had entered the country and had applied for</td>
-                    <td>HDDU/2773./DD</td>
-                </tr>
-                <tr class="tb-content-d">
-                    <td>
-                        <img src="img/save.png" alt="">
-                        <img src="img/edit.png" alt="">
-                        <img src="img/upload.png" alt="">
-                        <img src="img/reject.png" alt="">
-                    </td>
-                    <td>CD00002</td>
-                    <td>2017-04-23</td>
-                    <td>They had entered the country and had applied for</td>
-                    <td>HDDU/2773./DD</td>
-                </tr>
-                <tr class="tb-content-d">
-                    <td>
-                        <img src="img/save.png" alt="">
-                        <img src="img/edit.png" alt="">
-                        <img src="img/upload.png" alt="">
-                        <img src="img/reject.png" alt="">
-                    </td>
-                    <td>CD00002</td>
-                    <td>2017-04-23</td>
-                    <td>They had entered the country and had applied for</td>
-                    <td>HDDU/2773./DD</td>
-                </tr>
-                <tr class="tb-content-d">
-                    <td>
-                        <img src="img/save.png" alt="">
-                        <img src="img/edit.png" alt="">
-                        <img src="img/upload.png" alt="">
-                        <img src="img/reject.png" alt="">
-                    </td>
-                    <td>CD00002</td>
-                    <td>2017-04-23</td>
-                    <td>They had entered the country and had applied for</td>
-                    <td>HDDU/2773./DD</td>
-                </tr>
-                <tr class="tb-content-d">
-                    <td>
-                        <img src="img/save.png" alt="">
-                        <img src="img/edit.png" alt="">
-                        <img src="img/upload.png" alt="">
-                        <img src="img/reject.png" alt="">
-                    </td>
-                    <td>CD00002</td>
-                    <td>2017-04-23</td>
-                    <td>They had entered the country and had applied for</td>
-                    <td>HDDU/2773./DD</td>
-                </tr>
-                <tr class="tb-content-d">
-                    <td>
-                        <img src="img/save.png" alt="">
-                        <img src="img/edit.png" alt="">
-                        <img src="img/upload.png" alt="">
-                        <img src="img/reject.png" alt="">
-                    </td>
-                    <td>CD00002</td>
-                    <td>2017-04-23</td>
-                    <td>They had entered the country and had applied for</td>
-                    <td>HDDU/2773./DD</td>
-                </tr>
-                <tr class="tb-content-d">
-                    <td>
-                        <img src="img/save.png" alt="">
-                        <img src="img/edit.png" alt="">
-                        <img src="img/upload.png" alt="">
-                        <img src="img/reject.png" alt="">
-                    </td>
-                    <td>CD00002</td>
-                    <td>2017-04-23</td>
-                    <td>They had entered the country and had applied for</td>
-                    <td>HDDU/2773./DD</td>
-                </tr>
-                <tr class="tb-content-d">
-                    <td>
-                        <img src="img/save.png" alt="">
-                        <img src="img/edit.png" alt="">
-                        <img src="img/upload.png" alt="">
-                        <img src="img/reject.png" alt="">
-                    </td>
-                    <td>CD00002</td>
-                    <td>2017-04-23</td>
-                    <td>They had entered the country and had applied for</td>
-                    <td>HDDU/2773./DD</td>
-                </tr>
-
-                </tbody>
-            </table>
+    </div>
+    <div class="left-content col-md-2">
+        <div id="div_slideBar">
+            <div id="thediv" class="sidebar">
+                <ul style="float: left; width: 180px;">
+                    <li class="title"><span>Requistion</span><span class="arrow"></span>
+                        <ul class="in-sidebar">
+                            <li>
+                                <span>social security</span>
+                            </li>
+                            <li>
+                                <span>Evaluation</span>
+                            </li>
+                            <li>
+                                <span>Work experience</span>
+                            </li>
+                            <li>
+                                <span>training record</span>
+                            </li>
+                            <li>
+                                <span>payment record</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="title"><span>Report Forms</span><span class="arrow"></span>
+                        <ul class="in-sidebar">
+                            <li>
+                                <span>social security</span>
+                            </li>
+                            <li>
+                                <span>Evaluation</span>
+                            </li>
+                            <li>
+                                <span>Work experience</span>
+                            </li>
+                            <li>
+                                <span>training record</span>
+                            </li>
+                            <li>
+                                <span>payment record</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="title"><span>Outgoing</span><span class="arrow"></span>
+                        <ul class="in-sidebar">
+                            <li>
+                                <span>social security</span>
+                            </li>
+                            <li>
+                                <span>Evaluation</span>
+                            </li>
+                            <li>
+                                <span>Work experience</span>
+                            </li>
+                            <li>
+                                <span>training record</span>
+                            </li>
+                            <li>
+                                <span>payment record</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="title"><span>Expencse</span><span class="arrow"></span>
+                        <ul class="in-sidebar">
+                            <li>
+                                <span>social security</span>
+                            </li>
+                            <li>
+                                <span>Evaluation</span>
+                            </li>
+                            <li>
+                                <span>Work experience</span>
+                            </li>
+                            <li>
+                                <span>training record</span>
+                            </li>
+                            <li>
+                                <span>payment record</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="title"><span>Leave</span><span class="arrow"></span>
+                        <ul class="in-sidebar">
+                            <li>
+                                <span>social security</span>
+                            </li>
+                            <li>
+                                <span>Evaluation</span>
+                            </li>
+                            <li>
+                                <span>Work experience</span>
+                            </li>
+                            <li>
+                                <span>training record</span>
+                            </li>
+                            <li>
+                                <span>payment record</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <img id="img_show_slideBar" src="img/go.png" style="float: left;">
+            </div>
         </div>
     </div>
+    <div class="right-content col-md-9 table-responsive">
+        <table class="table table-bordered table-condensed" cellpadding="5">
+            <thead>
+            <tr class="tb-h">
+                <td colspan="6">Alex.Dave 9.11</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="tb-content">
+                <td>OUNTER ID</td>
+                <td><input type="text" class="form-control"></td>
+                <td>OUTER TYPE</td>
+                <td><input type="text" class="form-control"></td>
+                <td>STATU</td>
+                <td><input type="text" class="form-control" placeholder="YIHUN"></td>
+            </tr>
+            <tr class="tb-content">
+                <td>PROVENCE</td>
+                <td>
+                    <select class="form-control">
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td>HIALING</td>
+                <td>
+                    <select class="form-control">
+                    <option value=""></option>
+                    </select>
+                </td>
+                <td>DISPITCH</td>
+                <td>
+                    <select class="form-control">
+                        <option value=""></option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="tb-content">
+                <td>DISPATCH DA</td>
+                <td>
+                    <select class="form-control">
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td>DAYS</td>
+                <td>
+                    <input type="text" class="form-control">
+                </td>
+                <td>COUNTRY</td>
+                <td>
+                    <select class="form-control">
+                        <option value=""></option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="tb-content">
+                <td>REASON</td>
+                <td>
+                    <input type="text" class="form-control">
+                </td>
+                <td>PHONE</td>
+                <td>
+                    <select class="form-control">
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td>BIANHAO</td>
+                <td>
+                    <select class="form-control">
+                        <option value=""></option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="tb-content">
+                <td>HETONG</td>
+                <td>
+                    <input type="text" class="form-control">
+                </td>
+                <td>IANDINGDATE</td>
+                <td>
+                    <select class="form-control">
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td>HTTONGNUM</td>
+                <td>
+                    <input type="text" class="form-control">
+                </td>
+            </tr>
+            <tr class="tb-content">
+                <td>ADDRESS</td>
+                <td>
+                    ZHENSGHIGONG
+                </td>
+                <td>IANDINGDATE</td>
+                <td>
+                    1998-03-14
+                </td>
+                <td>HTTONGNUM</td>
+                <td>
+                    0010187677
+                </td>
+            </tr>
+            <tr class="tb-content">
+                <td>ADDRESS</td>
+                <td>
+                    <input type="text" class="form-control" placeholder="KUNMINGDAY">
+                </td>
+                <td>ADDRESS</td>
+                <td COLSPAN="3">
+                </td>
+            </tr>
+            <tr>
+                <td>ADDRESS</td>
+                <td colspan="5"></td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <input class="agree" type="button" value="AGREE">
+                    <input class="reject" type="button" value="REJECT">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-bordered table-condensed" cellpadding="5" style="margin-top: 16px">
+            <thead>
+            <tr class="tb-h">
+                <td>OPERA</td>
+                <td>NUMBER</td>
+                <td>APPLY DATE</td>
+                <td>WHAT</td>
+                <td>SOURCE</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="tb-content-d">
+                <td>
+                    <img src="img/save.png" alt="">
+                    <img src="img/edit.png" alt="">
+                    <img src="img/upload.png" alt="">
+                    <img src="img/reject.png" alt="">
+                </td>
+                <td>AB00001</td>
+                <td>2017-03-23</td>
+                <td>They had entered the country and had applied for</td>
+                <td>HDDU/2773./DD</td>
+            </tr>
+            <tr class="tb-content-d">
+                <td>
+                    <img src="img/save.png" alt="">
+                    <img src="img/edit.png" alt="">
+                    <img src="img/upload.png" alt="">
+                    <img src="img/reject.png" alt="">
+                </td>
+                <td>CD00002</td>
+                <td>2017-04-23</td>
+                <td>They had entered the country and had applied for</td>
+                <td>HDDU/2773./DD</td>
+            </tr>
+            <tr class="tb-content-d">
+                <td>
+                    <img src="img/save.png" alt="">
+                    <img src="img/edit.png" alt="">
+                    <img src="img/upload.png" alt="">
+                    <img src="img/reject.png" alt="">
+                </td>
+                <td>CD00002</td>
+                <td>2017-04-23</td>
+                <td>They had entered the country and had applied for</td>
+                <td>HDDU/2773./DD</td>
+            </tr>
+            <tr class="tb-content-d">
+                <td>
+                    <img src="img/save.png" alt="">
+                    <img src="img/edit.png" alt="">
+                    <img src="img/upload.png" alt="">
+                    <img src="img/reject.png" alt="">
+                </td>
+                <td>CD00002</td>
+                <td>2017-04-23</td>
+                <td>They had entered the country and had applied for</td>
+                <td>HDDU/2773./DD</td>
+            </tr>
+            <tr class="tb-content-d">
+                <td>
+                    <img src="img/save.png" alt="">
+                    <img src="img/edit.png" alt="">
+                    <img src="img/upload.png" alt="">
+                    <img src="img/reject.png" alt="">
+                </td>
+                <td>CD00002</td>
+                <td>2017-04-23</td>
+                <td>They had entered the country and had applied for</td>
+                <td>HDDU/2773./DD</td>
+            </tr>
+            <tr class="tb-content-d">
+                <td>
+                    <img src="img/save.png" alt="">
+                    <img src="img/edit.png" alt="">
+                    <img src="img/upload.png" alt="">
+                    <img src="img/reject.png" alt="">
+                </td>
+                <td>CD00002</td>
+                <td>2017-04-23</td>
+                <td>They had entered the country and had applied for</td>
+                <td>HDDU/2773./DD</td>
+            </tr>
+            <tr class="tb-content-d">
+                <td>
+                    <img src="img/save.png" alt="">
+                    <img src="img/edit.png" alt="">
+                    <img src="img/upload.png" alt="">
+                    <img src="img/reject.png" alt="">
+                </td>
+                <td>CD00002</td>
+                <td>2017-04-23</td>
+                <td>They had entered the country and had applied for</td>
+                <td>HDDU/2773./DD</td>
+            </tr>
+            <tr class="tb-content-d">
+                <td>
+                    <img src="img/save.png" alt="">
+                    <img src="img/edit.png" alt="">
+                    <img src="img/upload.png" alt="">
+                    <img src="img/reject.png" alt="">
+                </td>
+                <td>CD00002</td>
+                <td>2017-04-23</td>
+                <td>They had entered the country and had applied for</td>
+                <td>HDDU/2773./DD</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
 </div>
+
+<script>
+    var img_show_slideBar = document.getElementById('img_show_slideBar');
+    var odiv = document.getElementById('thediv');
+    img_show_slideBar.onclick = function() {
+        if(-180 == odiv.offsetLeft) {
+            $('.right-content').removeClass('col-md-11');
+            $('.right-content').addClass('col-md-9');
+            //$('#div_slideBar').removeClass('col-md-1');
+            //$('#div_slideBar').addClass('col-md-2');
+            startmove(0, 5);
+        } else {
+            startmove(-180, -10);
+        }
+    }
+
+    var timer = null;
+
+    function startmove(target, speed) {
+        var odiv = document.getElementById('thediv');
+        clearInterval(timer);
+        timer = setInterval(function() {
+            if(odiv.offsetLeft == target) {
+                clearInterval(timer);
+                if(target == -180) {
+                    $('.right-content').removeClass('col-md-9');
+                    $('.right-content').addClass('col-md-11');
+                    //$('#div_slideBar').removeClass('col-md-2');
+                    //$('#div_slideBar').addClass('col-md-1');
+                }
+            } else {
+                odiv.style.left = odiv.offsetLeft + speed + 'px';
+            }
+        }, 10)
+    }
+</script>
 
 </body>
 </html>

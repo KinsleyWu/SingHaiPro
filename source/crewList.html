@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>船员列表</title>
+	</head>
+	<link rel="stylesheet" href="css/head.css" />
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/sidbar.css" />
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<style type="text/css">		
+		.table_thead_th {
+			background-color: #96c5df;
+		}
+		
+		td {
+			font-size: 12px;
+			border: 1.5px solid #bbe3f3;
+			color: #585858;
+		}
+		
+		.btn {
+			font-size: 10px;
+		}
+	</style>
+
+	<body>
+		<div>
+			<header class="navbar">
+				<nav class="navbar navbar-default  navbar-orange">
+					<div class="container">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-settings" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+							<a class="navbar-brand brand"><img src="img/brand.png" alt=""></a>
+						</div>
+						<div class="collapse navbar-collapse visible-lg-block" id="header-settings">
+							<div class="header-section">
+								<span class="greet">Hello! David (Class1 crew)</span>
+								<span class="logout">logout</span>
+							</div>
+							<div style="float: right;">
+								<ul class="clearfix header-ul">
+									<li>
+										<a>
+											<div class="img-wrapper">
+												<img src="img/approval-home.png" alt="">
+											</div>
+											<span class="header-text">Home</span>
+										</a>
+									</li>
+									<li>
+										<a>
+											<div class="img-wrapper">
+												<img src="img/approval-crew.png" alt="">
+											</div>
+											<span class="header-text" style="color: #e4a24e">Crew management</span>
+										</a>
+									</li>
+									<li>
+										<a>
+											<div class="img-wrapper">
+												<img src="img/approval-personal.png" alt="">
+											</div>
+											<span class="header-text">Personal Center</span>
+										</a>
+									</li>
+									<li>
+										<a>
+											<div class="img-wrapper">
+												<img src="img/approval-setting.png" alt="">
+											</div>
+											<span class="header-text">Settings</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</header>
+		</div>
+		<div id="div_slideBar" class="col-md-2">
+			<div id="thediv" class="sidebar">
+				<ul style="float: left; width: 180px;">
+					<li class="title"><span>Requistion</span><span class="arrow"></span>
+						<ul class="in-sidebar">
+							<li>
+								<span>social security</span>
+							</li>
+							<li>
+								<span>Evaluation</span>
+							</li>
+							<li>
+								<span>Work experience</span>
+							</li>
+							<li>
+								<span>training record</span>
+							</li>
+							<li>
+								<span>payment record</span>
+							</li>
+						</ul>
+					</li>
+					<li class="title"><span>Report Forms</span><span class="arrow"></span>
+						<ul class="in-sidebar">
+							<li>
+								<span>social security</span>
+							</li>
+							<li>
+								<span>Evaluation</span>
+							</li>
+							<li>
+								<span>Work experience</span>
+							</li>
+							<li>
+								<span>training record</span>
+							</li>
+							<li>
+								<span>payment record</span>
+							</li>
+						</ul>
+					</li>
+					<li class="title"><span>Outgoing</span><span class="arrow"></span>
+						<ul class="in-sidebar">
+							<li>
+								<span>social security</span>
+							</li>
+							<li>
+								<span>Evaluation</span>
+							</li>
+							<li>
+								<span>Work experience</span>
+							</li>
+							<li>
+								<span>training record</span>
+							</li>
+							<li>
+								<span>payment record</span>
+							</li>
+						</ul>
+					</li>
+					<li class="title"><span>Expencse</span><span class="arrow"></span>
+						<ul class="in-sidebar">
+							<li>
+								<span>social security</span>
+							</li>
+							<li>
+								<span>Evaluation</span>
+							</li>
+							<li>
+								<span>Work experience</span>
+							</li>
+							<li>
+								<span>training record</span>
+							</li>
+							<li>
+								<span>payment record</span>
+							</li>
+						</ul>
+					</li>
+					<li class="title"><span>Leave</span><span class="arrow"></span>
+						<ul class="in-sidebar">
+							<li>
+								<span>social security</span>
+							</li>
+							<li>
+								<span>Evaluation</a>
+							</li>
+							<li>
+								<span>Work experience</span>
+							</li>
+							<li>
+								<span>training record</span>
+							</li>
+							<li>
+								<span>payment record</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<img id="img_show_slideBar" src="img/go.png" style="float: left;">
+			</div>
+		</div>
+		<div id="table_list" class="col-md-10" style="z-index: -999; padding-left: 40px;">
+			<div>
+				<button type="button" class="btn btn-info">Msg to Master</button>
+				<button type="button" class="btn btn-info" style="margin-left: 6px;">Opening Msg</button>
+				<button type="button" class="btn btn-primary" style="margin-left: 6px;">Alert event</button>
+				<button type="button" class="btn btn-primary" style="margin-left: 6px;">Add crew</button>
+				<div class="btn-group" style="margin-left: 6px;">
+					<button style="width: 200px;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						--select a report-- <span class="caret"></span>
+  					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">Action</a> 
+						</li>
+						<li>
+							<a href="#">Another action</a>
+						</li>
+						<li>
+							<a href="#">Something else here</a>
+						</li>
+						<li>
+							<a href="#">Separated link</a>
+						</li>
+					</ul>
+				</div>
+				<button type="button" class="btn btn-primary" style="margin-left: 6px;">Generate Report</button>
+			</div>
+			<div style="margin-top: 10px;">
+				<span class="label" style="color: black;">Name</span>
+				<div class="btn-group">
+					<button style="width: 160px;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						--select a report-- <span class="caret"></span>
+  					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">Action</a>
+						</li>
+						<li>
+							<a href="#">Another action</a>
+						</li>
+						<li>
+							<a href="#">Something else here</a>
+						</li>
+						<li>
+							<a href="#">Separated link</a>
+						</li>
+					</ul>
+				</div>
+				<span class="label" style="color: black; margin-left: 20px;">Id</span>
+				<div class="btn-group">
+					<button style="width: 160px;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						--select a report-- <span class="caret"></span>
+  					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">Action</a>
+						</li>
+						<li>
+							<a href="#">Another action</a>
+						</li>
+						<li>
+							<a href="#">Something else here</a>
+						</li>
+						<li>
+							<a href="#">Separated link</a>
+						</li>
+					</ul>
+				</div>
+				<span class="label" style="color: black; margin-left: 12px;">National</span>
+				<div class="btn-group">
+					<button style="width: 160px;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						--select a report-- <span class="caret"></span>
+  					</button>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">Action</a>
+						</li>
+						<li>
+							<a href="#">Another action</a>
+						</li>
+						<li>
+							<a href="#">Something else here</a>
+						</li>
+						<li>
+							<a href="#">Separated link</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div style="margin-top: 10px;">
+				<table class="table table-condensed" style="text-align: center; vertical-align: middle;" cellpadding="5">
+					<thead>
+						<tr style="background-color: #96c5df;">
+							<td>
+								ID
+							</td>
+							<td>
+								NAME
+							</td>
+							<td>
+								POST
+							</td>
+							<td>
+								SIGN DATE
+							</td>
+							<td>
+								END DATE
+							</td>
+							<td>
+								SEA EAG
+							</td>
+							<td>
+								STATE
+							</td>
+							<td>
+								SHIP OWNERS IN</br>RECENT WORK
+							</td>
+							<td>
+								OPERA
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr style="background-color: #e4f1f5;">
+							<td scope="row">
+								1
+							</td>
+							<td>
+								Barara
+							</td>
+							<td>
+								CEO Chief
+							</td>
+							<td>
+								2017-02-12
+							</td>
+							<td>
+								2017-02-12
+							</td>
+							<td>
+								1
+							</td>
+							<td>
+								Sall
+							</td>
+							<td>
+								Barara
+							</td>
+							<td>
+								<a>view</a>
+							</td>
+						</tr>
+						<tr>
+							<td scope="row">
+								2
+							</td>
+							<td>
+								Elazabeth
+							</td>
+							<td>
+								Executive
+							</td>
+							<td>
+								2017-04-31
+							</td>
+							<td>
+								2017-04-31
+							</td>
+							<td>
+								2
+							</td>
+							<td>
+								Sall
+							</td>
+							<td>
+								Elazabeth
+							</td>
+							<td>
+								<a>view</a>
+							</td>
+						</tr>
+						<tr style="background-color: #e4f1f5;">
+							<td scope="row">
+								3
+							</td>
+							<td>
+								Hellen
+							</td>
+							<td>
+								Officer
+							</td>
+							<td>
+								2017-06-23
+							</td>
+							<td>
+								2017-06-23
+							</td>
+							<td>
+								3
+							</td>
+							<td>
+								Reset
+							</td>
+							<td>
+								Hellen
+							</td>
+							<td>
+								<a>view</a>
+							</td>
+						</tr>
+						<tr>
+							<td scope="row">
+								4
+							</td>
+							<td>
+								Katharine
+							</td>
+							<td>
+								CFO
+							</td>
+							<td>
+								2017-04-12
+							</td>
+							<td>
+								2017-04-12
+							</td>
+							<td>
+								4
+							</td>
+							<td>
+								Reset
+							</td>
+							<td>
+								Katharine
+							</td>
+							<td>
+								<a>view</a>
+							</td>
+						</tr>
+						<tr style="background-color: #e4f1f5;">
+							<td scope="row">
+								5
+							</td>
+							<td>
+								Lee
+							</td>
+							<td>
+								Chief
+							</td>
+							<td>
+								2017-09-02
+							</td>
+							<td>
+								2017-09-02
+							</td>
+							<td>
+								5
+							</td>
+							<td>
+								Reset
+							</td>
+							<td>
+								Lee
+							</td>
+							<td>
+								<a>view</a>
+							</td>
+						</tr>
+						<tr>
+							<td scope="row">
+								6
+							</td>
+							<td>
+								Ann
+							</td>
+							<td>
+								Financial
+							</td>
+							<td>
+								2017-03-12
+							</td>
+							<td>
+								2017-03-12
+							</td>
+							<td>
+								6
+							</td>
+							<td>
+								Reset
+							</td>
+							<td>
+								Ann
+							</td>
+							<td>
+								<a>view</a>
+							</td>
+						</tr>
+						<tr style="background-color: #e4f1f5;">
+							<td scope="row">
+								7
+							</td>
+							<td>
+								Diana
+							</td>
+							<td>
+								Officer
+							</td>
+							<td>
+								2017-09-13
+							</td>
+							<td>
+								2017-09-13
+							</td>
+							<td>
+								7
+							</td>
+							<td>
+								Sall
+							</td>
+							<td>
+								Diana
+							</td>
+							<td>
+								<a>view</a>
+							</td>
+						</tr>
+						<tr>
+							<td scope="row">
+								8
+							</td>
+							<td>
+								Fiona
+							</td>
+							<td>
+								COO Chief
+							</td>
+							<td>
+								2016-03-25
+							</td>
+							<td>
+								2016-03-25
+							</td>
+							<td>
+								8
+							</td>
+							<td>
+								Sall
+							</td>
+							<td>
+								Fiona
+							</td>
+							<td>
+								<a>view</a>
+							</td>
+						</tr>
+						<tr style="background-color: #e4f1f5;">
+							<td scope="row">
+								9
+							</td>
+							<td>
+								Shirley
+							</td>
+							<td>
+								Operated
+							</td>
+							<td>
+								2016-02-14
+							</td>
+							<td>
+								2016-02-14
+							</td>
+							<td>
+								9
+							</td>
+							<td>
+								rest
+							</td>
+							<td>
+								Shirley
+							</td>
+							<td>
+								<a>view</a>
+							</td>
+						</tr>
+						<tr>
+							<td scope="row">
+								10
+							</td>
+							<td>
+								Emily
+							</td>
+							<td>
+								Officer Chief
+							</td>
+							<td>
+								2018-02-18
+							</td>
+							<td>
+								2018-02-18
+							</td>
+							<td>
+								10
+							</td>
+							<td>
+								rest
+							</td>
+							<td>
+								Emily
+							</td>
+							<td>
+								<a>view</a>
+							</td>
+						</tr>
+						<tr style="background-color: #e4f1f5;">
+							<td scope="row">
+								11
+							</td>
+							<td>
+								Barara
+							</td>
+							<td>
+								CEO Chief
+							</td>
+							<td>
+								2017-02-12
+							</td>
+							<td>
+								2017-02-12
+							</td>
+							<td>
+								11
+							</td>
+							<td>
+								Sall
+							</td>
+							<td>
+								Barara
+							</td>
+							<td>
+								<a>view</a>
+							</td>
+						</tr>
+						<tr>
+							<td scope="row">
+								12
+							</td>
+							<td>
+								Elazabeth
+							</td>
+							<td>
+								Executive
+							</td>
+							<td>
+								2017-04-31
+							</td>
+							<td>
+								2017-04-31
+							</td>
+							<td>
+								12
+							</td>
+							<td>
+								Sall
+							</td>
+							<td>
+								Elazabeth
+							</td>
+							<td>
+								<a>view</a>
+							</td>
+						</tr>
+						<tr style="background-color: #e4f1f5;">
+							<td scope="row">
+								13
+							</td>
+							<td>
+								Hellen
+							</td>
+							<td>
+								Officer
+							</td>
+							<td>
+								2017-06-23
+							</td>
+							<td>
+								2017-06-23
+							</td>
+							<td>
+								13
+							</td>
+							<td>
+								Reset
+							</td>
+							<td>
+								Hellen
+							</td>
+							<td>
+								<a>view</a>
+							</td>
+						</tr>
+						<tr>
+							<td scope="row">
+								14
+							</td>
+							<td>
+								Katharine
+							</td>
+							<td>
+								CFO
+							</td>
+							<td>
+								2017-04-12
+							</td>
+							<td>
+								2017-04-12
+							</td>
+							<td>
+								14
+							</td>
+							<td>
+								Reset
+							</td>
+							<td>
+								Katharine
+							</td>
+							<td>
+								<a>view</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+	<script type="application/javascript">
+		window.onload = function() {
+			/**
+			 * 边菜单栏动作
+			 */
+			var clicked = null;
+			$('.title').click(function() {
+				if (clicked == this){
+					if ($(clicked).children('ul').slideUp().end().children('.arrow').hasClass('arrow-up')){
+						$(clicked).children('ul').slideUp().end().children('.arrow').removeClass('arrow-up');
+					} else {
+						$(this).children('ul').slideToggle().end().children('.arrow').addClass('arrow-up');	
+					}	
+				} else {
+					$(clicked).children('ul').slideUp().end().children('.arrow').removeClass('arrow-up');
+					$(this).children('ul').slideToggle().end().children('.arrow').addClass('arrow-up');					
+				}
+				clicked = this;
+			});
+			 $('.title > ul').click(function() {
+				return false; // 阻止事件冒泡
+			});
+		};
+		
+		var img_show_slideBar=document.getElementById('img_show_slideBar');
+		var odiv = document.getElementById('thediv');
+		img_show_slideBar.onclick=function (){
+			if (-180 == odiv.offsetLeft) {
+				$('#table_list').removeClass('col-md-12');
+				$('#table_list').addClass('col-md-10');
+				$('#div_slideBar').removeClass('col-md-1');
+				$('#div_slideBar').addClass('col-md-2');
+				startmove(0,5);
+			} else {
+				startmove(-180,-10);
+			}
+		}
+		
+		var timer=null;
+		function startmove(target,speed){
+			var odiv = document.getElementById('thediv');
+			clearInterval(timer);
+			timer=setInterval(function (){
+				if(odiv.offsetLeft==target){
+					clearInterval(timer);
+					if (target == -180){
+						$('#table_list').removeClass('col-md-10');
+						$('#table_list').addClass('col-md-12');
+						$('#div_slideBar').removeClass('col-md-2');
+						$('#div_slideBar').addClass('col-md-1');
+					}
+				}
+				else{    
+					odiv.style.left=odiv.offsetLeft+speed+'px';
+				}
+			},10)
+		}
+	</script>
+
+</html>
