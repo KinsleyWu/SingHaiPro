@@ -193,7 +193,7 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav" style="margin-left: 9.5%">
                             <li>
-                                <a>
+                                <a onclick="hightlight(this)">
                                     <div class="img-wrapper">
                                         <img src="img/approval-home.png" alt="">
                                     </div>
@@ -201,7 +201,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a>
+                                <a onclick="hightlight(this)">
                                     <div class="img-wrapper">
                                         <img src="img/approval-crew.png" alt="">
                                     </div>
@@ -209,7 +209,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a>
+                                <a onclick="hightlight(this)">
                                     <div class="img-wrapper">
                                         <img src="img/approval-personal.png" alt="">
                                     </div>
@@ -217,7 +217,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a>
+                                <a onclick="hightlight(this)">
                                     <div class="img-wrapper">
                                         <img src="img/approval-setting.png" alt="">
                                     </div>
@@ -631,6 +631,12 @@
                 odiv.style.left = odiv.offsetLeft + speed + 'px';
             }
         }, 10)
+    }
+    function hightlight(obj) {
+        $(obj).parent().addClass("on");
+        $(obj).parent().siblings().each(function(i,o){
+            $(o).removeClass("on");
+        });
     }
 </script>
 

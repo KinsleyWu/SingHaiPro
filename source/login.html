@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登陆</title>
+	</head>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<style>
+		html,body{
+			height: 100%;width: 100%;margin:0;padding:0;
+		}
+		body{
+			background:url(img/bg_login.png)no-repeat;
+			background-size:100% 100%;
+			position:absolute;
+			filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/bg_login.png',sizingMethod='scale');
+		}
+		.center {
+			margin-top: auto; 
+			margin-bottom: auto;
+			margin-left: auto;
+			margin-right: 8%;
+			position: absolute;
+			top: 0; left: 0; bottom: 0; right: 0;
+			width: 60%; 
+			height: 60%;   
+			min-width: 100px;  
+			max-width: 300px; 
+			min-height: 200px; 
+			max-height: 400px; 
+			padding: 40px; 
+			/**position: fixed;
+			top: 50%;
+			right: 20%;
+			-webkit-transform: translateX(50%) translateY(-50%);*/
+		}
+
+		.transparent_class {   
+			background: rgba(255,255,255,0.7);
+			filter:Alpha(opacity=50);   
+			-moz-opacity:0.5;   
+			-khtml-opacity: 0.5;
+		}
+		
+		.img_login_logo {
+			width: 100%;
+		}
+		
+		.input_login_username {
+			margin-top: 30px;
+			font-size: 16px;
+			background-color: transparent;
+			width: 100%;
+			padding: 25px 12px 25px 12px;
+			border-radius: 3px;
+			border:1px solid black;
+			border-radius: 6px;
+		}
+		
+		.input_login_pwd {
+			margin-top: 20px;
+			background-color: transparent;
+			font-size: 16px;
+			width: 100%;
+			padding: 25px 12px 25px 12px;
+			border-radius: 3px;
+			border:1px solid black;
+			border-radius: 6px;
+		}
+		
+		.btn_login {
+			font-size: 18px;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			width: 100%;
+			margin-top: 30px;
+			border-radius: 6px;
+			background: #1c4096;
+		}
+	</style>
+	<body class="body">
+		<div style="margin-right: 20px;">
+			<div class="center transparent_class" style="padding: 36px 16px; border-radius: 6px;">
+				<img class="img_login_logo" src="img/brand.png"/>
+				<div>
+					<input type="text" class="form-control input_login_username" placeholder="请输入账号" aria-describedby="basic-addon1">
+				</div>
+				<div style="margin-top: 20px;">
+					<input type="text" class="form-control input_login_pwd" placeholder="请输入密码" aria-describedby="basic-addon1">
+				</div>
+				<button type="button" class="btn btn-primary btn_login">Sign in</button>
+			</div>
+		</div>
+	</body>
+</html>
