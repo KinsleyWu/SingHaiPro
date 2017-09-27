@@ -553,30 +553,32 @@
 </div>
 <div class="col-md-1" style="text-align: center; padding-left: 0; padding-right: 20px;">
     <div style="border: 2px solid #8fc9e1; font-size: 12px; padding-top: 10px; padding-bottom: 10px; background-color: #cfe6f5;">
-        <span>BASIC</span>
-        <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
-        <span>WORK</span>
-        <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
-        <span>CERT</span>
-        <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
-        <span>TRAIN</span>
-        <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
-        <span>FAMILY</span>
-        <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
-        <span>SKILLS</span>
-        <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
-        <span>ETC.</span>
-        <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
-        <span>CERT</span>
-        <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
-        <span>TRAIN</span>
-        <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
-        <span>FAMILY</span>
-        <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+        <div id="div_right_menu">
+            <span>BASIC</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>WORK</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>CERT</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>TRAIN</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>FAMILY</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>SKILLS</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>ETC.</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>CERT</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>TRAIN</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>FAMILY</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+        </div>
         <div id="stretch" style="cursor: pointer">
-            <img src="img/icon_right_back.png">
+            <img id="img_right_back" src="img/icon_right_back.png">
             <br/>
-            <span>BACK</span>
+            <span id="span_right_back">BACK</span>
         </div>
     </div>
 </div>
@@ -584,6 +586,18 @@
 </body>
 <script type="application/javascript">
     window.onload = function() {
+        $("#stretch").click(function () {
+            if ($("#div_right_menu").is(":hidden")) {
+                $("#div_right_menu").slideDown('slow');
+                $("#img_right_back").attr("src","img/icon_right_back.png");
+                $("#span_right_back").text("BACK");
+            } else {
+                $("#div_right_menu").slideUp('slow');
+                $("#img_right_back").attr("src","img/icon_right_open.png");
+                $("#span_right_back").text("OPEN");
+            }
+        });
+
         /**
          * 边菜单栏动作
          */
@@ -642,7 +656,6 @@
             }
         }, 10)
     }
-    $("#stretch")
 </script>
 
 </html>
