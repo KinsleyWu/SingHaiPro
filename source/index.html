@@ -173,6 +173,15 @@
     .nav>li{
         display: inline-block;
     }
+    .on {
+        color: #e29b3a;
+    }
+    .instructions {
+        cursor: pointer;
+    }
+    .instructions:hover{
+        color: #e29b3a;
+    }
     @media screen and (max-width: 767px) {
         .content{
             margin-top: -41px;
@@ -458,6 +467,13 @@
         </div>
     </div>
 </div>
-
+<script>
+    $(function(){
+        $(".control").on("click", function () {
+            $(this).find(".instructions").addClass("on");
+            $(this).siblings().find(".instructions").removeClass("on");
+        })
+    })
+</script>
 </body>
 </html>

@@ -13,7 +13,9 @@
     <script src="js/bootstrap.min.js"></script>
 </head>
 <style type="text/css">
-
+    body{
+        font-size: 14px;
+    }
     tr,td{
         font-size: 12px;
     }
@@ -113,6 +115,12 @@
         color: #000;
         font-weight: bold;
     }
+    .agree:hover{
+        outline: -webkit-focus-ring-color auto 5px;
+    }
+    .reject:hover{
+        outline: -webkit-focus-ring-color auto 5px;
+    }
     @media screen and (max-width: 768px) {
         .content{
             margin-top: -41px;
@@ -164,32 +172,32 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav" style="margin-left: 9.5%">
-                            <li>
-                                <a onclick="hightlight(this)">
+                            <li class="head-li">
+                                <a>
                                     <div class="img-wrapper">
                                         <img src="img/approval-home.png" alt="">
                                     </div>
                                     <span class="header-text">Home</span>
                                 </a>
                             </li>
-                            <li>
-                                <a onclick="hightlight(this)">
+                            <li class="head-li">
+                                <a>
                                     <div class="img-wrapper">
                                         <img src="img/approval-crew.png" alt="">
                                     </div>
                                     <span class="header-text" >Crew management</span>
                                 </a>
                             </li>
-                            <li>
-                                <a onclick="hightlight(this)">
+                            <li class="head-li">
+                                <a>
                                     <div class="img-wrapper">
                                         <img src="img/approval-personal.png" alt="">
                                     </div>
                                     <span class="header-text">Personal Center</span>
                                 </a>
                             </li>
-                            <li>
-                                <a onclick="hightlight(this)">
+                            <li class="head-li">
+                                <a>
                                     <div class="img-wrapper">
                                         <img src="img/approval-setting.png" alt="">
                                     </div>
@@ -601,12 +609,11 @@
             }
         }, 10)
     }
-    function hightlight(obj) {
-        $(obj).parent().addClass("on");
-        $(obj).parent().siblings().each(function(i,o){
-            $(o).removeClass("on");
-        });
-    }
+    $(".head-li").on("click", function () {
+        $(this).find(".header-text").addClass("on");
+        $(this).siblings().find(".header-text").removeClass("on");
+    })
+
 </script>
 
 </body>

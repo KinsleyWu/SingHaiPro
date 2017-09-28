@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="height: 100%">
+<html>
 
 <head>
 	<meta charset="UTF-8">
@@ -46,32 +46,32 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav" style="margin-left: 9.5%">
-						<li>
-							<a onclick="hightlight(this)">
+						<li class="head-li">
+							<a>
 								<div class="img-wrapper">
 									<img src="img/approval-home.png" alt="">
 								</div>
 								<span class="header-text">Home</span>
 							</a>
 						</li>
-						<li>
-							<a onclick="hightlight(this)">
+						<li class="head-li">
+							<a>
 								<div class="img-wrapper">
 									<img src="img/approval-crew.png" alt="">
 								</div>
 								<span class="header-text" >Crew management</span>
 							</a>
 						</li>
-						<li>
-							<a onclick="hightlight(this)">
+						<li class="head-li">
+							<a>
 								<div class="img-wrapper">
 									<img src="img/approval-personal.png" alt="">
 								</div>
 								<span class="header-text">Personal Center</span>
 							</a>
 						</li>
-						<li>
-							<a onclick="hightlight(this)">
+						<li class="head-li">
+							<a>
 								<div class="img-wrapper">
 									<img src="img/approval-setting.png" alt="">
 								</div>
@@ -197,10 +197,10 @@
 </div>
 <div id="table_list" class="col-md-10" style="z-index: -999; padding-left: 40px; margin-top: 20px">
 	<div>
-		<button type="button" class="btn btn-info">Msg to Master</button>
-		<button type="button" class="btn btn-info" style="margin-left: 6px;">Opening Msg</button>
-		<button type="button" class="btn btn-primary" style="margin-left: 6px;">Alert event</button>
-		<button type="button" class="btn btn-primary" style="margin-left: 6px;">Add crew</button>
+		<button type="button" class="btn btn-info features-btn">Msg to Master</button>
+		<button type="button" class="btn btn-info features-btn" style="margin-left: 6px;">Opening Msg</button>
+		<button type="button" class="btn btn-info features-btn" style="margin-left: 6px;">Alert event</button>
+		<button type="button" class="btn btn-info features-btn" style="margin-left: 6px;">Add crew</button>
 		<div class="btn-group" style="margin-left: 6px;">
 			<button style="width: 200px;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				--select a report-- <span class="caret"></span>
@@ -220,7 +220,7 @@
 				</li>
 			</ul>
 		</div>
-		<button type="button" class="btn btn-primary" style="margin-left: 6px;">Generate Report</button>
+		<button type="button" class="btn btn-info features-btn" style="margin-left: 6px;">Generate Report</button>
 	</div>
 	<div style="margin-top: 10px;">
 		<span class="label" style="color: black;">Name</span>
@@ -731,6 +731,10 @@
 </body>
 <script type="application/javascript">
     window.onload = function() {
+        $(".head-li").on("click", function () {
+            $(this).find(".header-text").addClass("on");
+            $(this).siblings().find(".header-text").removeClass("on");
+        })
         /**
          * 边菜单栏动作
          */
@@ -787,13 +791,12 @@
                 odiv.style.left=odiv.offsetLeft+speed+'px';
             }
         },10)
-    }
-    function hightlight(obj) {
-        $(obj).parent().addClass("on");
-        $(obj).parent().siblings().each(function(i,o){
-            $(o).removeClass("on");
-        });
-    }
+    };
+    $(".features-btn").on("click", function () {
+        $(this).addClass("btn-primary").removeClass("btn-info");
+        $(this).siblings().removeClass("btn-primary").addClass("btn-info");
+    })
+
 </script>
 
 </html>

@@ -8,11 +8,17 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="css/sidbar.css" />
-<link rel="stylesheet" href="css/head.css" />
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/head.css" />
 
 <style type="text/css">
+    #div_right_menu span:hover{
+        color: #1a4692;
+    }
+    #div_right_menu span{
+        cursor: pointer;
+    }
     .table_thead_td {
         background-color: #96c5df;
     }
@@ -30,6 +36,9 @@
         font-size: 12px;
         border: 1.5px solid #bbe3f3;
         color: #585858;
+    }
+    .span-hover{
+        color: #1a4692 !important;
     }
     @media screen and (max-width: 767px) {
         #thediv{
@@ -67,32 +76,32 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav" style="margin-left: 9.5%">
-                        <li>
-                            <a onclick="hightlight(this)">
+                        <li class="head-li">
+                            <a>
                                 <div class="img-wrapper">
                                     <img src="img/approval-home.png" alt="">
                                 </div>
                                 <span class="header-text">Home</span>
                             </a>
                         </li>
-                        <li>
-                            <a onclick="hightlight(this)">
+                        <li class="head-li">
+                            <a>
                                 <div class="img-wrapper">
                                     <img src="img/approval-crew.png" alt="">
                                 </div>
                                 <span class="header-text" >Crew management</span>
                             </a>
                         </li>
-                        <li>
-                            <a onclick="hightlight(this)">
+                        <li class="head-li">
+                            <a>
                                 <div class="img-wrapper">
                                     <img src="img/approval-personal.png" alt="">
                                 </div>
                                 <span class="header-text">Personal Center</span>
                             </a>
                         </li>
-                        <li>
-                            <a onclick="hightlight(this)">
+                        <li class="head-li">
+                            <a>
                                 <div class="img-wrapper">
                                     <img src="img/approval-setting.png" alt="">
                                 </div>
@@ -586,6 +595,10 @@
 </body>
 <script type="application/javascript">
     window.onload = function() {
+        $(".head-li").on("click", function () {
+            $(this).find(".header-text").addClass("on");
+            $(this).siblings().find(".header-text").removeClass("on");
+        })
         $("#stretch").click(function () {
             if ($("#div_right_menu").is(":hidden")) {
                 $("#div_right_menu").slideDown('slow');
@@ -655,7 +668,11 @@
 
             }
         }, 10)
-    }
+    };
+    $("#div_right_menu span").on("click",function () {
+        $(this).addClass("span-hover");
+        $(this).siblings().removeClass("span-hover");
+    })
 </script>
 
 </html>
