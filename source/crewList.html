@@ -24,10 +24,33 @@
 	.btn {
 		font-size: 10px;
 	}
-
+    .h-input {
+        overflow: hidden;
+        clear: both;
+    }
+    .h-input li {
+        float: left;
+        margin-left: 70px;
+        width: 180px;
+        text-align: right;
+        margin-top: 10px;
+    }
+    .form-control {
+        width: 110px;
+        display: inline-block;
+        height: 22px;
+    }
+    .btn-info {
+        color: #000;
+        background-color: #cccccc;
+        border-color: #cccccc;
+    }
+    .btn {
+        padding: 6px 20px;
+    }
 </style>
 
-<body style="height: 100%">
+<body style="height: 100%;background: #f7fbff;">
 <div>
 	<nav class="navbar navbar-default" style="margin-bottom: 0">
 		<div class="container">
@@ -96,637 +119,360 @@
 <div id="div_slideBar" class="col-md-2">
 	<div id="thediv" class="sidebar">
 		<ul style="float: left; width: 180px;">
-			<li class="title"><span>Requistion</span><span class="arrow"></span>
+			<li class="title"><span>船员基本信息管理</span><span class="arrow"></span>
 				<ul class="in-sidebar">
 					<li>
-						<span>social security</span>
+						<span>船员信息</span>
 					</li>
 					<li>
-						<span>Evaluation</span>
+						<span>船员联系记录</span>
 					</li>
 					<li>
-						<span>Work experience</span>
+						<span>船员劳务合同</span>
 					</li>
 					<li>
-						<span>training record</span>
+						<span>服装订购记录</span>
 					</li>
 					<li>
-						<span>payment record</span>
+						<span>机票预订记录</span>
+					</li>
+					<li>
+						<span>酒店订购记录</span>
+					</li>
+					<li>
+						<span>保险记录</span>
+					</li>
+					<li>
+						<span>工伤医疗记录</span>
+					</li>
+					<li>
+						<span>船员欠款记录</span>
+					</li>
+					<li>
+						<span>非正常下船跟踪</span>
 					</li>
 				</ul>
 			</li>
-			<li class="title"><span>Report Forms</span><span class="arrow"></span>
+			<li class="title"><span>船员调配管理</span><span class="arrow"></span>
 				<ul class="in-sidebar">
 					<li>
-						<span>social security</span>
+						<span>船员散派计划管理</span>
 					</li>
 					<li>
-						<span>Evaluation</span>
+						<span>船员套派计划管理</span>
 					</li>
 					<li>
-						<span>Work experience</span>
+						<span>船员派遣单</span>
 					</li>
 					<li>
-						<span>training record</span>
-					</li>
-					<li>
-						<span>payment record</span>
+						<span>船员资历报备提醒</span>
 					</li>
 				</ul>
 			</li>
-			<li class="title"><span>Outgoing</span><span class="arrow"></span>
+			<li class="title"><span>船员证件管理</span><span class="arrow"></span>
 				<ul class="in-sidebar">
 					<li>
-						<span>social security</span>
+						<span>所有证件</span>
 					</li>
 					<li>
-						<span>Evaluation</span>
-					</li>
-					<li>
-						<span>Work experience</span>
-					</li>
-					<li>
-						<span>training record</span>
-					</li>
-					<li>
-						<span>payment record</span>
+						<span>预警证件</span>
 					</li>
 				</ul>
 			</li>
-			<li class="title"><span>Expencse</span><span class="arrow"></span>
+			<li class="title"><span>船员招募管理</span><span class="arrow"></span>
 				<ul class="in-sidebar">
 					<li>
-						<span>social security</span>
+						<span>职位需求</span>
 					</li>
 					<li>
-						<span>Evaluation</span>
+						<span>待联系船员信息</span>
 					</li>
 					<li>
-						<span>Work experience</span>
+						<span>招募人员信息</span>
 					</li>
 					<li>
-						<span>training record</span>
+						<span>面试记录</span>
 					</li>
 					<li>
-						<span>payment record</span>
+						<span>推荐列表</span>
+					</li>
+                    <li>
+                        <span>联系记录</span>
+                    </li>
+				</ul>
+			</li>
+			<li class="title"><span>船员培训管理</span><span class="arrow"></span>
+				<ul class="in-sidebar">
+					<li>
+						<span>培训计划</span>
+					</li>
+					<li>
+					     <span>课程列表</span>
+					</li>
+					<li>
+						<span>讲师列表</span>
+					</li>
+					<li>
+						<span>培训记录</span>
+					</li>
+					<li>
+						<span>培训费用报表</span>
 					</li>
 				</ul>
 			</li>
-			<li class="title"><span>Leave</span><span class="arrow"></span>
-				<ul class="in-sidebar">
-					<li>
-						<span>social security</span>
-					</li>
-					<li>
-					     <span>Evaluation</span>
-					</li>
-					<li>
-						<span>Work experience</span>
-					</li>
-					<li>
-						<span>training record</span>
-					</li>
-					<li>
-						<span>payment record</span>
-					</li>
-				</ul>
-			</li>
+            <li class="title"><span>船员审批管理</span><span class="arrow"></span>
+                <ul class="in-sidebar">
+                    <li>
+                        <span>创建船员申请</span>
+                    </li>
+                    <li>
+                        <span>船员申请记录</span>
+                    </li>
+                    <li>
+                        <span>船员申请审批</span>
+                    </li>
+                </ul>
+            </li>
 		</ul>
 		<img id="img_show_slideBar" src="img/back.png" style="float: left;">
 	</div>
 </div>
 <div id="table_list" class="col-md-10" style="z-index: -999; padding-left: 40px; margin-top: 20px">
-	<div>
-		<button type="button" class="btn btn-info features-btn">Msg to Master</button>
-		<button type="button" class="btn btn-info features-btn" style="margin-left: 6px;">Opening Msg</button>
-		<button type="button" class="btn btn-info features-btn" style="margin-left: 6px;">Alert event</button>
-		<button type="button" class="btn btn-info features-btn" style="margin-left: 6px;">Add crew</button>
-		<div class="btn-group" style="margin-left: 6px;">
-			<button style="width: 200px;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				--select a report-- <span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu">
-				<li>
-					<a href="#">Action</a>
-				</li>
-				<li>
-					<a href="#">Another action</a>
-				</li>
-				<li>
-					<a href="#">Something else here</a>
-				</li>
-				<li>
-					<a href="#">Separated link</a>
-				</li>
-			</ul>
-		</div>
-		<button type="button" class="btn btn-info features-btn" style="margin-left: 6px;">Generate Report</button>
-	</div>
-	<div style="margin-top: 10px;">
-		<span class="label" style="color: black;">Name</span>
-		<div class="btn-group">
-			<button style="width: 160px;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				--select a report-- <span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu">
-				<li>
-					<a href="#">Action</a>
-				</li>
-				<li>
-					<a href="#">Another action</a>
-				</li>
-				<li>
-					<a href="#">Something else here</a>
-				</li>
-				<li>
-					<a href="#">Separated link</a>
-				</li>
-			</ul>
-		</div>
-		<span class="label" style="color: black; margin-left: 20px;">Id</span>
-		<div class="btn-group">
-			<button style="width: 160px;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				--select a report-- <span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu">
-				<li>
-					<a href="#">Action</a>
-				</li>
-				<li>
-					<a href="#">Another action</a>
-				</li>
-				<li>
-					<a href="#">Something else here</a>
-				</li>
-				<li>
-					<a href="#">Separated link</a>
-				</li>
-			</ul>
-		</div>
-		<span class="label" style="color: black; margin-left: 12px;">National</span>
-		<div class="btn-group">
-			<button style="width: 160px;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				--select a report-- <span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu">
-				<li>
-					<a href="#">Action</a>
-				</li>
-				<li>
-					<a href="#">Another action</a>
-				</li>
-				<li>
-					<a href="#">Something else here</a>
-				</li>
-				<li>
-					<a href="#">Separated link</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div style="margin-top: 10px;">
-		<table class="table table-condensed" style="text-align: center; vertical-align: middle;" cellpadding="5">
-			<thead>
-			<tr style="background-color: #96c5df;">
-				<td>
-					ID
-				</td>
-				<td>
-					NAME
-				</td>
-				<td>
-					POST
-				</td>
-				<td>
-					SIGN DATE
-				</td>
-				<td>
-					END DATE
-				</td>
-				<td>
-					SEA EAG
-				</td>
-				<td>
-					STATE
-				</td>
-				<td>
-					SHIP OWNERS IN</br>RECENT WORK
-				</td>
-				<td>
-					OPERA
-				</td>
-			</tr>
-			</thead>
-			<tbody>
-			<tr style="background-color: #e4f1f5;">
-				<td scope="row">
-					1
-				</td>
-				<td>
-					Barara
-				</td>
-				<td>
-					CEO Chief
-				</td>
-				<td>
-					2017-02-12
-				</td>
-				<td>
-					2017-02-12
-				</td>
-				<td>
-					1
-				</td>
-				<td>
-					Sall
-				</td>
-				<td>
-					Barara
-				</td>
-				<td>
-					<a>view</a>
-				</td>
-			</tr>
-			<tr>
-				<td scope="row">
-					2
-				</td>
-				<td>
-					Elazabeth
-				</td>
-				<td>
-					Executive
-				</td>
-				<td>
-					2017-04-31
-				</td>
-				<td>
-					2017-04-31
-				</td>
-				<td>
-					2
-				</td>
-				<td>
-					Sall
-				</td>
-				<td>
-					Elazabeth
-				</td>
-				<td>
-					<a>view</a>
-				</td>
-			</tr>
-			<tr style="background-color: #e4f1f5;">
-				<td scope="row">
-					3
-				</td>
-				<td>
-					Hellen
-				</td>
-				<td>
-					Officer
-				</td>
-				<td>
-					2017-06-23
-				</td>
-				<td>
-					2017-06-23
-				</td>
-				<td>
-					3
-				</td>
-				<td>
-					Reset
-				</td>
-				<td>
-					Hellen
-				</td>
-				<td>
-					<a>view</a>
-				</td>
-			</tr>
-			<tr>
-				<td scope="row">
-					4
-				</td>
-				<td>
-					Katharine
-				</td>
-				<td>
-					CFO
-				</td>
-				<td>
-					2017-04-12
-				</td>
-				<td>
-					2017-04-12
-				</td>
-				<td>
-					4
-				</td>
-				<td>
-					Reset
-				</td>
-				<td>
-					Katharine
-				</td>
-				<td>
-					<a>view</a>
-				</td>
-			</tr>
-			<tr style="background-color: #e4f1f5;">
-				<td scope="row">
-					5
-				</td>
-				<td>
-					Lee
-				</td>
-				<td>
-					Chief
-				</td>
-				<td>
-					2017-09-02
-				</td>
-				<td>
-					2017-09-02
-				</td>
-				<td>
-					5
-				</td>
-				<td>
-					Reset
-				</td>
-				<td>
-					Lee
-				</td>
-				<td>
-					<a>view</a>
-				</td>
-			</tr>
-			<tr>
-				<td scope="row">
-					6
-				</td>
-				<td>
-					Ann
-				</td>
-				<td>
-					Financial
-				</td>
-				<td>
-					2017-03-12
-				</td>
-				<td>
-					2017-03-12
-				</td>
-				<td>
-					6
-				</td>
-				<td>
-					Reset
-				</td>
-				<td>
-					Ann
-				</td>
-				<td>
-					<a>view</a>
-				</td>
-			</tr>
-			<tr style="background-color: #e4f1f5;">
-				<td scope="row">
-					7
-				</td>
-				<td>
-					Diana
-				</td>
-				<td>
-					Officer
-				</td>
-				<td>
-					2017-09-13
-				</td>
-				<td>
-					2017-09-13
-				</td>
-				<td>
-					7
-				</td>
-				<td>
-					Sall
-				</td>
-				<td>
-					Diana
-				</td>
-				<td>
-					<a>view</a>
-				</td>
-			</tr>
-			<tr>
-				<td scope="row">
-					8
-				</td>
-				<td>
-					Fiona
-				</td>
-				<td>
-					COO Chief
-				</td>
-				<td>
-					2016-03-25
-				</td>
-				<td>
-					2016-03-25
-				</td>
-				<td>
-					8
-				</td>
-				<td>
-					Sall
-				</td>
-				<td>
-					Fiona
-				</td>
-				<td>
-					<a>view</a>
-				</td>
-			</tr>
-			<tr style="background-color: #e4f1f5;">
-				<td scope="row">
-					9
-				</td>
-				<td>
-					Shirley
-				</td>
-				<td>
-					Operated
-				</td>
-				<td>
-					2016-02-14
-				</td>
-				<td>
-					2016-02-14
-				</td>
-				<td>
-					9
-				</td>
-				<td>
-					rest
-				</td>
-				<td>
-					Shirley
-				</td>
-				<td>
-					<a>view</a>
-				</td>
-			</tr>
-			<tr>
-				<td scope="row">
-					10
-				</td>
-				<td>
-					Emily
-				</td>
-				<td>
-					Officer Chief
-				</td>
-				<td>
-					2018-02-18
-				</td>
-				<td>
-					2018-02-18
-				</td>
-				<td>
-					10
-				</td>
-				<td>
-					rest
-				</td>
-				<td>
-					Emily
-				</td>
-				<td>
-					<a>view</a>
-				</td>
-			</tr>
-			<tr style="background-color: #e4f1f5;">
-				<td scope="row">
-					11
-				</td>
-				<td>
-					Barara
-				</td>
-				<td>
-					CEO Chief
-				</td>
-				<td>
-					2017-02-12
-				</td>
-				<td>
-					2017-02-12
-				</td>
-				<td>
-					11
-				</td>
-				<td>
-					Sall
-				</td>
-				<td>
-					Barara
-				</td>
-				<td>
-					<a>view</a>
-				</td>
-			</tr>
-			<tr>
-				<td scope="row">
-					12
-				</td>
-				<td>
-					Elazabeth
-				</td>
-				<td>
-					Executive
-				</td>
-				<td>
-					2017-04-31
-				</td>
-				<td>
-					2017-04-31
-				</td>
-				<td>
-					12
-				</td>
-				<td>
-					Sall
-				</td>
-				<td>
-					Elazabeth
-				</td>
-				<td>
-					<a>view</a>
-				</td>
-			</tr>
-			<tr style="background-color: #e4f1f5;">
-				<td scope="row">
-					13
-				</td>
-				<td>
-					Hellen
-				</td>
-				<td>
-					Officer
-				</td>
-				<td>
-					2017-06-23
-				</td>
-				<td>
-					2017-06-23
-				</td>
-				<td>
-					13
-				</td>
-				<td>
-					Reset
-				</td>
-				<td>
-					Hellen
-				</td>
-				<td>
-					<a>view</a>
-				</td>
-			</tr>
-			<tr>
-				<td scope="row">
-					14
-				</td>
-				<td>
-					Katharine
-				</td>
-				<td>
-					CFO
-				</td>
-				<td>
-					2017-04-12
-				</td>
-				<td>
-					2017-04-12
-				</td>
-				<td>
-					14
-				</td>
-				<td>
-					Reset
-				</td>
-				<td>
-					Katharine
-				</td>
-				<td>
-					<a>view</a>
-				</td>
-			</tr>
-			</tbody>
-		</table>
-	</div>
+    <div style="clear: both;overflow: hidden">
+        <ul class="h-input">
+            <li style="margin-left: 0;">
+                <span>身份证号: </span>
+                <input type="text" class="form-control">
+            </li>
+            <li>
+                <span>船员姓名: </span>
+                <input type="text" class="form-control">
+            </li>
+            <li>
+                <span>英文名: </span>
+                <input type="text" class="form-control">
+            </li>
+            <li>
+                <span>船员首拼: </span>
+                <input type="text" class="form-control">
+            </li>
+        </ul>
+        <ul class="h-input">
+            <li style="margin-left: 0;">
+                <span>船员下家: </span>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">SHSH</option>
+                    <option value="">ARY</option>
+                    <option value="">BDLW</option>
+                    <option value="">取字典表数据</option>
+                </select>
+            </li>
+            <li>
+                <span>船东: </span>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">AET</option>
+                    <option value="">NATHALIN</option>
+                    <option value="">SBSS</option>
+                    <option value="">COSTA</option>
+                    <option value="">取字典表数据</option>
+                </select>
+            </li>
+            <li>
+                <span>可上船日: </span>
+                <input type="text" class="form-control">
+            </li>
+            <li>
+                <span>状态: </span>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">在船</option>
+                    <option value="">休假</option>
+                    <option value="">取字典表数据</option>
+                </select>
+            </li>
+        </ul>
+        <ul class="h-input">
+            <li style="margin-left: 0;">
+                <span>职务: </span>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">船长</option>
+                    <option value="">大副</option>
+                    <option value="">二副</option>
+                    <option value="">轮机长</option>
+                    <option value="">一水</option>
+                    <option value="">甲板实习生</option>
+                    <option value="">取字典表数据</option>
+                </select>
+            </li>
+            <li>
+                <span>船员类型: </span>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">自由船员</option>
+                    <option value="">邮轮海乘</option>
+                    <option value="">自有船员</option>
+                    <option value="">取字典表数据</option>
+                </select>
+            </li>
+            <li style="width:auto">
+                <input type="checkbox">
+                <span>存在预警证件</span>
+            </li>
+            <li style="width:auto">
+                <input type="checkbox">
+                <span>即将下船</span>
+            </li>
+            <li style="width:auto">
+                <input type="checkbox">
+                <span>缺少SEA</span>
+            </li>
+        </ul>
+        <ul class="h-input">
+            <li class="features-btn" style="width: auto;margin-left: 0px;">
+                <button type="button" class="btn btn-primary">查询</button>
+            </li>
+            <li class="features-btn" style="width: auto">
+                <button type="button" class="btn btn-info">新增</button>
+            </li>
+            <li class="features-btn" style="width: auto">
+                <button type="button" class="btn btn-info">编辑</button>
+            </li>
+            <li class="features-btn" style="width: auto">
+                <button type="button" class="btn btn-info">删除</button>
+            </li>
+            <li class="features-btn" style="width: auto">
+                <button type="button" class="btn btn-info">导出列表</button>
+            </li>
+            <li class="features-btn" style="width: auto">
+                <button type="button" class="btn btn-info">导出个人简历</button>
+            </li>
+        </ul>
+    </div>
+    <div style="margin-top: 20px;">
+        <table class="table table-bordered table-condensed" style="background: #fff;text-align: center">
+            <thead>
+            <tr class="tb-content" style="background: #97c5df;">
+                <td style="background: #fff;">
+                    <input type="checkbox">
+                </td>
+                <td>
+                    身份证号
+                </td>
+                <td>
+                    船员姓名
+                </td>
+                <td>
+                    英文名
+                </td>
+                <td>
+                    船员类型
+                </td>
+                <td>
+                    职务
+                </td>
+                <td>
+                    状态
+                </td>
+                <td>
+                    船东
+                </td>
+                <td>
+                    最近船舶
+                </td>
+                <td>
+                    上传日期
+                </td>
+                <td>
+                    下船日期
+                </td>
+                <td>
+                    可上传日
+                </td>
+                <td>
+                    船员下家
+                </td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="tb-content">
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr class="tb-content">
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <p>1.从旧系统迁移过来的船员信息，必须有人确认后才可以使用</p>
+        <p>2.颜色标注</p>
+        <p style="text-indent: 2em">蓝色：未确认数据</p>
+        <p style="text-indent: 2em">红色：存在预警证件</p>
+        <p style="text-indent: 2em">黄色：即将下船船员</p>
+        <p>3.预警证件：达到预警期或者已过期（判断范围为所有证件，无论是否在库）</p>
+        <p style="text-indent: 2rem">预警期在基本业务配置里配置</p>
+        <p>4.即将下船：达到下船提示时间区间的</p>
+        <p style="text-indent: 2rem">即将下船提示区间（多少天算即将下船）在基本业务配置里配置</p>
+        <p>5.导出个人简历</p>
+        <p style="text-indent: 2rem">需选择简历模板（默认为对应船东的简历模板），确认后根据简历模板导出简历</p>
+        <p style="text-indent: 2rem">支持多选，批量导出</p>
+        <p>6.可上船日检索条件</p>
+        <p style="text-indent: 2rem">检索可上船日>=该日期的船员</p>
+        <p>7.缺少SEA：存在工作经历中没有SEA附件的</p>
+        <p style="text-indent: 2rem">查找起始时间在基本业务配置里配置</p>
+        <p style="text-indent: 2rem">例如：配置时间为2018/01/01，则查找上船日期>=2018/01/01的工作经历里</p>
+        <p>没有SEA附件的数据</p>
+    </div>
 </div>
 </body>
 <script type="application/javascript">
@@ -793,8 +539,8 @@
         },10)
     };
     $(".features-btn").on("click", function () {
-        $(this).addClass("btn-primary").removeClass("btn-info");
-        $(this).siblings().removeClass("btn-primary").addClass("btn-info");
+        $(this).find("button").addClass("btn-primary").removeClass("btn-info");
+        $(this).siblings().find("button").removeClass("btn-primary").addClass("btn-info");
     })
 
 </script>
