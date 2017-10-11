@@ -373,7 +373,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="right-content col-md-10">
+			<div id="contentRight" class="right-content col-md-10" style="padding-left: 40px;">
 				<div style="display: flex;width: 100%;margin: 28px auto 24px auto;">
 					<div style="border-bottom: 1px solid #91c2d1;position: relative;top:-6px;width: 15px;"></div>
 					<div style="padding: 0 12px;font-size: 14px">基本信息</div>
@@ -695,6 +695,8 @@
 					$('#img_show_slideBar').attr('src', 'img/back.png');
 					//$('#div_slideBar').removeClass('col-md-1');
 					//$('#div_slideBar').addClass('col-md-2');
+					$('#contentRight').removeClass('col-md-12');
+            		$('#contentRight').addClass('col-md-10');
 					startmove(0, 5);
 				} else {
 					startmove(-180, -10);
@@ -710,8 +712,10 @@
 					if(odiv.offsetLeft == target) {
 						clearInterval(timer);
 						if(target == -180) {
-							//$('#div_slideBar').removeClass('col-md-2');
-							//$('#div_slideBar').addClass('col-md-1');
+							$('#contentRight').removeClass('col-md-10');
+                    		$('#contentRight').addClass('col-md-12');
+							$('#div_slideBar').removeClass('col-md-2');
+							$('#div_slideBar').addClass('col-md-1');
 							$('#img_show_slideBar').attr('src', 'img/icon_sidebar_go.png');
 						}
 					} else {
