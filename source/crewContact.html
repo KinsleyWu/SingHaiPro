@@ -2,31 +2,17 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<title>船员信息列表</title>
+    <meta charset="UTF-8">
+    <title>船员联系记录</title>
 </head>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="common/reset.css">
+<link rel="stylesheet" href="css/head.css" />
 <link rel="stylesheet" href="css/sidbar.css" />
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/head.css" />
+<script src="js/page.js"></script>
 <style type="text/css">
-    body {
-        font-size: 14px;
-    }
-
-    .input-greenbg {
-        background-color: #e5f0f6;
-        border: 1px solid #91c2d1;
-        border-radius: 0;
-    }
-    .col-inline {
-        display: inline;
-        width: 120px;
-        margin-left: 10px;
-    }
     .table_thead_td {
         background-color: #96c5df;
     }
@@ -45,9 +31,10 @@
         border: 1.5px solid #bbe3f3;
         color: #585858;
     }
-	.btn {
-		font-size: 10px;
-	}
+
+    .btn {
+        font-size: 10px;
+    }
     .h-input {
         overflow: hidden;
         clear: both;
@@ -61,9 +48,8 @@
     }
     .form-control {
         display: inline-block;
-        height:auto;
+        height: 22px;
         border-radius: 0px;
-        padding: 0;
     }
     .btn-info {
         color: #000;
@@ -72,10 +58,6 @@
     }
     .btn {
         padding: 6px 20px;
-    }
-    .col-label {
-        width: 60px;
-        text-align: right;
     }
 </style>
 
@@ -139,7 +121,7 @@
     <!-- /.navbar-collapse -->
     <!-- /.container-fluid -->
 </div>
-<div style="clear: both">
+<div style="clear: both;">
     <div id="div_slideBar" class="col-md-2">
         <div id="thediv" class="sidebar">
             <ul style="float: left; width: 180px;">
@@ -261,107 +243,20 @@
             <img id="img_show_slideBar" src="img/back.png" style="float: left;">
         </div>
     </div>
-
     <div id="table_list" class="col-md-10" style="z-index: -999; padding-left: 40px; margin-top: 20px">
         <div>
-            <div class="col-md-12">
-                <div class="col-md-3">
-                    <label class="col-label">身份证号</label>
-                    <input type="text" class="form-control col-inline input-greenbg" />
-                </div>
-                <div class="col-md-3">
-                    <label class="col-label">船员姓名</label>
-                    <input type="text" class="form-control col-inline input-greenbg" />
-                </div>
-                <div class="col-md-3">
-                    <label class="col-label">英文名</label>
-                    <input type="text" class="form-control col-inline input-greenbg" />
-                </div>
-                <div class="col-md-3">
-                    <label class="col-label">船员首拼</label>
-                    <input type="text" class="form-control col-inline input-greenbg" />
-                </div>
-            </div>
-            <div class="col-md-12" style="margin-top: 15px;">
-                <div class="col-md-3">
-                    <label class="col-label">船员下家</label>
-                    <select type="text" class="form-control col-inline input-greenbg">
-                    <option value="">SHSH</option>
-                    <option value="">ARY</option>
-                    <option value="">BDLW</option>
-                    <option value="">取字典表数据</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <label class="col-label">船东</label>
-                    <select type="text" class="form-control col-inline input-greenbg">
-                    <option value="">AET</option>
-                    <option value="">NATHALIN</option>
-                    <option value="">SBSS</option>
-                    <option value="">COSTA</option>
-                    <option value="">取字典表数据</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <label class="col-label">可上船日</label>
-                    <input type="text" class="form-control col-inline input-greenbg" />
-                </div>
-                <div class="col-md-3">
-                    <label class="col-label">状态</label>
-                    <select type="text" class="form-control col-inline input-greenbg">
-                    <option value="">在船</option>
-                    <option value="">休假</option>
-                    <option value="">取字典表数据</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-12" style="margin-top: 15px;">
-                <div class="col-md-3">
-                    <label class="col-label">职务</label>
-                    <select type="text" class="form-control col-inline input-greenbg">
-                        <option value="">船长</option>
-                        <option value="">大副</option>
-                        <option value="">二副</option>
-                        <option value="">轮机长</option>
-                        <option value="">一水</option>
-                        <option value="">甲板实习生</option>
-                        <option value="">取字典表数据</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <label class="col-label">船员类型</label>
-                    <select type="text" class="form-control col-inline input-greenbg">
-                        <option value="">自由船员</option>
-                        <option value="">邮轮海乘</option>
-                        <option value="">自有船员</option>
-                        <option value="">取字典表数据</option>
-                    </select>
-                </div>
-                <div class="col-md-6">
-                    <label class="col-label" style="width: 30%;"><input type="checkbox" />存在预警证件</label>
-                    <label class="col-label" style="width: 30%;"><input type="checkbox"  />即将下船</label>
-                    <label class="col-label" style="width: 30%;"><input type="checkbox" />缺少SEA</label>
-                </div>
-            </div>
-
             <ul class="h-input">
-                <li class="features-btn" style="width: auto;margin-left: 0px;">
-                    <button type="button" class="btn btn-primary">查询</button>
-                </li>
-                <li class="features-btn" style="width: auto">
+                <li class="features-btn" style="width: auto;margin-left: 0px;" >
                     <button type="button" class="btn btn-info">新增</button>
                 </li>
-                <li class="features-btn" style="width: auto">
+                <li class="features-btn" style="width: auto" >
                     <button type="button" class="btn btn-info">编辑</button>
                 </li>
-                <li class="features-btn" style="width: auto">
-                    <button type="button" class="btn btn-info">删除</button>
+                <li class="features-btn" style="width: auto;" >
+                    <button type="button" class="btn btn-primary">删除</button>
                 </li>
-                <li class="features-btn" style="width: auto">
-                    <button type="button" class="btn btn-info">导出列表</button>
-                </li>
-                <li class="features-btn" style="width: auto">
-                    <button type="button" class="btn btn-info">导出个人简历</button>
+                <li class="features-btn" style="width: auto" >
+                    <button type="button" class="btn btn-info">查看操作记录</button>
                 </li>
             </ul>
         </div>
@@ -369,61 +264,95 @@
             <table class="table table-bordered table-condensed" style="background: #fff;text-align: center">
                 <thead>
                 <tr class="tb-content" style="background: #97c5df;">
-                    <td style="background: #fff;">
-                        <input type="checkbox">
+                    <td>
+                        联系日期
                     </td>
                     <td>
-                        身份证号
+                        跟踪标识
                     </td>
                     <td>
-                        船员姓名
+                        计划联系
                     </td>
+
                     <td>
-                        英文名
-                    </td>
-                    <td>
-                        船员类型
-                    </td>
-                    <td>
-                        职务
-                    </td>
-                    <td>
-                        状态
-                    </td>
-                    <td>
-                        船东
-                    </td>
-                    <td>
-                        最近船舶
-                    </td>
-                    <td>
-                        上传日期
-                    </td>
-                    <td>
-                        下船日期
-                    </td>
-                    <td>
-                        可上传日
+                        可上船日
                     </td>
                     <td>
                         船员下家
+                    </td>
+                    <td>
+                        休假天数
+                    </td>
+                    <td>
+                        联系人
+                    </td>
+                    <td>
+                        需要更新证书
+                    </td>
+                    <td>
+                        备注
                     </td>
                 </tr>
                 </thead>
                 <tbody>
                 <tr class="tb-content">
                     <td>
+                        2017/08/25
+                    </td>
+                    <td>
                         <input type="checkbox">
                     </td>
                     <td>
+                        2017/09/25
+                    </td>
+                    <td>
+                        2017/10/25
+                    </td>
+                    <td>
+                        SHSH
+                    </td>
+                    <td>
+                        30
+                    </td>
+                    <td>
+                        Zhang San
                     </td>
                     <td>
                     </td>
                     <td>
                     </td>
+                </tr>
+                <tr class="tb-content">
+                    <td>
+                        2017/07/25
+                    </td>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                        2017/08/25
+                    </td>
+                    <td>
+                        2017/10/25
+                    </td>
+                    <td>
+                        SHSH
+                    </td>
                     <td>
                     </td>
                     <td>
+                        Zhang San
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr class="tb-content">
+                    <td>
+                    </td>
+                    <td>
+                        <input type="checkbox">
                     </td>
                     <td>
                     </td>
@@ -442,6 +371,8 @@
                 </tr>
                 <tr class="tb-content">
                     <td>
+                    </td>
+                    <td>
                         <input type="checkbox">
                     </td>
                     <td>
@@ -453,6 +384,59 @@
                     <td>
                     </td>
                     <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr class="tb-content">
+                    <td>
+                    </td>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr class="tb-content">
+                    <td>
+                    </td>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr class="tb-content">
+                    <td>
+                    </td>
+                    <td>
+                        <input type="checkbox">
                     </td>
                     <td>
                     </td>
@@ -472,11 +456,38 @@
                 </tbody>
             </table>
         </div>
-
+        <div class="pageDiv page" style='display:block; text-align:right;'></div>
     </div>
 </div>
 </body>
 <script type="application/javascript">
+    //列表分页
+    $(function() {
+        page.createPage({pageSize: 30, searchFunction: search});
+    });
+    function search() {
+        //把pageNo, pageSize和用户填写的查询条件build进pageParam中
+        /* var pageParam = page.buildParams($("form").serializeObject());
+
+         sys.ajax("/servlet/userOpLog/search", {
+             params : pageParam,
+             callback : pageQueryCallback
+         });  */
+    }
+    //开始查找
+    function goSearch() {
+        page.resetPageNo();
+        search();
+    }
+    function pageQueryCallback(result) {
+        var data = result.data;
+
+        page.updatePage(data);
+
+        var html = template('opLogListTpl', data);
+        $("#result").html(html);
+    }
+
     window.onload = function() {
         $(".head-li").on("click", function () {
             $(this).find(".header-text").addClass("on");
