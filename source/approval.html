@@ -1,646 +1,730 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>审批</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="common/base.css">
-    <link rel="stylesheet" href="css/head.css" />
-    <link rel="stylesheet" href="css/sidbar.css" />
-    <link rel="stylesheet" href="common/reset.css">
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-</head>
-<style type="text/css">
-    body{
-        font-size: 14px;
-    }
-    tr,td{
-        font-size: 12px;
-    }
-    .img-wrapper{
-        text-align: center;
-        width:40px;
-        height: 48px;
-        margin:0 auto;
-    }
-    .content{
-        background: #f7fbff;
-        margin-top: 85px;
-        width: 100%;
-        height: 100%;
-        padding-top: 12px;
-        padding-right: 22px;
-    }
-    .left-content{
-        z-index:999;
-    }
-    .right-content{
-        z-index: 1;
-    }
-    .main{
-        background: #f7fbff;
-        height: 100%;
-    }
-    .container{
-        padding-left: 0;
-        padding-right: 0;
-        width: 100%
-    }
-    .tb-h{
-        background: #97c4de;
-        color: #000;
-    }
-    .table tbody .tb-content td:nth-child(odd){
-        background: #e3eff4;
-    }
-    .table tbody .tb-content td:nth-child(even){
-        background: #fff;
-    }
-    .table tbody .tb-content-d:nth-child(odd){
-        background: #e3eff4;
-    }
-    .table tbody .tb-content-d:nth-child(even){
-        background: #fff;
-    }
-    .agree{
-        width: 94px;
-        text-shadow: 0 1px 0 #fff;
-        border-color: #ccc;
-        display: inline-block;
-        padding: 6px 6px;
-        margin-bottom: 0;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 1.42857143;
-        text-align: left;
-        white-space: nowrap;
-        vertical-align: middle;
-        border: 1px solid transparent;
-        border-radius: 4px;
-        background-color: #fff;
-        background-image: url("img/agree.png");
-        background-repeat: no-repeat;
-        background-position: 58px 5px;
-    }
-    .reject{
-        width: 94px;
-        text-shadow: 0 1px 0 #fff;
-        border-color: #ccc;
-        display: inline-block;
-        padding: 6px 12px;
-        margin-bottom: 0;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 1.42857143;
-        text-align: left;
-        white-space: nowrap;
-        vertical-align: middle;
-        border: 1px solid transparent;
-        border-radius: 4px;
-        background-color: #fff;
-        background-image: url("img/reject.png");
-        background-repeat: no-repeat;
-        background-position: 60px 7px;
-    }
-    .form-control {
-        height: auto;
-        padding: 0px;
-    }
-    .table-bordered>tbody>tr>td{
-        border: 1px solid #92d5f4;
-    }
-    .tb-h td{
-        color: #000;
-        font-weight: bold;
-    }
-    .agree:hover{
-        outline: -webkit-focus-ring-color auto 5px;
-    }
-    .reject:hover{
-        outline: -webkit-focus-ring-color auto 5px;
-    }
-    @media screen and (max-width: 768px) {
-        .content{
-            margin-top: -41px;
-        }
-        .brand {
-            margin-top: 0;
-        }
-        #thediv {
-            margin-top: -20px;
-        }
-    }
-    @media screen and (min-width: 992px) {
-        .content{
-            margin-top: -12px;
-        }
-        .header-ul{
-            right: 145px;
-        }
-        #thediv {
-            margin-top: -20px;
-        }
-    }
-    @media screen and (min-width:768px) and (max-width: 991px) {
-        .header-ul{
-            right: 0px;
-        }
-        #thediv {
-            margin-top: -20px;
-        }
-    }
-</style>
-<body>
-<div>
-    <div>
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>审批</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="common/base.css">
+		<link rel="stylesheet" href="css/head.css" />
+		<link rel="stylesheet" href="css/sidbar.css" />
+		<link rel="stylesheet" href="common/reset.css">
+		<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" />
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+	</head>
+	<style type="text/css">
+		body {
+			font-size: 14px;
+		}
+		
+		tr,
+		td {
+			font-size: 12px;
+		}
+		
+		.img-wrapper {
+			text-align: center;
+			width: 40px;
+			height: 48px;
+			margin: 0 auto;
+		}
+		
+		.content {
+			background: #f7fbff;
+			margin-top: 85px;
+			width: 100%;
+			height: 100%;
+			padding-top: 12px;
+			padding-right: 22px;
+		}
+		
+		.left-content {
+			z-index: 999;
+		}
+		
+		.right-content {
+			z-index: 1;
+		}
+		
+		.main {
+			background: #f7fbff;
+			height: 100%;
+		}
+		
+		.container {
+			padding-left: 0;
+			padding-right: 0;
+			width: 100%
+		}
+		
+		.tb-h {
+			background: #97c4de;
+			color: #000;
+		}
+		
+		.table tbody .tb-content td:nth-child(odd) {
+			background: #e3eff4;
+		}
+		
+		.table tbody .tb-content td:nth-child(even) {
+			background: #fff;
+		}
+		
+		.table tbody .tb-content-d:nth-child(odd) {
+			background: #e3eff4;
+		}
+		
+		.table tbody .tb-content-d:nth-child(even) {
+			background: #fff;
+		}
+		
+		.agree {
+			width: 94px;
+			text-shadow: 0 1px 0 #fff;
+			border-color: #ccc;
+			display: inline-block;
+			padding: 6px 6px;
+			margin-bottom: 0;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 1.42857143;
+			text-align: left;
+			white-space: nowrap;
+			vertical-align: middle;
+			border: 1px solid transparent;
+			border-radius: 4px;
+			background-color: #fff;
+			background-image: url("img/agree.png");
+			background-repeat: no-repeat;
+			background-position: 58px 5px;
+		}
+		
+		.reject {
+			width: 94px;
+			text-shadow: 0 1px 0 #fff;
+			border-color: #ccc;
+			display: inline-block;
+			padding: 6px 12px;
+			margin-bottom: 0;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 1.42857143;
+			text-align: left;
+			white-space: nowrap;
+			vertical-align: middle;
+			border: 1px solid transparent;
+			border-radius: 4px;
+			background-color: #fff;
+			background-image: url("img/reject.png");
+			background-repeat: no-repeat;
+			background-position: 60px 7px;
+		}
+		
+		.form-control {
+			height: auto;
+			padding: 0px;
+		}
+		
+		.table-bordered>tbody>tr>td {
+			border: 1px solid #92d5f4;
+		}
+		
+		.tb-h td {
+			color: #000;
+			font-weight: bold;
+		}
+		
+		.agree:hover {
+			outline: -webkit-focus-ring-color auto 5px;
+		}
+		
+		.reject:hover {
+			outline: -webkit-focus-ring-color auto 5px;
+		}
+		
+		@media screen and (max-width: 768px) {
+			.content {
+				margin-top: -41px;
+			}
+			.brand {
+				margin-top: 0;
+			}
+			#thediv {
+				margin-top: -20px;
+			}
+		}
+		
+		@media screen and (min-width: 992px) {
+			.content {
+				margin-top: -12px;
+			}
+			.header-ul {
+				right: 145px;
+			}
+			#thediv {
+				margin-top: -20px;
+			}
+		}
+		
+		@media screen and (min-width:768px) and (max-width: 991px) {
+			.header-ul {
+				right: 0px;
+			}
+			#thediv {
+				margin-top: -20px;
+			}
+		}
+		
+		.col-inline {
+			display: inline;
+			width: 120px;
+			margin-left: 10px;
+		}
+		
+		.col-label {
+			width: 60px;
+			text-align: right;
+		}
+		
+		.calendar-input {
+			padding-right: 20px;
+			background: url("img/icon_calendar.png") no-repeat scroll right center transparent;
+		}
+		
+		.input-greenbg {
+			background-color: #e5f0f6;
+			border: 1px solid #91c2d1;
+			border-radius: 0;
+		}
+	</style>
+
+	<body style="height: 100%;background: #f7fbff;">
+		<div>
+			<div>
+				<nav class="navbar navbar-default">
+					<div class="container">
+						<div class="container-fluid">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand brand"><img src="img/brand.png" alt=""></a>
-                    </div>
+								<a class="navbar-brand brand"><img src="img/brand.png" alt=""></a>
+							</div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav" style="margin-left: 9.5%">
-                            <li class="head-li">
-                                <a>
-                                    <div class="img-wrapper">
-                                        <img src="img/approval-home.png" alt="">
-                                    </div>
-                                    <span class="header-text">Home</span>
-                                </a>
-                            </li>
-                            <li class="head-li">
-                                <a>
-                                    <div class="img-wrapper">
-                                        <img src="img/approval-crew.png" alt="">
-                                    </div>
-                                    <span class="header-text" >Crew management</span>
-                                </a>
-                            </li>
-                            <li class="head-li">
-                                <a>
-                                    <div class="img-wrapper">
-                                        <img src="img/approval-personal.png" alt="">
-                                    </div>
-                                    <span class="header-text">Personal Center</span>
-                                </a>
-                            </li>
-                            <li class="head-li">
-                                <a>
-                                    <div class="img-wrapper">
-                                        <img src="img/approval-setting.png" alt="">
-                                    </div>
-                                    <span class="header-text">Settings</span>
-                                </a>
-                            </li>
-                        </ul>
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav" style="margin-left: 9.5%">
+									<li class="head-li">
+										<a>
+											<div class="img-wrapper">
+												<img src="img/approval-home.png" alt="">
+											</div>
+											<span class="header-text">Home</span>
+										</a>
+									</li>
+									<li class="head-li">
+										<a>
+											<div class="img-wrapper">
+												<img src="img/approval-crew.png" alt="">
+											</div>
+											<span class="header-text">Crew management</span>
+										</a>
+									</li>
+									<li class="head-li">
+										<a>
+											<div class="img-wrapper">
+												<img src="img/approval-personal.png" alt="">
+											</div>
+											<span class="header-text">Personal Center</span>
+										</a>
+									</li>
+									<li class="head-li">
+										<a>
+											<div class="img-wrapper">
+												<img src="img/approval-setting.png" alt="">
+											</div>
+											<span class="header-text">Settings</span>
+										</a>
+									</li>
+								</ul>
 
-                        <ul class="nav navbar-nav navbar-right">
-                            <li> <span class="greet">Hello! David (Class1 crew)</span></li>
-                            <li>
-                                <span class="logout">logout</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.navbar-collapse -->
-                </div>
-                <!-- /.container-fluid -->
-            </div>
-        </nav>
-    </div>
-    <div class="left-content col-md-2">
-        <div id="div_slideBar">
-            <div id="thediv" class="sidebar">
-                <ul style="float: left; width: 180px;">
-                    <li class="title"><span>Requistion</span><span class="arrow"></span>
-                        <ul class="in-sidebar">
-                            <li>
-                                <span>social security</span>
-                            </li>
-                            <li>
-                                <span>Evaluation</span>
-                            </li>
-                            <li>
-                                <span>Work experience</span>
-                            </li>
-                            <li>
-                                <span>training record</span>
-                            </li>
-                            <li>
-                                <span>payment record</span>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="title"><span>Report Forms</span><span class="arrow"></span>
-                        <ul class="in-sidebar">
-                            <li>
-                                <span>social security</span>
-                            </li>
-                            <li>
-                                <span>Evaluation</span>
-                            </li>
-                            <li>
-                                <span>Work experience</span>
-                            </li>
-                            <li>
-                                <span>training record</span>
-                            </li>
-                            <li>
-                                <span>payment record</span>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="title"><span>Outgoing</span><span class="arrow"></span>
-                        <ul class="in-sidebar">
-                            <li>
-                                <span>social security</span>
-                            </li>
-                            <li>
-                                <span>Evaluation</span>
-                            </li>
-                            <li>
-                                <span>Work experience</span>
-                            </li>
-                            <li>
-                                <span>training record</span>
-                            </li>
-                            <li>
-                                <span>payment record</span>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="title"><span>Expencse</span><span class="arrow"></span>
-                        <ul class="in-sidebar">
-                            <li>
-                                <span>social security</span>
-                            </li>
-                            <li>
-                                <span>Evaluation</span>
-                            </li>
-                            <li>
-                                <span>Work experience</span>
-                            </li>
-                            <li>
-                                <span>training record</span>
-                            </li>
-                            <li>
-                                <span>payment record</span>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="title"><span>Leave</span><span class="arrow"></span>
-                        <ul class="in-sidebar">
-                            <li>
-                                <span>social security</span>
-                            </li>
-                            <li>
-                                <span>Evaluation</span>
-                            </li>
-                            <li>
-                                <span>Work experience</span>
-                            </li>
-                            <li>
-                                <span>training record</span>
-                            </li>
-                            <li>
-                                <span>payment record</span>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <img id="img_show_slideBar" src="img/back.png" style="float: left;">
-            </div>
-        </div>
-    </div>
-    <div class="right-content col-md-10">
-        <table class="table table-bordered table-condensed" >
-            <thead>
-            <tr class="tb-h">
-                <td colspan="6" style="color: #000;font-weight: bold">Alex.Dave 9.11</td>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="tb-content">
-                <td>OUNTER ID</td>
-                <td><input type="text" class="form-control"></td>
-                <td>OUTER TYPE</td>
-                <td><input type="text" class="form-control"></td>
-                <td>STATU</td>
-                <td><input type="text" class="form-control" placeholder="YIHUN"></td>
-            </tr>
-            <tr class="tb-content">
-                <td>PROVENCE</td>
-                <td>
-                    <select class="form-control">
-                        <option value=""></option>
-                    </select>
-                </td>
-                <td>HIALING</td>
-                <td>
-                    <select class="form-control">
-                    <option value=""></option>
-                    </select>
-                </td>
-                <td>DISPITCH</td>
-                <td>
-                    <select class="form-control">
-                        <option value=""></option>
-                    </select>
-                </td>
-            </tr>
-            <tr class="tb-content">
-                <td>DISPATCH DA</td>
-                <td>
-                    <select class="form-control">
-                        <option value=""></option>
-                    </select>
-                </td>
-                <td>DAYS</td>
-                <td>
-                    <input type="text" class="form-control">
-                </td>
-                <td>COUNTRY</td>
-                <td>
-                    <select class="form-control">
-                        <option value=""></option>
-                    </select>
-                </td>
-            </tr>
-            <tr class="tb-content">
-                <td>REASON</td>
-                <td>
-                    <input type="text" class="form-control">
-                </td>
-                <td>PHONE</td>
-                <td>
-                    <select class="form-control">
-                        <option value=""></option>
-                    </select>
-                </td>
-                <td>BIANHAO</td>
-                <td>
-                    <select class="form-control">
-                        <option value=""></option>
-                    </select>
-                </td>
-            </tr>
-            <tr class="tb-content">
-                <td>HETONG</td>
-                <td>
-                    <input type="text" class="form-control">
-                </td>
-                <td>IANDINGDATE</td>
-                <td>
-                    <select class="form-control">
-                        <option value=""></option>
-                    </select>
-                </td>
-                <td>HTTONGNUM</td>
-                <td>
-                    <input type="text" class="form-control">
-                </td>
-            </tr>
-            <tr class="tb-content">
-                <td>ADDRESS</td>
-                <td>
-                    ZHENSGHIGONG
-                </td>
-                <td>IANDINGDATE</td>
-                <td>
-                    1998-03-14
-                </td>
-                <td>HTTONGNUM</td>
-                <td>
-                    0010187677
-                </td>
-            </tr>
-            <tr class="tb-content">
-                <td>ADDRESS</td>
-                <td>
-                    <input type="text" class="form-control" placeholder="KUNMINGDAY">
-                </td>
-                <td>ADDRESS</td>
-                <td COLSPAN="3">
-                </td>
-            </tr>
-            <tr>
-                <td>ADDRESS</td>
-                <td colspan="5"></td>
-            </tr>
-            <tr>
-                <td colspan="6">
-                    <input class="agree" type="button" value="AGREE">
-                    <input class="reject" type="button" value="REJECT">
-                </td>
-            </tr>
-            </tbody>
-        </table>
+								<ul class="nav navbar-nav navbar-right">
+									<li> <span class="greet">Hello! David (Class1 crew)</span></li>
+									<li>
+										<span class="logout">logout</span>
+									</li>
+								</ul>
+							</div>
+							<!-- /.navbar-collapse -->
+						</div>
+						<!-- /.container-fluid -->
+					</div>
+				</nav>
+			</div>
+			<div class="left-content col-md-2">
+				<div id="div_slideBar">
+					<div id="thediv" class="sidebar">
+						<ul style="float: left; width: 180px;">
+							<li class="title"><span>Requistion</span><span class="arrow"></span>
+								<ul class="in-sidebar">
+									<li>
+										<span>social security</span>
+									</li>
+									<li>
+										<span>Evaluation</span>
+									</li>
+									<li>
+										<span>Work experience</span>
+									</li>
+									<li>
+										<span>training record</span>
+									</li>
+									<li>
+										<span>payment record</span>
+									</li>
+								</ul>
+							</li>
+							<li class="title"><span>Report Forms</span><span class="arrow"></span>
+								<ul class="in-sidebar">
+									<li>
+										<span>social security</span>
+									</li>
+									<li>
+										<span>Evaluation</span>
+									</li>
+									<li>
+										<span>Work experience</span>
+									</li>
+									<li>
+										<span>training record</span>
+									</li>
+									<li>
+										<span>payment record</span>
+									</li>
+								</ul>
+							</li>
+							<li class="title"><span>Outgoing</span><span class="arrow"></span>
+								<ul class="in-sidebar">
+									<li>
+										<span>social security</span>
+									</li>
+									<li>
+										<span>Evaluation</span>
+									</li>
+									<li>
+										<span>Work experience</span>
+									</li>
+									<li>
+										<span>training record</span>
+									</li>
+									<li>
+										<span>payment record</span>
+									</li>
+								</ul>
+							</li>
+							<li class="title"><span>Expencse</span><span class="arrow"></span>
+								<ul class="in-sidebar">
+									<li>
+										<span>social security</span>
+									</li>
+									<li>
+										<span>Evaluation</span>
+									</li>
+									<li>
+										<span>Work experience</span>
+									</li>
+									<li>
+										<span>training record</span>
+									</li>
+									<li>
+										<span>payment record</span>
+									</li>
+								</ul>
+							</li>
+							<li class="title"><span>Leave</span><span class="arrow"></span>
+								<ul class="in-sidebar">
+									<li>
+										<span>social security</span>
+									</li>
+									<li>
+										<span>Evaluation</span>
+									</li>
+									<li>
+										<span>Work experience</span>
+									</li>
+									<li>
+										<span>training record</span>
+									</li>
+									<li>
+										<span>payment record</span>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<img id="img_show_slideBar" src="img/back.png" style="float: left;">
+					</div>
+				</div>
+			</div>
+			<div class="right-content col-md-10">
+				<div style="display: flex;width: 100%;margin: 28px auto 24px auto;">
+					<div style="border-bottom: 1px solid #91c2d1;position: relative;top:-6px;width: 15px;"></div>
+					<div style="padding: 0 12px;font-size: 14px">基本信息</div>
+					<div style="flex:1;border-bottom: 1px solid #91c2d1;position: relative;top:-6px"></div>
+				</div>
+				<div class="col-md-12">
+					<div class="col-md-3">
+						<label class="col-label">船员姓名</label>
+						<input type="text" class="form-control col-inline input-greenbg" />
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">船员职位</label>
+						<select type="text" class="form-control col-inline input-greenbg">
+							<option value="">大副</option>
+							<option value="">取字典表数据</option>
+						</select>
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">船东</label>
+						<select type="text" class="form-control col-inline input-greenbg">
+							<option value="">取字典表数据</option>
+						</select>
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">船员下家</label>
+						<select type="text" class="form-control col-inline input-greenbg">
+							<option value="">取字典表数据</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-12" style="margin-top: 15px;">
+					<div class="col-md-3">
+						<label class="col-label">船名</label>
+						<input type="text" class="form-control col-inline input-greenbg" />
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">培训日期</label>
+						<input type="text" id="pxDate" class="form-control col-inline date form_date calendar-input input-greenbg" data-date-format="yyyy-mm-dd" />
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">签证日期</label>
+						<input type="text" class="form-control col-inline date form_date calendar-input input-greenbg" data-date-format="yyyy-mm-dd" />
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">上船日期</label>
+						<input type="text" class="form-control col-inline date form_date calendar-input input-greenbg" data-date-format="yyyy-mm-dd" />
+					</div>
+				</div>
+				<div class="col-md-12" style="margin-top: 15px;margin-bottom: 24px;">
+					<div class="col-md-3">
+						<label class="col-label">下船日期</label>
+						<input type="text" class="form-control col-inline date form_date calendar-input input-greenbg" data-date-format="yyyy-mm-dd" />
+					</div>
+				</div>
+				<div style="display: flex;width: 100%;margin: 28px auto 24px auto;">
+					<div style="border-bottom: 1px solid #91c2d1;position: relative;top:-6px;width: 15px;"></div>
+					<div style="padding: 0 12px;font-size: 14px">项目报销</div>
+					<div style="flex:1;border-bottom: 1px solid #91c2d1;position: relative;top:-6px"></div>
+				</div>
+				<div class="col-md-12">
+					<div class="col-md-3">
+						<label class="col-label">交通费</label>
+						<input type="text" class="form-control col-inline input-greenbg" style="width: 80px;" />
+						<label><input name="exp" type="radio" value="" />EXP </label>
+						<label><input name="exp" type="radio" value="" />CA </label>
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">体检费</label>
+						<input type="text" class="form-control col-inline input-greenbg" style="width: 80px;" />
+						<label><input name="exp" type="radio" value="" />EXP </label>
+						<label><input name="exp" type="radio" value="" />CA </label>
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">住宿费</label>
+						<input type="text" class="form-control col-inline input-greenbg" style="width: 80px;" />
+						<label><input name="exp" type="radio" value="" />EXP </label>
+						<label><input name="exp" type="radio" value="" />CA </label>
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">餐饮费</label>
+						<input type="text" class="form-control col-inline input-greenbg" style="width: 80px;" />
+						<label><input name="exp" type="radio" value="" />EXP </label>
+						<label><input name="exp" type="radio" value="" />CA </label>
+					</div>
+				</div>
+				<div class="col-md-12" style="margin-top: 15px;margin-bottom: 24px;">
+					<div class="col-md-3">
+						<label class="col-label">培训费</label>
+						<input type="text" class="form-control col-inline input-greenbg" style="width: 80px;" />
+						<label><input name="exp" type="radio" value="" />EXP </label>
+						<label><input name="exp" type="radio" value="" />CA </label>
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">补贴</label>
+						<input type="text" class="form-control col-inline input-greenbg" style="width: 80px;" />
+						<label><input name="exp" type="radio" value="" />EXP </label>
+						<label><input name="exp" type="radio" value="" />CA </label>
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">其他</label>
+						<input type="text" class="form-control col-inline input-greenbg" style="width: 80px;" />
+						<label><input name="exp" type="radio" value="" />EXP </label>
+						<label><input name="exp" type="radio" value="" />CA </label>
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">票据张数</label>
+						<input type="text" class="form-control col-inline input-greenbg" style="width: 80px;" />
+						<label><input name="exp" type="radio" value="" />EXP </label>
+						<label><input name="exp" type="radio" value="" />CA </label>
+					</div>
+				</div>
+				<div style="display: flex;width: 100%;margin: 28px auto 24px auto;">
+					<div style="border-bottom: 1px solid #91c2d1;position: relative;top:-6px;width: 15px;"></div>
+					<div style="padding: 0 12px;font-size: 14px">公司安排</div>
+					<div style="flex:1;border-bottom: 1px solid #91c2d1;position: relative;top:-6px"></div>
+				</div>
+				<div class="col-md-12">
+					<div class="col-md-3">
+						<label class="col-label">
+							<input type="checkbox" value="checkbox" style="vertical-align: bottom"/> 机票费
+						</label>
+						<input type="text" class="form-control col-inline input-greenbg" />
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">
+							<input type="checkbox" value="checkbox" style="vertical-align: bottom"/> 住宿费
+						</label>
+						<input type="text" class="form-control col-inline input-greenbg" />
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">
+							<input type="checkbox" value="checkbox" style="vertical-align: bottom"/> 租车费
+						</label>
+						<input type="text" class="form-control col-inline input-greenbg" />
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">
+							<input type="checkbox" value="checkbox" style="vertical-align: bottom"/> 签证费
+						</label>
+						<input type="text" class="form-control col-inline input-greenbg" />
+					</div>
+				</div>
+				<div class="col-md-12" style="margin-top: 15px;">
+					<div class="col-md-3">
+						<label class="col-label">
+							<input type="checkbox" value="checkbox" style="vertical-align: bottom"/> 巴证费
+						</label>
+						<input type="text" class="form-control col-inline input-greenbg" />
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">
+							<input type="checkbox" value="checkbox" style="vertical-align: bottom"/> 保险
+						</label>
+						<input type="text" class="form-control col-inline input-greenbg" />
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">
+							<input type="checkbox" value="checkbox" style="vertical-align: bottom"/> D&A
+						</label>
+						<input type="text" class="form-control col-inline input-greenbg" />
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">
+							<input type="checkbox" value="checkbox" style="vertical-align: bottom"/> 其他
+						</label>
+						<input type="text" class="form-control col-inline input-greenbg" />
+					</div>
+				</div>
+				<div class="col-md-12" style="margin-top: 15px;">
+					<div class="col-md-3">
+						<label class="col-label">
+							EXP合计
+						</label>
+						<input type="text" class="form-control col-inline input-greenbg" />
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">
+							CA合计
+						</label>
+						<input type="text" class="form-control col-inline input-greenbg" />
+					</div>
+					<div class="col-md-3">
+						<label class="col-label">
+							合计
+						</label>
+						<input type="text" class="form-control col-inline input-greenbg" />
+						<!--<span>大写金额</span>-->
+					</div>
+				</div>
+				<div class="col-md-12" style="margin-top: 15px;">
+					<div class="col-md-6">
+						<label class="col-label" style="vertical-align: top;">
+							说明
+						</label>
+						<textarea name="a" class="form-control col-inline input-greenbg" style="width:424px;height:80px;resize:none;">这里写内容</textarea>
+					</div>
+				</div>
+				<div class="col-md-12" style="margin-top: 15px;">
+					<div class="col-md-6">
+						<label class="col-label">
+							是否审批
+						</label>
+						<label style="margin-left: 10px;"><input name="approve" type="radio" value="" />同意 </label>
+						<label style="margin-left: 10px;"><input name="approve" type="radio" value="" />拒绝 </label>
+					</div>
+				</div>
+				<div class="col-md-12" style="margin-top: 15px;">
+					<div class="col-md-6">
+						<label class="col-label" style="vertical-align: top;">
+							审批意见
+						</label>
+						<textarea name="a" class="form-control col-inline input-greenbg" style="width:424px;height:80px;resize:none;">这里写内容</textarea>
+					</div>
+				</div>
+				<div class="col-md-12" style="margin-top: 15px;">
+					<div class="col-md-6">
+						<label class="col-label" style="vertical-align: top;">
+							审批历史
+						</label>
+						<div class="col-inline">
+							<label style="background:inherit;background-color:#5bc0de;width: 130px;padding: 20px 0px;">
+							<p style="text-align:center;"><span>人事部</span></p>
+							<p style="text-align: center;margin-top: 10px;"><span>同意</span></p>
+							</label>
+							<label style="background:inherit;background-color:#5bc0de;width: 130px;padding: 20px 0px;">
+							<p style="text-align:center;"><span>人事部</span></p>
+							<p style="text-align: center;margin-top: 10px;"><span>同意</span></p>
+							</label>
+							<label style="background:inherit;background-color:#5bc0de;width: 130px;padding: 20px 0px;">
+							<p style="text-align:center;"><span>人事部</span></p>
+							<p style="text-align: center;margin-top: 10px;"><span>同意</span></p>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12" style="margin-top: 15px;">
+					<div class="col-md-6">
+						<label class="col-label" style="vertical-align: top;">
+						</label>
+						<table class="table col-inline">
+							<thead>
+								<tr>
+									<th style="border-bottom: none;">时间</th>
+									<th style="border-bottom: none;">操作</th>
+									<th style="border-bottom: none;">审批意见</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td style="border-top: none;">2017/09/09 12:09:08</td>
+									<td style="border-top: none;">人事部同意申请</td>
+									<td style="border-top: none;">发票完整，同意申请</td>
+								</tr>
+								<tr>
+									<td style="border-top: none;">2017/10/09 11:23:08</td>
+									<td style="border-top: none;">财务部同意申请</td>
+									<td style="border-top: none;">发票完整，同意申请</td>
+								</tr>
+								<tr>
+									<td style="border-top: none;">2017/11/09 09:44:08</td>
+									<td style="border-top: none;">经理同意申请</td>
+									<td style="border-top: none;">同意</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="col-md-12" style="margin-top: 15px;">
+					<div class="col-md-12">
+						<label class="col-label"></label>
+						<button type="button" class="btn btn-info col-inline">保存</button>
+						<button type="button" class="btn btn-info col-inline">返回</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <table class="table table-bordered table-condensed" style="margin-top: 16px">
-            <thead>
-            <tr class="tb-h">
-                <td>OPERA</td>
-                <td>NUMBER</td>
-                <td>APPLY DATE</td>
-                <td>WHAT</td>
-                <td>SOURCE</td>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="tb-content-d">
-                <td>
-                    <img src="img/save.png" alt="">
-                    <img src="img/edit.png" alt="">
-                    <img src="img/upload.png" alt="">
-                    <img src="img/reject.png" alt="">
-                </td>
-                <td>AB00001</td>
-                <td>2017-03-23</td>
-                <td>They had entered the country and had applied for</td>
-                <td>HDDU/2773./DD</td>
-            </tr>
-            <tr class="tb-content-d">
-                <td>
-                    <img src="img/save.png" alt="">
-                    <img src="img/edit.png" alt="">
-                    <img src="img/upload.png" alt="">
-                    <img src="img/reject.png" alt="">
-                </td>
-                <td>CD00002</td>
-                <td>2017-04-23</td>
-                <td>I should apply for the post if i were you, i think you stand a good chance</td>
-                <td>GDYY/JFI III 123</td>
-            </tr>
-            <tr class="tb-content-d">
-                <td>
-                    <img src="img/save.png" alt="">
-                    <img src="img/edit.png" alt="">
-                    <img src="img/upload.png" alt="">
-                    <img src="img/reject.png" alt="">
-                </td>
-                <td>DE00003</td>
-                <td>2017-01-10</td>
-                <td>He applied for British residency</td>
-                <td>SFTEFTRFTEF//22344</td>
-            </tr>
-            <tr class="tb-content-d">
-                <td>
-                    <img src="img/save.png" alt="">
-                    <img src="img/edit.png" alt="">
-                    <img src="img/upload.png" alt="">
-                    <img src="img/reject.png" alt="">
-                </td>
-                <td>DE00004</td>
-                <td>2017-02-29</td>
-                <td>The district council agreed with the objecttors and turned down the application</td>
-                <td>WDEE/0033</td>
-            </tr>
-            <tr class="tb-content-d">
-                <td>
-                    <img src="img/save.png" alt="">
-                    <img src="img/edit.png" alt="">
-                    <img src="img/upload.png" alt="">
-                    <img src="img/reject.png" alt="">
-                </td>
-                <td>VR00005</td>
-                <td>2018-02-31</td>
-                <td>Candidates in India are advised to submit their applications through the overseas
-                student office in London
-                </td>
-                <td>BDWDDHEUHD12884</td>
-            </tr>
-            <tr class="tb-content-d">
-                <td>
-                    <img src="img/save.png" alt="">
-                    <img src="img/edit.png" alt="">
-                    <img src="img/upload.png" alt="">
-                    <img src="img/reject.png" alt="">
-                </td>
-                <td>FE00001</td>
-                <td>2018-09-02</td>
-                <td>Tickets are available on application</td>
-                <td>GDYY/JFI III 123</td>
-            </tr>
-            <tr class="tb-content-d">
-                <td>
-                    <img src="img/save.png" alt="">
-                    <img src="img/edit.png" alt="">
-                    <img src="img/upload.png" alt="">
-                    <img src="img/reject.png" alt="">
-                </td>
-                <td>GR00001</td>
-                <td>2017-02-13</td>
-                <td>I decided to put in for a job as deputy security</td>
-                <td>SZD/1</td>
-            </tr>
-            <tr class="tb-content-d">
-                <td>
-                    <img src="img/save.png" alt="">
-                    <img src="img/edit.png" alt="">
-                    <img src="img/upload.png" alt="">
-                    <img src="img/reject.png" alt="">
-                </td>
-                <td>DF00001</td>
-                <td>2018-09-25</td>
-                <td>Ask for an extra compensation payment to make
-                    up for the stress you have been caused
-                </td>
-                <td>WDEE/0033</td>
-            </tr>
-            <tr class="tb-content-d">
-                <td>
-                    <img src="img/save.png" alt="">
-                    <img src="img/edit.png" alt="">
-                    <img src="img/upload.png" alt="">
-                    <img src="img/reject.png" alt="">
-                </td>
-                <td>0HY0001</td>
-                <td>2018-93-93</td>
-                <td>I should apply for the post if i were you, i think you stand a good chance
-                </td>
-                <td>QEEEE</td>
-            </tr>
+		<script>
+			window.onload = function() {
+				$(".head-li").on("click", function() {
+					$(this).find(".header-text").addClass("on");
+					$(this).siblings().find(".header-text").removeClass("on");
+				})
+				/**
+				 * 边菜单栏动作
+				 */
+				var clicked = null;
+				$('.title').click(function() {
+					if(clicked == this) {
+						if($(clicked).children('ul').slideUp().end().children('.arrow').hasClass('arrow-up')) {
+							$(clicked).children('ul').slideUp().end().children('.arrow').removeClass('arrow-up');
+						} else {
+							$(this).children('ul').slideToggle().end().children('.arrow').addClass('arrow-up');
+						}
+					} else {
+						$(clicked).children('ul').slideUp().end().children('.arrow').removeClass('arrow-up');
+						$(this).children('ul').slideToggle().end().children('.arrow').addClass('arrow-up');
+					}
+					clicked = this;
+				});
+				$('.title > ul').click(function() {
+					return false; // 阻止事件冒泡
+				});
+			};
+			$(".form_date").datetimepicker({
+				language: 'zh-CN',
+				weekStart: 1,
+				todayBtn: 1,
+				autoclose: 1,
+				todayHighlight: 1,
+				startView: 2,
+				minView: 2,
+				forceParse: 0
+			});
+			var img_show_slideBar = document.getElementById('img_show_slideBar');
+			var odiv = document.getElementById('thediv');
+			img_show_slideBar.onclick = function() {
+				if(-180 == odiv.offsetLeft) {
+					$('#img_show_slideBar').attr('src', 'img/back.png');
+					//$('#div_slideBar').removeClass('col-md-1');
+					//$('#div_slideBar').addClass('col-md-2');
+					startmove(0, 5);
+				} else {
+					startmove(-180, -10);
+				}
+			}
 
-            </tbody>
-        </table>
-    </div>
-</div>
+			var timer = null;
 
-<script>
-    window.onload = function() {
-        $(".head-li").on("click", function () {
-            $(this).find(".header-text").addClass("on");
-            $(this).siblings().find(".header-text").removeClass("on");
-        })
-        /**
-         * 边菜单栏动作
-         */
-        var clicked = null;
-        $('.title').click(function() {
-            if (clicked == this){
-                if ($(clicked).children('ul').slideUp().end().children('.arrow').hasClass('arrow-up')){
-                    $(clicked).children('ul').slideUp().end().children('.arrow').removeClass('arrow-up');
-                } else {
-                    $(this).children('ul').slideToggle().end().children('.arrow').addClass('arrow-up');
-                }
-            } else {
-                $(clicked).children('ul').slideUp().end().children('.arrow').removeClass('arrow-up');
-                $(this).children('ul').slideToggle().end().children('.arrow').addClass('arrow-up');
-            }
-            clicked = this;
-        });
-        $('.title > ul').click(function() {
-            return false; // 阻止事件冒泡
-        });
-    };
-    var img_show_slideBar = document.getElementById('img_show_slideBar');
-    var odiv = document.getElementById('thediv');
-    img_show_slideBar.onclick = function() {
-        if(-180 == odiv.offsetLeft) {
-            $('#img_show_slideBar').attr('src', 'img/back.png');
-            //$('#div_slideBar').removeClass('col-md-1');
-            //$('#div_slideBar').addClass('col-md-2');
-            startmove(0, 5);
-        } else {
-            startmove(-180, -10);
-        }
-    }
+			function startmove(target, speed) {
+				var odiv = document.getElementById('thediv');
+				clearInterval(timer);
+				timer = setInterval(function() {
+					if(odiv.offsetLeft == target) {
+						clearInterval(timer);
+						if(target == -180) {
+							//$('#div_slideBar').removeClass('col-md-2');
+							//$('#div_slideBar').addClass('col-md-1');
+							$('#img_show_slideBar').attr('src', 'img/icon_sidebar_go.png');
+						}
+					} else {
+						odiv.style.left = odiv.offsetLeft + speed + 'px';
+					}
+				}, 10)
+			}
+			$(".head-li").on("click", function() {
+				$(this).find(".header-text").addClass("on");
+				$(this).siblings().find(".header-text").removeClass("on");
+			})
+		</script>
 
-    var timer = null;
+	</body>
 
-    function startmove(target, speed) {
-        var odiv = document.getElementById('thediv');
-        clearInterval(timer);
-        timer = setInterval(function() {
-            if(odiv.offsetLeft == target) {
-                clearInterval(timer);
-                if(target == -180) {
-                    //$('#div_slideBar').removeClass('col-md-2');
-                    //$('#div_slideBar').addClass('col-md-1');
-                    $('#img_show_slideBar').attr('src', 'img/icon_sidebar_go.png');
-                }
-            } else {
-                odiv.style.left = odiv.offsetLeft + speed + 'px';
-            }
-        }, 10)
-    }
-    $(".head-li").on("click", function () {
-        $(this).find(".header-text").addClass("on");
-        $(this).siblings().find(".header-text").removeClass("on");
-    })
-
-</script>
-
-</body>
 </html>
