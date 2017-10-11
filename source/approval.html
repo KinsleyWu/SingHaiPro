@@ -26,13 +26,6 @@
 			font-size: 12px;
 		}
 		
-		.img-wrapper {
-			text-align: center;
-			width: 40px;
-			height: 48px;
-			margin: 0 auto;
-		}
-		
 		.content {
 			background: #f7fbff;
 			margin-top: 85px;
@@ -53,12 +46,6 @@
 		.main {
 			background: #f7fbff;
 			height: 100%;
-		}
-		
-		.container {
-			padding-left: 0;
-			padding-right: 0;
-			width: 100%
 		}
 		
 		.tb-h {
@@ -203,174 +190,186 @@
 	</style>
 
 	<body style="height: 100%;background: #f7fbff;">
-		<div>
-			<div>
-				<nav class="navbar navbar-default">
-					<div class="container">
-						<div class="container-fluid">
-							<!-- Brand and toggle get grouped for better mobile display -->
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-								<a class="navbar-brand brand"><img src="img/brand.png" alt=""></a>
-							</div>
 
-							<!-- Collect the nav links, forms, and other content for toggling -->
-							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-								<ul class="nav navbar-nav" style="margin-left: 9.5%">
-									<li class="head-li">
-										<a>
-											<div class="img-wrapper">
-												<img src="img/approval-home.png" alt="">
-											</div>
-											<span class="header-text">Home</span>
-										</a>
-									</li>
-									<li class="head-li">
-										<a>
-											<div class="img-wrapper">
-												<img src="img/approval-crew.png" alt="">
-											</div>
-											<span class="header-text">Crew management</span>
-										</a>
-									</li>
-									<li class="head-li">
-										<a>
-											<div class="img-wrapper">
-												<img src="img/approval-personal.png" alt="">
-											</div>
-											<span class="header-text">Personal Center</span>
-										</a>
-									</li>
-									<li class="head-li">
-										<a>
-											<div class="img-wrapper">
-												<img src="img/approval-setting.png" alt="">
-											</div>
-											<span class="header-text">Settings</span>
-										</a>
-									</li>
-								</ul>
-
-								<ul class="nav navbar-nav navbar-right">
-									<li> <span class="greet">Hello! David (Class1 crew)</span></li>
-									<li>
-										<span class="logout">logout</span>
-									</li>
-								</ul>
-							</div>
-							<!-- /.navbar-collapse -->
-						</div>
-						<!-- /.container-fluid -->
-					</div>
-				</nav>
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+				<a class="navbar-brand brand"><img src="img/logo.png" alt=""></a>
 			</div>
-			<div class="left-content col-md-2">
-				<div id="div_slideBar">
-					<div id="thediv" class="sidebar">
-						<ul style="float: left; width: 180px;">
-							<li class="title"><span>Requistion</span><span class="arrow"></span>
-								<ul class="in-sidebar">
-									<li>
-										<span>social security</span>
-									</li>
-									<li>
-										<span>Evaluation</span>
-									</li>
-									<li>
-										<span>Work experience</span>
-									</li>
-									<li>
-										<span>training record</span>
-									</li>
-									<li>
-										<span>payment record</span>
-									</li>
-								</ul>
-							</li>
-							<li class="title"><span>Report Forms</span><span class="arrow"></span>
-								<ul class="in-sidebar">
-									<li>
-										<span>social security</span>
-									</li>
-									<li>
-										<span>Evaluation</span>
-									</li>
-									<li>
-										<span>Work experience</span>
-									</li>
-									<li>
-										<span>training record</span>
-									</li>
-									<li>
-										<span>payment record</span>
-									</li>
-								</ul>
-							</li>
-							<li class="title"><span>Outgoing</span><span class="arrow"></span>
-								<ul class="in-sidebar">
-									<li>
-										<span>social security</span>
-									</li>
-									<li>
-										<span>Evaluation</span>
-									</li>
-									<li>
-										<span>Work experience</span>
-									</li>
-									<li>
-										<span>training record</span>
-									</li>
-									<li>
-										<span>payment record</span>
-									</li>
-								</ul>
-							</li>
-							<li class="title"><span>Expencse</span><span class="arrow"></span>
-								<ul class="in-sidebar">
-									<li>
-										<span>social security</span>
-									</li>
-									<li>
-										<span>Evaluation</span>
-									</li>
-									<li>
-										<span>Work experience</span>
-									</li>
-									<li>
-										<span>training record</span>
-									</li>
-									<li>
-										<span>payment record</span>
-									</li>
-								</ul>
-							</li>
-							<li class="title"><span>Leave</span><span class="arrow"></span>
-								<ul class="in-sidebar">
-									<li>
-										<span>social security</span>
-									</li>
-									<li>
-										<span>Evaluation</span>
-									</li>
-									<li>
-										<span>Work experience</span>
-									</li>
-									<li>
-										<span>training record</span>
-									</li>
-									<li>
-										<span>payment record</span>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						<img id="img_show_slideBar" src="img/back.png" style="float: left;">
-					</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div>
+				<ul class="nav navbar-nav" style="margin-left: 9.5%">
+					<li class="head-li">
+						<a>
+							<div class="img-wrapper">
+								<img src="img/h-crew.png" alt="">
+								<span class="header-text" style="vertical-align: super;">船员管理</span>
+							</div>
+						</a>
+					</li>
+					<li class="head-li">
+						<a>
+							<div class="img-wrapper">
+								<img src="img/h-yuna.png" alt="">
+								<span class="header-text" style="vertical-align: super;">员工管理</span>
+							</div>
+						</a>
+					</li>
+					<li class="head-li">
+						<a>
+							<div class="img-wrapper">
+								<img src="img/h-client.png" alt="">
+								<span class="header-text" style="vertical-align: super;">客户管理</span>
+							</div>
+						</a>
+					</li>
+					<li class="head-li">
+						<a>
+							<div class="img-wrapper">
+								<img src="img/h-list.png" alt="">
+								<span class="header-text" style="vertical-align: super;">报表管理</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li style="color: #fff;font-size: 14px">您好！David！</li>
+					<li><img class="header-img" src="img/user.png" alt=""></li>
+					<li><img class="header-img" src="img/set.png" alt=""></li>
+					<li><img class="header-img" src="img/logout.png" alt=""></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+			<!-- /.container-fluid -->
+		</div>
+		<div style="clear: both;">
+			<div id="div_slideBar" class="col-md-2">
+				<div id="thediv" class="sidebar">
+					<ul style="float: left; width: 180px;">
+						<li class="title"><span>船员基本信息管理</span><span class="arrow"></span>
+							<ul class="in-sidebar">
+								<li>
+									<span>船员信息</span>
+								</li>
+								<li>
+									<span>船员联系记录</span>
+								</li>
+								<li>
+									<span>船员劳务合同</span>
+								</li>
+								<li>
+									<span>服装订购记录</span>
+								</li>
+								<li>
+									<span>机票预订记录</span>
+								</li>
+								<li>
+									<span>酒店订购记录</span>
+								</li>
+								<li>
+									<span>保险记录</span>
+								</li>
+								<li>
+									<span>工伤医疗记录</span>
+								</li>
+								<li>
+									<span>船员欠款记录</span>
+								</li>
+								<li>
+									<span>非正常下船跟踪</span>
+								</li>
+							</ul>
+						</li>
+						<li class="title"><span>船员调配管理</span><span class="arrow"></span>
+							<ul class="in-sidebar">
+								<li>
+									<span>船员散派计划管理</span>
+								</li>
+								<li>
+									<span>船员套派计划管理</span>
+								</li>
+								<li>
+									<span>船员派遣单</span>
+								</li>
+								<li>
+									<span>船员资历报备提醒</span>
+								</li>
+							</ul>
+						</li>
+						<li class="title"><span>船员证件管理</span><span class="arrow"></span>
+							<ul class="in-sidebar">
+								<li>
+									<span>所有证件</span>
+								</li>
+								<li>
+									<span>预警证件</span>
+								</li>
+							</ul>
+						</li>
+						<li class="title"><span>船员招募管理</span><span class="arrow"></span>
+							<ul class="in-sidebar">
+								<li>
+									<span>职位需求</span>
+								</li>
+								<li>
+									<span>待联系船员信息</span>
+								</li>
+								<li>
+									<span>招募人员信息</span>
+								</li>
+								<li>
+									<span>面试记录</span>
+								</li>
+								<li>
+									<span>推荐列表</span>
+								</li>
+								<li>
+									<span>联系记录</span>
+								</li>
+							</ul>
+						</li>
+						<li class="title"><span>船员培训管理</span><span class="arrow"></span>
+							<ul class="in-sidebar">
+								<li>
+									<span>培训计划</span>
+								</li>
+								<li>
+									<span>课程列表</span>
+								</li>
+								<li>
+									<span>讲师列表</span>
+								</li>
+								<li>
+									<span>培训记录</span>
+								</li>
+								<li>
+									<span>培训费用报表</span>
+								</li>
+							</ul>
+						</li>
+						<li class="title"><span>船员审批管理</span><span class="arrow"></span>
+							<ul class="in-sidebar">
+								<li>
+									<span>创建船员申请</span>
+								</li>
+								<li>
+									<span>船员申请记录</span>
+								</li>
+								<li>
+									<span>船员申请审批</span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<img id="img_show_slideBar" src="img/back.png" style="float: left;">
 				</div>
 			</div>
 			<div id="contentRight" class="right-content col-md-10" style="padding-left: 40px;">
@@ -696,7 +695,7 @@
 					//$('#div_slideBar').removeClass('col-md-1');
 					//$('#div_slideBar').addClass('col-md-2');
 					$('#contentRight').removeClass('col-md-12');
-            		$('#contentRight').addClass('col-md-10');
+					$('#contentRight').addClass('col-md-10');
 					startmove(0, 5);
 				} else {
 					startmove(-180, -10);
@@ -713,7 +712,7 @@
 						clearInterval(timer);
 						if(target == -180) {
 							$('#contentRight').removeClass('col-md-10');
-                    		$('#contentRight').addClass('col-md-12');
+							$('#contentRight').addClass('col-md-12');
 							$('#div_slideBar').removeClass('col-md-2');
 							$('#div_slideBar').addClass('col-md-1');
 							$('#img_show_slideBar').attr('src', 'img/icon_sidebar_go.png');
