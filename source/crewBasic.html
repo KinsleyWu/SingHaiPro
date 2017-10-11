@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>基本信息</title>
+</head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/sidbar.css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/head.css" />
+
+<style type="text/css">
+    #div_right_menu span:hover{
+        color: #1a4692;
+    }
+    #div_right_menu span{
+        cursor: pointer;
+    }
+    .table_thead_td {
+        background-color: #96c5df;
+    }
+
+    .table_tbody_th {
+        background-color: #e4f1f5;
+    }
+
+    th {
+        font-size: 12px;
+        border: 1.5px solid #bbe3f3;
+    }
+
+    td {
+        font-size: 12px;
+        border: 1.5px solid #bbe3f3;
+        color: #585858;
+    }
+    .btn {
+        font-size: 10px;
+    }
+    .h-input {
+        overflow: hidden;
+        clear: both;
+    }
+    .h-input li {
+        float: left;
+        margin-left: 70px;
+        width: 180px;
+        text-align: right;
+        margin-top: 10px;
+    }
+    .must {
+        color: red;
+    }
+    .form-control {
+        display: inline-block;
+        height: auto;
+        padding: 0;
+    }
+    .span-hover{
+        color: #1a4692 !important;
+    }
+    @media screen and (max-width: 767px) {
+        #thediv{
+            margin-top: -20px;
+        }
+    }
+    @media screen and (min-width:768px) and (max-width: 991px) {
+        #thediv{
+            margin-top: -20px;
+        }
+    }
+    @media screen and (min-width: 992px) {
+        #thediv{
+            margin-top: -20px;
+        }
+    }
+</style>
+
+<body>
+<div>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand brand"><img src="img/brand.png" alt=""></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav" style="margin-left: 9.5%">
+                        <li class="head-li">
+                            <a>
+                                <div class="img-wrapper">
+                                    <img src="img/approval-home.png" alt="">
+                                </div>
+                                <span class="header-text">Home</span>
+                            </a>
+                        </li>
+                        <li class="head-li">
+                            <a>
+                                <div class="img-wrapper">
+                                    <img src="img/approval-crew.png" alt="">
+                                </div>
+                                <span class="header-text" >Crew management</span>
+                            </a>
+                        </li>
+                        <li class="head-li">
+                            <a>
+                                <div class="img-wrapper">
+                                    <img src="img/approval-personal.png" alt="">
+                                </div>
+                                <span class="header-text">Personal Center</span>
+                            </a>
+                        </li>
+                        <li class="head-li">
+                            <a>
+                                <div class="img-wrapper">
+                                    <img src="img/approval-setting.png" alt="">
+                                </div>
+                                <span class="header-text">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li> <span class="greet">Hello! David (Class1 crew)</span></li>
+                        <li>
+                            <span class="logout">logout</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+    </nav>
+</div>
+<div id="div_slideBar" class="col-md-2">
+    <div id="thediv" class="sidebar">
+        <ul style="float: left; width: 180px;">
+            <li class="title"><span>船员基本信息管理</span><span class="arrow"></span>
+                <ul class="in-sidebar">
+                    <li>
+                        <span>船员信息</span>
+                    </li>
+                    <li>
+                        <span>船员联系记录</span>
+                    </li>
+                    <li>
+                        <span>船员劳务合同</span>
+                    </li>
+                    <li>
+                        <span>服装订购记录</span>
+                    </li>
+                    <li>
+                        <span>机票预订记录</span>
+                    </li>
+                    <li>
+                        <span>酒店订购记录</span>
+                    </li>
+                    <li>
+                        <span>保险记录</span>
+                    </li>
+                    <li>
+                        <span>工伤医疗记录</span>
+                    </li>
+                    <li>
+                        <span>船员欠款记录</span>
+                    </li>
+                    <li>
+                        <span>非正常下船跟踪</span>
+                    </li>
+                </ul>
+            </li>
+            <li class="title"><span>船员调配管理</span><span class="arrow"></span>
+                <ul class="in-sidebar">
+                    <li>
+                        <span>船员散派计划管理</span>
+                    </li>
+                    <li>
+                        <span>船员套派计划管理</span>
+                    </li>
+                    <li>
+                        <span>船员派遣单</span>
+                    </li>
+                    <li>
+                        <span>船员资历报备提醒</span>
+                    </li>
+                </ul>
+            </li>
+            <li class="title"><span>船员证件管理</span><span class="arrow"></span>
+                <ul class="in-sidebar">
+                    <li>
+                        <span>所有证件</span>
+                    </li>
+                    <li>
+                        <span>预警证件</span>
+                    </li>
+                </ul>
+            </li>
+            <li class="title"><span>船员招募管理</span><span class="arrow"></span>
+                <ul class="in-sidebar">
+                    <li>
+                        <span>职位需求</span>
+                    </li>
+                    <li>
+                        <span>待联系船员信息</span>
+                    </li>
+                    <li>
+                        <span>招募人员信息</span>
+                    </li>
+                    <li>
+                        <span>面试记录</span>
+                    </li>
+                    <li>
+                        <span>推荐列表</span>
+                    </li>
+                    <li>
+                        <span>联系记录</span>
+                    </li>
+                </ul>
+            </li>
+            <li class="title"><span>船员培训管理</span><span class="arrow"></span>
+                <ul class="in-sidebar">
+                    <li>
+                        <span>培训计划</span>
+                    </li>
+                    <li>
+                        <span>课程列表</span>
+                    </li>
+                    <li>
+                        <span>讲师列表</span>
+                    </li>
+                    <li>
+                        <span>培训记录</span>
+                    </li>
+                    <li>
+                        <span>培训费用报表</span>
+                    </li>
+                </ul>
+            </li>
+            <li class="title"><span>船员审批管理</span><span class="arrow"></span>
+                <ul class="in-sidebar">
+                    <li>
+                        <span>创建船员申请</span>
+                    </li>
+                    <li>
+                        <span>船员申请记录</span>
+                    </li>
+                    <li>
+                        <span>船员申请审批</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <img id="img_show_slideBar" src="img/back.png" style="float: left;">
+    </div>
+</div>
+<div id="table_detail" class="col-md-9" style="padding-right: 0; z-index: -999;">
+    <table class="table table-condensed" cellpadding="5">
+        <thead>
+        <tr>
+            <td colspan="7" class="table_thead_td">
+                <button style="float: right;height: auto;width: 110px;" class="form-control">查看操作记录</button>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th class="table_tbody_th">
+                姓名
+            </th>
+            <td>
+                <input class="form-control" type="text">
+            </td>
+            <th class="table_tbody_th">
+                英文名
+            </th>
+            <td>
+                <input class="form-control" type="text">
+            </td>
+            <th class="table_tbody_th">
+                政治身份
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                <option value="">党员</option>
+                <option value="">团员</option>
+                <option value="">普通群众</option>
+                </select>
+            </td>
+            <td rowspan="7"  style="text-align: center;">
+                <div>
+                    <img src="img/1.jpg" />
+                    <div style="text-align: center;">
+                        <a style="float: left;">DOWN</a>
+                        <a style="float: right;">ENLARGE</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th class="table_tbody_th">
+                状态
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">休假</option>
+                    <option value="">在船</option>
+                    <option value="">待派</option>
+                    <option value="">离职</option>
+                    <option value="">黑名单</option>
+                    <option value="">取字典表数据</option>
+                </select>
+            </td>
+            <th class="table_tbody_th">
+                国籍
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                <option value="">中国</option>
+                <option value="">印度</option>
+                <option value="">美国</option>
+                <option value="">取字典表数据</option>
+                </select>
+            </td>
+            <th class="table_tbody_th">
+                籍贯
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                <option value="">上海</option>
+                <option value="">湖北</option>
+                <option value="">湖南</option>
+                <option value="">江苏</option>
+                <option value="">四川</option>
+                <option value="">取字典表数据</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th class="table_tbody_th">
+                婚姻状态
+            </th>
+            <td>
+                <select class="form-control" style="padding: 0 0;">
+                    <option value="">已婚</option>
+                    <option value="">未婚</option>
+                    <option value="">离异</option>
+                </select>
+            </td>
+            <th class="table_tbody_th">
+                性别
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">男</option>
+                    <option value="">女</option>
+                </select>
+            </td>
+            <th class="table_tbody_th">
+                出生年月
+            </th>
+            <td>
+                <input type="text" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <th class="table_tbody_th">
+                英文水平
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;width: 100px">
+                    <option value="">四级</option>
+                    <option value="">八级</option>
+                    <option value="">取字典表数据</option>
+                </select>
+                <input type="checkbox">
+                英语工作
+            </td>
+            <th class="table_tbody_th">
+                身份证号
+            </th>
+            <td>
+                <input type="text" class="form-control">
+            </td>
+            <th class="table_tbody_th">
+                户口性质
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">农村户口</option>
+                    <option value="">非农村户口</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th class="table_tbody_th">
+                联系电话
+            </th>
+            <td>
+                <input type="text" class="form-control">
+            </td>
+            <th class="table_tbody_th">
+                联系电话2
+            </th>
+            <td>
+                <input type="text" class="form-control">
+            </td>
+            <th class="table_tbody_th">
+                入司日期
+            </th>
+            <td>
+                <input type="text" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <th class="table_tbody_th">
+                离司日期
+            </th>
+            <td>
+                <input type="text" class="form-control">
+            </td>
+            <th class="table_tbody_th">
+                船员类别
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">社会船员</option>
+                    <option value="">自有船员</option>
+                    <option value="">海乘</option>
+                </select>
+            </td>
+            <th class="table_tbody_th">
+                船员类型
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">根据船员类别来显示</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th class="table_tbody_th">
+                船员下家
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">SHSH</option>
+                    <option value="">ARY</option>
+                    <option value="">BDLW</option>
+                    <option value="">取类别为[船员代理]的供应商</option>
+                </select>
+            </td>
+            <th class="table_tbody_th">
+                船东
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">AET</option>
+                    <option value="">NATHALIN</option>
+                    <option value="">SBSS</option>
+                    <option value="">COSTA</option>
+                    <option value="">取字典表数据</option>
+                </select>
+            </td>
+            <th class="table_tbody_th">
+                任职职务
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">船长</option>
+                    <option value="">大副</option>
+                    <option value="">二副</option>
+                    <option value="">轮机长</option>
+                    <option value="">一水</option>
+                    <option value="">甲板实习生</option>
+                    <option value="">取字典表数据</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th class="table_tbody_th">
+                证书职务
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">船长</option>
+                    <option value="">大副</option>
+                    <option value="">二副</option>
+                    <option value="">轮机长</option>
+                    <option value="">一水</option>
+                    <option value="">甲板实习生</option>
+                    <option value="">取字典表数据</option>
+                </select>
+            </td>
+            <th class="table_tbody_th">
+                适任船型
+            </th>
+            <td colspan="4">
+                <input type="checkbox">
+                <span>CONTAINER</span>
+                <input type="checkbox">
+                <span>CHEMICAL</span>
+                <input type="checkbox">
+                <span>BULK</span>
+                <input type="checkbox">
+                <span>OIL</span>
+                <input type="checkbox">
+                <span>lLNG/LPG</span>
+                <input type="checkbox">
+                <span>OFFSHORE</span>
+                <input type="checkbox">
+                <span>CRUISE</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="table table-condensed" cellpadding="5">
+        <tbody>
+        <tr>
+            <th class="table_tbody_th">
+                适任航区
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">无限航区</option>
+                    <option value="">近洋航区</option>
+                    <option value="">CST3-M</option>
+                    <option value="">CST3</option>
+                    <option value="">取字典表数据</option>
+                </select>
+            </td>
+            <th class="table_tbody_th">
+                QQ
+            </th>
+            <td>
+                <input class="form-control" type="input">
+            </td>
+            <th class="table_tbody_th">
+                微信
+            </th>
+            <td>
+                <input class="form-control" type="input">
+            </td>
+        </tr>
+        <tr>
+            <th class="table_tbody_th">
+                邮箱
+            </th>
+            <td>
+                <input class="form-control" type="input">
+            </td>
+            <th class="table_tbody_th">
+                社保账号
+            </th>
+            <td>
+                <input class="form-control" type="input">
+            </td>
+            <th class="table_tbody_th">
+                毕业院校
+            </th>
+            <td colspan="2">
+                <input class="form-control" type="text">
+            </td>
+        </tr>
+        <tr>
+            <th class="table_tbody_th">
+                毕业日期
+            </th>
+            <td>
+                <input class="form-control" type="text">
+            </td>
+            <th class="table_tbody_th">
+                学历
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">专科</option>
+                    <option value="">本科</option>
+                    <option value="">研究生</option>
+                    <option value="">博士生</option>
+                    <option value="">取字典表数据</option>
+                </select>
+            </td>
+            <th class="table_tbody_th">
+                专业
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">取字典表数据</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th class="table_tbody_th">
+                家庭地址
+            </th>
+            <td>
+                <input class="form-control" type="text">
+            </td>
+            <th class="table_tbody_th">
+                邮编
+            </th>
+            <td>
+                <input class="form-control" type="text">
+            </td>
+            <th class="table_tbody_th">
+                推荐人
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">取分公司对应员工</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th class="table_tbody_th">
+                最近机场
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">取字典表数据</option>
+                </select>
+            </td>
+            <th class="table_tbody_th">
+                身高
+            </th>
+            <td>
+                <input class="form-control" type="text">
+            </td>
+            <th class="table_tbody_th">
+                体重(kg)
+            </th>
+            <td>
+                <input class="form-control" type="text">
+            </td>
+        </tr>
+        <tr>
+            <th class="table_tbody_th">
+                工作服码
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">XS</option>
+                    <option value="">S</option>
+                    <option value="">M</option>
+                    <option value="">L</option>
+                    <option value="">XL</option>
+                    <option value="">取字典表数据</option>
+                </select>
+            </td>
+            <th class="table_tbody_th">
+                鞋码
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">35</option>
+                    <option value="">36</option>
+                    <option value="">37</option>
+                    <option value="">38</option>
+                    <option value="">39</option>
+                    <option value="">40</option>
+                    <option value="">取字典表数据</option>
+                </select>
+            </td>
+            <th class="table_tbody_th">
+                所属分公司
+            </th>
+            <td>
+                <select type="text" class="form-control" style="padding: 0 0;">
+                    <option value="">SHSH</option>
+                    <option value="">取字典表数据</option>
+                </select>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="col-md-1" style="text-align: center; padding-left: 0; padding-right: 20px;">
+    <div style="border: 2px solid #8fc9e1; font-size: 12px; padding-top: 10px; padding-bottom: 10px; background-color: #cfe6f5;">
+        <div id="div_right_menu">
+            <span>基本信息</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>证书列表</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>工作经历</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>面试记录</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>培训记录</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>银行账户</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>家庭关系</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>联系记录</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>保险记录</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>欠款记录</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>劳务合同</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+            <span>医疗记录</span>
+            <hr style="margin: 10px 20px; border:none; border-top:1px solid #96c5df;">
+        </div>
+        <div id="stretch" style="cursor: pointer">
+            <img id="img_right_back" src="img/icon_right_back.png">
+            <br/>
+            <span id="span_right_back">BACK</span>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+<script type="application/javascript">
+    window.onload = function() {
+        $(".head-li").on("click", function () {
+            $(this).find(".header-text").addClass("on");
+            $(this).siblings().find(".header-text").removeClass("on");
+        })
+        $("#stretch").click(function () {
+            if ($("#div_right_menu").is(":hidden")) {
+                $("#div_right_menu").slideDown('slow');
+                $("#img_right_back").attr("src","img/icon_right_back.png");
+                $("#span_right_back").text("BACK");
+            } else {
+                $("#div_right_menu").slideUp('slow');
+                $("#img_right_back").attr("src","img/icon_right_open.png");
+                $("#span_right_back").text("OPEN");
+            }
+        });
+
+        /**
+         * 边菜单栏动作
+         */
+        var clicked = null;
+        $('.title').click(function() {
+            if(clicked == this) {
+                if($(clicked).children('ul').slideUp().end().children('.arrow').hasClass('arrow-up')) {
+                    $(clicked).children('ul').slideUp().end().children('.arrow').removeClass('arrow-up');
+                } else {
+                    $(this).children('ul').slideToggle().end().children('.arrow').addClass('arrow-up');
+                }
+            } else {
+                $(clicked).children('ul').slideUp().end().children('.arrow').removeClass('arrow-up');
+                $(this).children('ul').slideToggle().end().children('.arrow').addClass('arrow-up');
+            }
+            clicked = this;
+        });
+        $('.title > ul').click(function() {
+            return false; // 阻止事件冒泡
+        });
+    };
+
+    var img_show_slideBar = document.getElementById('img_show_slideBar');
+    var odiv = document.getElementById('thediv');
+    img_show_slideBar.onclick = function() {
+        if(-180 == odiv.offsetLeft) {
+            $('#img_show_slideBar').attr('src', 'img/back.png');
+            $('#table_detail').removeClass('col-md-11');
+            $('#table_detail').addClass('col-md-9');
+            //$('#div_slideBar').removeClass('col-md-1');
+            //$('#div_slideBar').addClass('col-md-2');
+            startmove(0, 5);
+        } else {
+            startmove(-180, -10);
+        }
+    }
+
+    var timer = null;
+
+    function startmove(target, speed) {
+        var odiv = document.getElementById('thediv');
+        clearInterval(timer);
+        timer = setInterval(function() {
+            if(odiv.offsetLeft == target) {
+                clearInterval(timer);
+                if(target == -180) {
+                    $('#table_detail').removeClass('col-md-9');
+                    $('#table_detail').addClass('col-md-11');
+                    $('#img_show_slideBar').attr('src', 'img/icon_sidebar_go.png');
+                    //$('#div_slideBar').removeClass('col-md-2');
+                    //$('#div_slideBar').addClass('col-md-1');
+                }
+            } else {
+                odiv.style.left = odiv.offsetLeft + speed + 'px';
+
+            }
+        }, 10)
+    };
+    $("#div_right_menu span").on("click",function () {
+        $(this).addClass("span-hover");
+        $(this).siblings().removeClass("span-hover");
+    })
+</script>
+
+</html>

@@ -3,24 +3,33 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>船员信息</title>
+	<title>船员信息列表</title>
 </head>
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/head.css" />
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="css/sidbar.css" />
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/head.css" />
 <style type="text/css">
-	.table_thead_th {
-		background-color: #96c5df;
-	}
+    .table_thead_td {
+        background-color: #96c5df;
+    }
 
-	td {
-		font-size: 12px;
-		border: 1.5px solid #bbe3f3;
-		color: #585858;
-	}
+    .table_tbody_th {
+        background-color: #e4f1f5;
+    }
 
+    th {
+        font-size: 12px;
+        border: 1.5px solid #bbe3f3;
+    }
+
+    td {
+        font-size: 12px;
+        border: 1.5px solid #bbe3f3;
+        color: #585858;
+    }
 	.btn {
 		font-size: 10px;
 	}
@@ -36,9 +45,8 @@
         margin-top: 10px;
     }
     .form-control {
-        width: 110px;
         display: inline-block;
-        height: 22px;
+        height:22px;
     }
     .btn-info {
         color: #000;
@@ -121,8 +129,8 @@
 		<ul style="float: left; width: 180px;">
 			<li class="title"><span>船员基本信息管理</span><span class="arrow"></span>
 				<ul class="in-sidebar">
-					<li onclick="window.location.href('./crewBasic.html')">
-						<span>船员信息</span>
+					<li>
+                        <span>船员信息</span>
 					</li>
 					<li>
 						<span>船员联系记录</span>
@@ -238,93 +246,120 @@
 	</div>
 </div>
 <div id="table_list" class="col-md-10" style="z-index: -999; padding-left: 40px; margin-top: 20px">
-    <div style="clear: both;overflow: hidden">
-        <ul class="h-input">
-            <li style="margin-left: 0;">
-                <span>身份证号: </span>
-                <input type="text" class="form-control">
-            </li>
-            <li>
-                <span>船员姓名: </span>
-                <input type="text" class="form-control">
-            </li>
-            <li>
-                <span>英文名: </span>
-                <input type="text" class="form-control">
-            </li>
-            <li>
-                <span>船员首拼: </span>
-                <input type="text" class="form-control">
-            </li>
-        </ul>
-        <ul class="h-input">
-            <li style="margin-left: 0;">
-                <span>船员下家: </span>
-                <select type="text" class="form-control" style="padding: 0 0;">
-                    <option value="">SHSH</option>
-                    <option value="">ARY</option>
-                    <option value="">BDLW</option>
-                    <option value="">取字典表数据</option>
-                </select>
-            </li>
-            <li>
-                <span>船东: </span>
-                <select type="text" class="form-control" style="padding: 0 0;">
-                    <option value="">AET</option>
-                    <option value="">NATHALIN</option>
-                    <option value="">SBSS</option>
-                    <option value="">COSTA</option>
-                    <option value="">取字典表数据</option>
-                </select>
-            </li>
-            <li>
-                <span>可上船日: </span>
-                <input type="text" class="form-control">
-            </li>
-            <li>
-                <span>状态: </span>
-                <select type="text" class="form-control" style="padding: 0 0;">
-                    <option value="">在船</option>
-                    <option value="">休假</option>
-                    <option value="">取字典表数据</option>
-                </select>
-            </li>
-        </ul>
-        <ul class="h-input">
-            <li style="margin-left: 0;">
-                <span>职务: </span>
-                <select type="text" class="form-control" style="padding: 0 0;">
-                    <option value="">船长</option>
-                    <option value="">大副</option>
-                    <option value="">二副</option>
-                    <option value="">轮机长</option>
-                    <option value="">一水</option>
-                    <option value="">甲板实习生</option>
-                    <option value="">取字典表数据</option>
-                </select>
-            </li>
-            <li>
-                <span>船员类型: </span>
-                <select type="text" class="form-control" style="padding: 0 0;">
-                    <option value="">自由船员</option>
-                    <option value="">邮轮海乘</option>
-                    <option value="">自有船员</option>
-                    <option value="">取字典表数据</option>
-                </select>
-            </li>
-            <li style="width:auto">
-                <input type="checkbox">
-                <span>存在预警证件</span>
-            </li>
-            <li style="width:auto">
-                <input type="checkbox">
-                <span>即将下船</span>
-            </li>
-            <li style="width:auto">
-                <input type="checkbox">
-                <span>缺少SEA</span>
-            </li>
-        </ul>
+    <div>
+        <table class="table table-condensed table-bordered">
+            <tbody>
+            <tr>
+                <th class="table_tbody_th">
+                    身份证号
+                </th>
+                <td>
+                    <input type="text" class="form-control">
+                </td>
+                <th class="table_tbody_th">
+                    船员姓名
+                </th>
+                <td>
+                    <input type="text" class="form-control">
+                </td>
+                <th class="table_tbody_th">
+                    英文名
+                </th>
+                <td>
+                    <input class="form-control" type="input">
+                </td>
+            </tr>
+            <tr>
+                <th class="table_tbody_th">
+                    船员首拼
+                </th>
+                <td>
+                    <input type="text" class="form-control">
+                </td>
+                <th class="table_tbody_th">
+                    船员下家
+                </th>
+                <td>
+                    <select type="text" class="form-control" style="padding: 0 0;">
+                        <option value="">SHSH</option>
+                        <option value="">ARY</option>
+                        <option value="">BDLW</option>
+                        <option value="">取字典表数据</option>
+                    </select>
+                </td>
+                <th class="table_tbody_th">
+                    船东
+                </th>
+                <td>
+                    <select type="text" class="form-control" style="padding: 0 0;">
+                        <option value="">AET</option>
+                        <option value="">NATHALIN</option>
+                        <option value="">SBSS</option>
+                        <option value="">COSTA</option>
+                        <option value="">取字典表数据</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th class="table_tbody_th">
+                    可上船日
+                </th>
+                <td>
+                    <input class="form-control" type="text">
+                </td>
+                <th class="table_tbody_th">
+                    状态
+                </th>
+                <td>
+                    <select type="text" class="form-control" style="padding: 0 0;">
+                        <option value="">在船</option>
+                        <option value="">休假</option>
+                        <option value="">取字典表数据</option>
+                    </select>
+                </td>
+                <th class="table_tbody_th">
+                    职务
+                </th>
+                <td>
+                    <select type="text" class="form-control" style="padding: 0 0;">
+                        <option value="">船长</option>
+                        <option value="">大副</option>
+                        <option value="">二副</option>
+                        <option value="">轮机长</option>
+                        <option value="">一水</option>
+                        <option value="">甲板实习生</option>
+                        <option value="">取字典表数据</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th class="table_tbody_th">
+                    船员类型
+                </th>
+                <td colspan="2">
+                    <select type="text" class="form-control" style="padding: 0 0;">
+                        <option value="">自由船员</option>
+                        <option value="">邮轮海乘</option>
+                        <option value="">自有船员</option>
+                        <option value="">取字典表数据</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="checkbox">
+                    <span>存在预警证件</span>
+                </td>
+                <td>
+                    <input type="checkbox">
+                    <span>即将下船</span>
+                </td>
+                <td>
+                    <input type="checkbox">
+                    <span>缺少SEA</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
         <ul class="h-input">
             <li class="features-btn" style="width: auto;margin-left: 0px;">
                 <button type="button" class="btn btn-primary">查询</button>
@@ -453,26 +488,7 @@
             </tbody>
         </table>
     </div>
-    <div>
-        <p>1.从旧系统迁移过来的船员信息，必须有人确认后才可以使用</p>
-        <p>2.颜色标注</p>
-        <p style="text-indent: 2em">蓝色：未确认数据</p>
-        <p style="text-indent: 2em">红色：存在预警证件</p>
-        <p style="text-indent: 2em">黄色：即将下船船员</p>
-        <p>3.预警证件：达到预警期或者已过期（判断范围为所有证件，无论是否在库）</p>
-        <p style="text-indent: 2rem">预警期在基本业务配置里配置</p>
-        <p>4.即将下船：达到下船提示时间区间的</p>
-        <p style="text-indent: 2rem">即将下船提示区间（多少天算即将下船）在基本业务配置里配置</p>
-        <p>5.导出个人简历</p>
-        <p style="text-indent: 2rem">需选择简历模板（默认为对应船东的简历模板），确认后根据简历模板导出简历</p>
-        <p style="text-indent: 2rem">支持多选，批量导出</p>
-        <p>6.可上船日检索条件</p>
-        <p style="text-indent: 2rem">检索可上船日>=该日期的船员</p>
-        <p>7.缺少SEA：存在工作经历中没有SEA附件的</p>
-        <p style="text-indent: 2rem">查找起始时间在基本业务配置里配置</p>
-        <p style="text-indent: 2rem">例如：配置时间为2018/01/01，则查找上船日期>=2018/01/01的工作经历里</p>
-        <p>没有SEA附件的数据</p>
-    </div>
+
 </div>
 </body>
 <script type="application/javascript">
