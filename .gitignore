@@ -1,4 +1,5 @@
 
 log.txt
 *.xml
+.idea/inspectionProfiles/
 *.xml

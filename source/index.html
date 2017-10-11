@@ -22,18 +22,13 @@
     html, body{ margin:0; height:100%; }
     .header .right{
     }
-    .brand{
-        margin-top: 15px;
-    }
-    .brand a img{
-    }
     .greet{
         display: inline-block;
         color: #f8d098;
         margin-right: 24px;
     }
     .header-img{
-        margin: 0 12px;
+        margin: 15px 12px 0 12px;
     }
     .header-ul{
         float: right;
@@ -79,8 +74,9 @@
         display: inline;
     }
     .container{
-        margin-left: 13px;
-        width: 100%
+        width: 100%;
+        height: 50px;
+        background: #3c8bdc;
     }
     .nav>li>a {
         padding: 10px 0px;
@@ -88,9 +84,9 @@
     .navbar-right{
         margin-right: 18px;
     }
-    .line:after {content: "|";color: rgb(99,129,174)} {
-        border-right: 1px solid #6381b6;
-    }
+    /*.line:after {content: "|";color: rgb(99,129,174)} {*/
+        /*border-right: 1px solid #6381b6;*/
+    /*}*/
     .right{
         padding-top: 18px;
     }
@@ -172,6 +168,7 @@
     }
     .nav>li{
         display: inline-block;
+        line-height: 50px;
     }
     .on {
         color: #e29b3a;
@@ -182,50 +179,22 @@
     .instructions:hover{
         color: #e29b3a;
     }
-    @media screen and (max-width: 767px) {
-        .content{
-            margin-top: -41px;
-        }
-        .brand {
-             margin-top: 0;
-        }
-    }
-    @media screen and (min-width:768px) and (max-width: 991px) {
-        .content{
-            margin-top: -41px;
-        }
-    }
-    @media screen and (min-width: 992px) {
-        .content{
-            margin-top: -41px;
-        }
-    }
 </style>
 <body>
 <div>
-    <header class="navbar">
-    <nav class="navbar navbar-default  navbar-orange">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-settings" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                    <a class="navbar-brand brand"><img src="img/brand.png" alt=""></a>
-            </div>
-            <div class="collapse navbar-collapse" id="header-settings">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a class="greet" style="color:#f8d098">您好！David！</a></li>
-                    <li><a class="line" href=""><img class="header-img" src="img/personal.png" alt=""></a></li>
-                    <li><a class="line" href=""><img class="header-img" src="img/setting.png" alt=""></a></li>
-                    <li><a class="line" href=""><img class="header-img" src="img/exit.png" alt=""></a></li>
-                </ul>
-            </div>
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand brand"><img src="img/logo.png" alt=""></a>
         </div>
-    </nav>
-    </header>
+        <div class="collapse navbar-collapse" id="header-settings">
+            <ul class="nav navbar-nav navbar-right">
+                <li style="color: #fff;font-size: 14px">您好！David！</li>
+                <li><img class="header-img" src="img/user.png" alt=""></li>
+                <li><img class="header-img" src="img/set.png" alt=""></li>
+                <li><img class="header-img" src="img/logout.png" alt=""></li>
+            </ul>
+        </div>
+    </div>
     <div class="content">
         <div class="left col-xs-2">
             <div class="control">
