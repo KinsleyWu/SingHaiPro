@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <title>非正常下船跟踪</title>
+    <title>证书列表</title>
 </head>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="css/head.css" />
+<link rel="stylesheet" href="common/reset.css">
 <link rel="stylesheet" href="css/sidbar.css" />
 <script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
 <script src="js/page.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/head.css" />
 <style type="text/css">
+    body {
+        font-size: 14px;
+    }
+
+    .input-greenbg {
+        background-color: #e5f0f6;
+        border: 1px solid #91c2d1;
+        border-radius: 0;
+    }
+    .col-inline {
+        display: inline;
+        width: 120px;
+        margin-left: 10px;
+    }
     .table_thead_td {
         background-color: #96c5df;
     }
@@ -19,7 +35,7 @@
     .table_tbody_th {
         background-color: #e4f1f5;
     }
-    
+
     th {
         font-size: 12px;
         border: 1.5px solid #bbe3f3;
@@ -30,7 +46,6 @@
         border: 1.5px solid #bbe3f3;
         color: #585858;
     }
-
     .btn {
         font-size: 10px;
     }
@@ -46,9 +61,10 @@
         margin-top: 10px;
     }
     .form-control {
-        width: 110px;
         display: inline-block;
-        height: 22px;
+        height:auto;
+        border-radius: 0px;
+        padding: 0;
     }
     .btn-info {
         color: #000;
@@ -57,6 +73,10 @@
     }
     .btn {
         padding: 6px 20px;
+    }
+    .col-label {
+        width: 60px;
+        text-align: right;
     }
 </style>
 
@@ -80,7 +100,7 @@
                 <a>
                     <div class="img-wrapper">
                         <img src="img/h-crew.png" alt="">
-                        <span class="header-text">船员管理</span>
+                        <span class="header-text" style="vertical-align: super;">船员管理</span>
                     </div>
                 </a>
             </li>
@@ -88,7 +108,7 @@
                 <a>
                     <div class="img-wrapper">
                         <img src="img/h-yuna.png" alt="">
-                        <span class="header-text">员工管理</span>
+                        <span class="header-text" style="vertical-align: super;">员工管理</span>
                     </div>
                 </a>
             </li>
@@ -96,7 +116,7 @@
                 <a>
                     <div class="img-wrapper">
                         <img src="img/h-client.png" alt="">
-                        <span class="header-text">客户管理</span>
+                        <span class="header-text" style="vertical-align: super;">客户管理</span>
                     </div>
                 </a>
             </li>
@@ -104,7 +124,7 @@
                 <a>
                     <div class="img-wrapper">
                         <img src="img/h-list.png" alt="">
-                        <span class="header-text">报表管理</span>
+                        <span class="header-text" style="vertical-align: super;">报表管理</span>
                     </div>
                 </a>
             </li>
@@ -242,87 +262,33 @@
             <img id="img_show_slideBar" src="img/back.png" style="float: left;">
         </div>
     </div>
+
     <div id="table_list" class="col-md-10" style="z-index: -999; padding-left: 40px; margin-top: 20px">
         <div>
-            <table class="table table-condensed table-bordered">
-                <tbody>
-                <tr>
-                    <th class="table_tbody_th">
-                        <span>身份证号:</span>
-                    </th>
-                    <td>
-                        <input type="text" class="form-control">
-                    </td>
-                    <th class="table_tbody_th">
-                        <span>船员姓名:</span>
-                    </th>
-                    <td>
-                        <input type="text" class="form-control">
-                    </td>
-                    <th class="table_tbody_th">
-                        <span>船员首拼:</span>
-                    </th>
-                    <td>
-                        <input class="form-control" type="input">
-                    </td>
-                </tr>
-                <tr>
-                    <th class="table_tbody_th">
-                        <span>职务: </span>
-                    </th>
-                    <td>
-                        <select type="text" class="form-control" style="padding: 0 0;">
-                            <option value="">&nbsp;</option>
-                            <option value="">船长</option>
-                            <option value="">大副</option>
-                            <option value="">二副</option>
-                            <option value="">轮机长</option>
-                            <option value="">一水</option>
-                            <option value="">甲板实习生</option>
-                            <option value="">取字典表数据</option>
-                        </select>
-                    </td>
-                    <th class="table_tbody_th">
-                        <span>船东: </span>
-                    </th>
-                    <td>
-                        <select type="text" class="form-control" style="padding: 0 0;">
-                            <option value="">&nbsp;</option>
-                            <option value="">AET</option>
-                            <option value="">NATHALIN</option>
-                            <option value="">SBSS</option>
-                            <option value="">COSTA</option>
-                            <option value="">取字典表数据</option>
-                        </select>
-                    </td>
-                    <th class="table_tbody_th">
-                        <span>离船原因: </span>
-                    </th>
-                    <td>
-                        <select type="text" class="form-control" style="padding: 0 0;">
-                            <option value="">&nbsp;</option>
-                            <option value="">正常下船</option>
-                            <option value="">因病下船</option>
-                            <option value="">船东辞退</option>
-                            <option value="">离职</option>
-                            <option value="">取字典表数据</option>
-                        </select>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
             <ul class="h-input">
-                <li class="features-btn" style="width: auto;margin-left: 0px;" >
-                    <button type="button" class="btn btn-primary">查询</button>
+                <li class="features-btn" style="width: auto;margin-left: 0px;">
+                    <button type="button" class="btn btn-primary">新增</button>
                 </li>
-                <li class="features-btn" style="width: auto" >
-                    <button type="button" class="btn btn-info">新增</button>
-                </li>
-                <li class="features-btn" style="width: auto" >
+                <li class="features-btn" style="width: auto">
                     <button type="button" class="btn btn-info">编辑</button>
                 </li>
-                <li class="features-btn" style="width: auto" >
+                <li class="features-btn" style="width: auto">
+                    <button type="button" class="btn btn-info">入库</button>
+                </li>
+                <li class="features-btn" style="width: auto">
+                    <button type="button" class="btn btn-info">出库</button>
+                </li>
+                <li class="features-btn" style="width: auto">
+                    <button type="button" class="btn btn-info">办证</button>
+                </li>
+                <li class="features-btn" style="width: auto">
+                    <button type="button" class="btn btn-info">下载</button>
+                </li>
+                <li class="features-btn" style="width: auto">
                     <button type="button" class="btn btn-info">查看操作记录</button>
+                </li>
+                <li class="features-btn" style="width: auto">
+                    <button type="button" class="btn btn-info">删除</button>
                 </li>
             </ul>
         </div>
@@ -334,35 +300,37 @@
                         <input type="checkbox">
                     </td>
                     <td>
-                        身份证号
+                        缩写
                     </td>
                     <td>
-                        船员姓名
+                        证件名称
                     </td>
                     <td>
-                        职务
-                    </td>
-
-                    <td>
-                        船东
+                        证件编号
                     </td>
                     <td>
-                        船舶
+                        发证机构
                     </td>
                     <td>
-                        上船日期
+                        签发日期
                     </td>
                     <td>
-                        离船日期
+                        有效日期
                     </td>
                     <td>
-                        离船原因
+                        在库状态
                     </td>
                     <td>
-                        离船评估
+                        换证状态
                     </td>
                     <td>
-                        操作
+                        修改人
+                    </td>
+                    <td>
+                        修改日期
+                    </td>
+                    <td>
+                        附件
                     </td>
                 </tr>
                 </thead>
@@ -372,51 +340,36 @@
                         <input type="checkbox">
                     </td>
                     <td>
+                        SMPP
+                    </td>
+                    <td>
+                        SMPP
+                    </td>
+                    <td>
+                        A00688256
+                    </td>
+                    <td>
+                        JiangSu MSA
+                    </td>
+                    <td>
+                        2011/10/12
+                    </td>
+                    <td>
+                        2016/10/12
+                    </td>
+                    <td>
+                        在库
                     </td>
                     <td>
                     </td>
                     <td>
+                        Zhang san
                     </td>
                     <td>
+                        2017/02/05
                     </td>
                     <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                        详情
-                    </td>
-                </tr>
-                <tr class="tb-content">
-                    <td>
-                        <input type="checkbox">
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                        详情
+                        查看、下载
                     </td>
                 </tr>
                 <tr class="tb-content">
@@ -424,51 +377,36 @@
                         <input type="checkbox">
                     </td>
                     <td>
+                        DD COC
+                    </td>
+                    <td>
+                        甲板部大证
+                    </td>
+                    <td>
+                        AFG114201307898
+                    </td>
+                    <td>
+                        JiangSu MSA
+                    </td>
+                    <td>
+                        2011/10/12
+                    </td>
+                    <td>
+                        2016/10/12
+                    </td>
+                    <td>
+                        在库
                     </td>
                     <td>
                     </td>
                     <td>
+                        Zhang san
                     </td>
                     <td>
+                        2017/02/05
                     </td>
                     <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                        详情
-                    </td>
-                </tr>
-                <tr class="tb-content">
-                    <td>
-                        <input type="checkbox">
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                        详情
+                        查看、下载
                     </td>
                 </tr>
                 <tr class="tb-content">
@@ -476,25 +414,36 @@
                         <input type="checkbox">
                     </td>
                     <td>
+                        WK NEW
+                    </td>
+                    <td>
+                        新版值班证书
+                    </td>
+                    <td>
+                        AFG114201307898
+                    </td>
+                    <td>
+                        JiangSu MSA
+                    </td>
+                    <td>
+                        2011/10/12
+                    </td>
+                    <td>
+                        2054/10/12
+                    </td>
+                    <td>
+                        出库
                     </td>
                     <td>
                     </td>
                     <td>
+                        Zhang san
                     </td>
                     <td>
+                        2017/02/05
                     </td>
                     <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                        详情
+                        查看、下载
                     </td>
                 </tr>
                 </tbody>
@@ -505,33 +454,31 @@
 </div>
 </body>
 <script type="application/javascript">
-//列表分页
-    $(function() {  
-        page.createPage({pageSize: 30, searchFunction: search});  
-    });  
-    function search() {  
-    //把pageNo, pageSize和用户填写的查询条件build进pageParam中  
-   /* var pageParam = page.buildParams($("form").serializeObject());  
-      
-    sys.ajax("/servlet/userOpLog/search", { 
-        params : pageParam,  
-        callback : pageQueryCallback  
-    });  */
-    } 
-    //开始查找  
-    function goSearch() {  
-        page.resetPageNo();  
-        search();  
-    }  
-        function pageQueryCallback(result) {  
-        var data = result.data;  
-          
-        page.updatePage(data);  
-      
-        var html = template('opLogListTpl', data);  
-        $("#result").html(html);  
-    }  
+    $(function() {
+        page.createPage({pageSize: 30, searchFunction: search});
+    });
+    function search() {
+        //把pageNo, pageSize和用户填写的查询条件build进pageParam中
+        /* var pageParam = page.buildParams($("form").serializeObject());
 
+         sys.ajax("/servlet/userOpLog/search", {
+             params : pageParam,
+             callback : pageQueryCallback
+         });  */
+    }
+    //开始查找
+    function goSearch() {
+        page.resetPageNo();
+        search();
+    }
+    function pageQueryCallback(result) {
+        var data = result.data;
+
+        page.updatePage(data);
+
+        var html = template('opLogListTpl', data);
+        $("#result").html(html);
+    }
     window.onload = function() {
         $(".head-li").on("click", function () {
             $(this).find(".header-text").addClass("on");
