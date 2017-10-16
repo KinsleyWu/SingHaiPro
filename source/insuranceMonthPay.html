@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>本月缴纳社保</title>
+	</head>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/head.css" />
+	<link rel="stylesheet" href="css/sidbar.css" />
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/page.js"></script>
+
+	<style type="text/css">
+		body {
+        font-size: 14px;
+    }
+		#div_right_menu span:hover {
+			color: #1a4692;
+		}
+		
+		#div_right_menu span {
+			cursor: pointer;
+		}
+		
+		.calendar-input {
+			padding-right: 20px;
+			background: url(img/icon_calendar.png) no-repeat scroll right center transparent;
+		}
+		
+		.table_thead_td {
+			background-color: #96c5df;
+		}
+		
+		.table_tbody_th {
+			background-color: #e4f1f5;
+		}
+		
+		th {
+			font-size: 12px;
+			border: 1.5px solid #bbe3f3;
+		}
+		
+		td {
+			font-size: 12px;
+			border: 1.5px solid #bbe3f3;
+			color: #585858;
+		}
+		
+		.btn {
+			font-size: 10px;
+			padding: 6px 20px;
+		}
+		
+		.h-input {
+			overflow: hidden;
+			clear: both;
+		}
+		
+		.h-input li {
+			float: left;
+			margin-left: 50px;
+			width: 180px;
+			text-align: right;
+			margin-top: 10px;
+		}
+		
+		.must {
+			color: red;
+		}
+		
+		.form-control {
+			display: inline-block;
+			height: auto;
+			padding: 0;
+			border-radius: 0px;
+		}
+		
+		.span-hover {
+			color: #1a4692 !important;
+		}
+		
+		@media screen and (max-width: 767px) {
+			#thediv {
+				margin-top: -20px;
+			}
+		}
+		
+		@media screen and (min-width:768px) and (max-width: 991px) {
+			#thediv {
+				margin-top: -20px;
+			}
+		}
+		
+		@media screen and (min-width: 992px) {
+			#thediv {
+				margin-top: -20px;
+			}
+		}
+		
+		.tb-content {
+			height: 22px;
+		}
+		
+		.col-inline {
+			display: inline;
+			width: 120px;
+			margin-left: 10px;
+		}
+		
+		.input-greenbg {
+			background-color: #e5f0f6;
+			border: 1px solid #91c2d1;
+			border-radius: 0;
+		}
+		
+		.col-label {
+			width: 120px;
+			text-align: right;
+		}
+		
+		.col-nopadding {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+	</style>
+
+	<body style="height: 100%;background: #f7fbff;">
+	<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand brand"><img src="img/logo.png" alt=""></a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div>
+			<ul class="nav navbar-nav" style="margin-left: 9.5%">
+				<li class="head-li">
+					<a>
+						<div class="img-wrapper">
+							<img src="img/h-crew.png" alt="">
+							<span class="header-text" >船员管理</span>
+						</div>
+					</a>
+				</li>
+				<li class="head-li">
+					<a>
+						<div class="img-wrapper">
+							<img src="img/h-yuna.png" alt="">
+							<span class="header-text" >员工管理</span>
+						</div>
+					</a>
+				</li>
+				<li class="head-li">
+					<a>
+						<div class="img-wrapper">
+							<img src="img/h-client.png" alt="">
+							<span class="header-text" >客户管理</span>
+						</div>
+					</a>
+				</li>
+				<li class="head-li">
+					<a>
+						<div class="img-wrapper">
+							<img src="img/h-list.png" alt="">
+							<span class="header-text" >报表管理</span>
+						</div>
+					</a>
+				</li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li style="color: #fff;font-size: 14px">您好！David！</li>
+				<li ><img class="header-img" src="img/user.png" alt=""></li>
+				<li ><img class="header-img" src="img/set.png" alt=""></li>
+				<li ><img class="header-img" src="img/logout.png" alt=""></li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+		<!-- /.container-fluid -->
+	</div>
+		<div style="clear: both;">
+			<div id="div_slideBar" class="col-md-2">
+				<div id="thediv" class="sidebar">
+					<ul style="float: left; width: 180px;">
+						<li class="title"><span>船员基本信息管理</span><span class="arrow"></span>
+							<ul class="in-sidebar">
+								<li>
+									<span>船员信息</span>
+								</li>
+								<li>
+									<span>船员联系记录</span>
+								</li>
+								<li>
+									<span>船员劳务合同</span>
+								</li>
+								<li>
+									<span>服装订购记录</span>
+								</li>
+								<li>
+									<span>机票预订记录</span>
+								</li>
+								<li>
+									<span>酒店订购记录</span>
+								</li>
+								<li>
+									<span>保险记录</span>
+								</li>
+								<li>
+									<span>工伤医疗记录</span>
+								</li>
+								<li>
+									<span>船员欠款记录</span>
+								</li>
+								<li>
+									<span>非正常下船跟踪</span>
+								</li>
+							</ul>
+						</li>
+						<li class="title"><span>船员调配管理</span><span class="arrow"></span>
+							<ul class="in-sidebar">
+								<li>
+									<span>船员散派计划管理</span>
+								</li>
+								<li>
+									<span>船员套派计划管理</span>
+								</li>
+								<li>
+									<span>船员派遣单</span>
+								</li>
+								<li>
+									<span>船员资历报备提醒</span>
+								</li>
+							</ul>
+						</li>
+						<li class="title"><span>船员证件管理</span><span class="arrow"></span>
+							<ul class="in-sidebar">
+								<li>
+									<span>所有证件</span>
+								</li>
+								<li>
+									<span>预警证件</span>
+								</li>
+							</ul>
+						</li>
+						<li class="title"><span>船员招募管理</span><span class="arrow"></span>
+							<ul class="in-sidebar">
+								<li>
+									<span>职位需求</span>
+								</li>
+								<li>
+									<span>待联系船员信息</span>
+								</li>
+								<li>
+									<span>招募人员信息</span>
+								</li>
+								<li>
+									<span>面试记录</span>
+								</li>
+								<li>
+									<span>推荐列表</span>
+								</li>
+								<li>
+									<span>联系记录</span>
+								</li>
+							</ul>
+						</li>
+						<li class="title"><span>船员培训管理</span><span class="arrow"></span>
+							<ul class="in-sidebar">
+								<li>
+									<span>培训计划</span>
+								</li>
+								<li>
+									<span>课程列表</span>
+								</li>
+								<li>
+									<span>讲师列表</span>
+								</li>
+								<li>
+									<span>培训记录</span>
+								</li>
+								<li>
+									<span>培训费用报表</span>
+								</li>
+							</ul>
+						</li>
+						<li class="title"><span>船员审批管理</span><span class="arrow"></span>
+							<ul class="in-sidebar">
+								<li>
+									<span>创建船员申请</span>
+								</li>
+								<li>
+									<span>船员申请记录</span>
+								</li>
+								<li>
+									<span>船员申请审批</span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<img id="img_show_slideBar" src="img/back.png" style="float: left;">
+				</div>
+			</div>
+			<div id="table_detail" class="col-md-10" style="z-index: -999;padding-left: 20px; margin-top: 20px">
+				<div>
+					<div class="col-md-12">
+						<div class="col-md-3 col-nopadding">
+							<label class="col-label">缴纳时间</label>
+							<input type="text" class="form-control col-inline input-greenbg" />
+						</div>
+						<div class="col-md-3 col-nopadding">
+							<label class="col-label">社保缴纳险种</label>
+							<select type="text" class="form-control col-inline input-greenbg" style="padding: 0 0;">
+								<option value="">在缴</option>
+								<option value="">停缴</option>
+							</select>
+						</div>
+						<div class="col-md-3 col-nopadding">
+							<label class="col-label">身份证号</label>
+							<input type="text" class="form-control col-inline input-greenbg" />
+						</div>
+						<div class="col-md-3 col-nopadding">
+							<label class="col-label">船员姓名</label>
+							<input type="text" class="form-control col-inline input-greenbg" />
+						</div>
+					</div>
+					<div class="col-md-12" style="margin-top: 15px;">
+						<div class="col-md-3 col-nopadding">
+							<label class="col-label">船员首拼</label>
+							<input type="text" class="form-control col-inline input-greenbg" />
+						</div>
+						<div class="col-md-3 col-nopadding">
+							<label class="col-label"><input type="checkbox" value="checkbox" style="vertical-align: bottom"/>
+							未缴船员</label>
+						</div>
+					</div>
+
+					<ul class="h-input" style="padding-left: 40px;">
+						<li class="features-btn" style="width: auto;margin-left: 0px;">
+							<button type="button" class="btn btn-primary">查询</button>
+						</li>
+						<li class="features-btn" style="width: auto">
+							<button type="button" class="btn btn-info">查看</button>
+						</li>
+						<li class="features-btn" style="width: auto">
+							<button type="button" class="btn btn-info">保险缴纳</button>
+						</li>
+						<li class="features-btn" style="width: auto">
+							<button type="button" class="btn btn-info">残障金缴纳</button>
+						</li>
+						<li class="features-btn" style="width: auto">
+							<button type="button" class="btn btn-info">商保缴纳</button>
+						</li>
+						<li class="features-btn" style="width: auto">
+							<button type="button" class="btn btn-info">导出余额</button>
+						</li>
+						<li class="features-btn" style="width: auto">
+							<button type="button" class="btn btn-info">导出明细</button>
+						</li>
+						<li class="features-btn" style="width: auto">
+							<button type="button" class="btn btn-info">查看操作记录</button>
+						</li>
+					</ul>
+				</div>
+				<div style="margin-top: 20px;">
+					<table class="table table-bordered table-condensed" style="background: #fff;text-align: center">
+						<thead>
+							<tr class="tb-content" style="background: #97c5df;">
+								<td style="background: #fff;">
+									<input type="checkbox">
+								</td>
+								<td>
+									身份证号
+								</td>
+								<td>
+									船员姓名
+								</td>
+								<td>
+									状态
+								</td>
+								<td>
+									职务
+								</td>
+								<td>
+									合作单位
+								</td>
+								<td>
+									船东
+								</td>
+								<td>
+									余额
+								</td>
+								<td>
+									缴纳险种
+								</td>
+								<td>
+									承担方式
+								</td>
+								<td>
+									个人承担
+								</td>
+								<td>
+									公司承担
+								</td>
+								<td>
+									制社保卡
+								</td>
+								<td>
+									合计
+								</td>
+								<td>
+									备注
+								</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="tb-content">
+								<td>
+									<input type="checkbox">
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>在缴</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td></td>
+								<td>个人承担个人，公司承担公司</td>
+								<td>120.00</td>
+								<td>120.00</td>
+								<td></td>
+								<td>
+								</td>
+								<td>
+								</td>
+							</tr>
+							<tr class="tb-content">
+								<td>
+									<input type="checkbox">
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>停缴</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td></td>
+								<td>
+								</td>
+								<td>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="pageDiv page" style='display:block; text-align:right;'></div>
+			</div>
+		</div>
+	</body>
+	<script type="application/javascript">
+		$(function() {
+			page.createPage({
+				pageSize: 30,
+				searchFunction: search
+			});
+		});
+
+		function search() {
+			//把pageNo, pageSize和用户填写的查询条件build进pageParam中  
+			/* var pageParam = page.buildParams($("form").serializeObject());  
+			   
+			 sys.ajax("/servlet/userOpLog/search", { 
+			     params : pageParam,  
+			     callback : pageQueryCallback  
+			 });  */
+		}
+		//开始查找  
+		function goSearch() {
+			page.resetPageNo();
+			search();
+		}
+		window.onload = function() {
+			$(".head-li").on("click", function() {
+				$(this).find(".header-text").addClass("on");
+				$(this).siblings().find(".header-text").removeClass("on");
+			})
+			$("#stretch").click(function() {
+				if($("#div_right_menu").is(":hidden")) {
+					$("#div_right_menu").slideDown('slow');
+					$("#img_right_back").attr("src", "img/icon_right_back.png");
+					$("#span_right_back").text("BACK");
+				} else {
+					$("#div_right_menu").slideUp('slow');
+					$("#img_right_back").attr("src", "img/icon_right_open.png");
+					$("#span_right_back").text("OPEN");
+				}
+			});
+
+			/**
+			 * 边菜单栏动作
+			 */
+			var clicked = null;
+			$('.title').click(function() {
+				if(clicked == this) {
+					if($(clicked).children('ul').slideUp().end().children('.arrow').hasClass('arrow-up')) {
+						$(clicked).children('ul').slideUp().end().children('.arrow').removeClass('arrow-up');
+					} else {
+						$(this).children('ul').slideToggle().end().children('.arrow').addClass('arrow-up');
+					}
+				} else {
+					$(clicked).children('ul').slideUp().end().children('.arrow').removeClass('arrow-up');
+					$(this).children('ul').slideToggle().end().children('.arrow').addClass('arrow-up');
+				}
+				clicked = this;
+			});
+			$('.title > ul').click(function() {
+				return false; // 阻止事件冒泡
+			});
+		};
+
+		var img_show_slideBar = document.getElementById('img_show_slideBar');
+		var odiv = document.getElementById('thediv');
+		img_show_slideBar.onclick = function() {
+			if(-180 == odiv.offsetLeft) {
+				$('#img_show_slideBar').attr('src', 'img/back.png');
+				$('#table_detail').removeClass('col-md-11');
+				$('#table_detail').addClass('col-md-9');
+				//$('#div_slideBar').removeClass('col-md-1');
+				//$('#div_slideBar').addClass('col-md-2');
+				startmove(0, 5);
+			} else {
+				startmove(-180, -10);
+			}
+		}
+
+		var timer = null;
+
+		function startmove(target, speed) {
+			var odiv = document.getElementById('thediv');
+			clearInterval(timer);
+			timer = setInterval(function() {
+				if(odiv.offsetLeft == target) {
+					clearInterval(timer);
+					if(target == -180) {
+						$('#table_detail').removeClass('col-md-9');
+						$('#table_detail').addClass('col-md-11');
+						$('#img_show_slideBar').attr('src', 'img/icon_sidebar_go.png');
+						//$('#div_slideBar').removeClass('col-md-2');
+						//$('#div_slideBar').addClass('col-md-1');
+					}
+				} else {
+					odiv.style.left = odiv.offsetLeft + speed + 'px';
+
+				}
+			}, 10)
+		};
+		$(".form_date").datetimepicker({
+			language: 'zh-CN',
+			weekStart: 1,
+			todayBtn: 1,
+			autoclose: 1,
+			todayHighlight: 1,
+			startView: 2,
+			minView: 2,
+			forceParse: 0
+		});
+		$("#div_right_menu span").on("click", function() {
+			$(this).addClass("span-hover");
+			$(this).siblings().removeClass("span-hover");
+		})
+	</script>
+
+</html>
