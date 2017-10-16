@@ -46,9 +46,14 @@
         margin-top: 10px;
     }
     .form-control {
-        width: 110px;
         display: inline-block;
-        height: 22px;
+        height: auto;
+        border-radius: 0px;
+        padding: 0;
+    }
+    thead .tb-content td {
+        color: #000;
+        font-weight: bold;
     }
     .btn-info {
         color: #000;
@@ -57,6 +62,15 @@
     }
     .btn {
         padding: 6px 20px;
+    }
+    .col-label {
+        width: 60px;
+        text-align: right;
+    }
+    .col-inline {
+        display: inline;
+        width: 120px;
+        margin-left: 10px;
     }
     @media screen and (max-width: 767px) {
         #thediv{
@@ -259,73 +273,55 @@
     </div>
     <div id="table_list" class="col-md-10" style="z-index: -999; padding-left: 40px; margin-top: 20px">
         <div>
-            <table class="table table-condensed table-bordered">
-                <tbody>
-                <tr>
-                    <th class="table_tbody_th">
-                        <span>身份证号:</span>
-                    </th>
-                    <td>
-                        <input type="text" class="form-control">
-                    </td>
-                    <th class="table_tbody_th">
-                        <span>船员姓名:</span>
-                    </th>
-                    <td>
-                        <input type="text" class="form-control">
-                    </td>
-                    <th class="table_tbody_th">
-                        <span>船员首拼:</span>
-                    </th>
-                    <td>
-                        <input class="form-control" type="input">
-                    </td>
-                </tr>
-                <tr>
-                    <th class="table_tbody_th">
-                        <span>职务: </span>
-                    </th>
-                    <td>
-                        <select type="text" class="form-control" style="padding: 0 0;">
-                            <option value="">&nbsp;</option>
-                            <option value="">船长</option>
-                            <option value="">大副</option>
-                            <option value="">二副</option>
-                            <option value="">轮机长</option>
-                            <option value="">一水</option>
-                            <option value="">甲板实习生</option>
-                            <option value="">取字典表数据</option>
-                        </select>
-                    </td>
-                    <th class="table_tbody_th">
-                        <span>船东: </span>
-                    </th>
-                    <td>
-                        <select type="text" class="form-control" style="padding: 0 0;">
-                            <option value="">&nbsp;</option>
-                            <option value="">AET</option>
-                            <option value="">NATHALIN</option>
-                            <option value="">SBSS</option>
-                            <option value="">COSTA</option>
-                            <option value="">取字典表数据</option>
-                        </select>
-                    </td>
-                    <th class="table_tbody_th">
-                        <span>离船原因: </span>
-                    </th>
-                    <td>
-                        <select type="text" class="form-control" style="padding: 0 0;">
-                            <option value="">&nbsp;</option>
-                            <option value="">正常下船</option>
-                            <option value="">因病下船</option>
-                            <option value="">船东辞退</option>
-                            <option value="">离职</option>
-                            <option value="">取字典表数据</option>
-                        </select>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="col-label">身份证号</label>
+                    <input type="text" class="form-control col-inline input-greenbg" />
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">船员姓名</label>
+                    <input type="text" class="form-control col-inline input-greenbg" disabled="disabled" />
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">船员首拼</label>
+                    <input type="text" class="form-control col-inline input-greenbg" />
+                    <span style="color: red;">*</span>
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">职务</label>
+                    <select type="text" class="form-control col-inline input-greenbg">
+                        <option value="">船长</option>
+                        <option value="">大副</option>
+                        <option value="">二副</option>
+                        <option value="">轮机长</option>
+                        <option value="">一水</option>
+                        <option value="">甲板实习生</option>
+                        <option value="">取字典表数据</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="col-label">船东</label>
+                    <select type="text" class="form-control col-inline input-greenbg">
+                        <option value="">AET</option>
+                        <option value="">NATHALIN</option>
+                        <option value="">SBSS</option>
+                        <option value="">COSTA</option>
+                        <option value="">取字典表数据</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">离船原因</label>
+                    <select type="text" class="form-control col-inline input-greenbg">
+                        <option value="">正常下船</option>
+                        <option value="">因病下船</option>
+                        <option value="">船东辞退</option>
+                        <option value="">离职</option>
+                        <option value="">取字典表数据</option>
+                    </select>
+                </div>
+            </div>
             <ul class="h-input">
                 <li class="features-btn" style="width: auto;margin-left: 0px;" >
                     <button type="button" class="btn btn-primary">查询</button>
@@ -345,7 +341,7 @@
             <table class="table table-bordered table-condensed" style="background: #fff;text-align: center">
                 <thead>
                 <tr class="tb-content" style="background: #97c5df;">
-                    <td style="background: #fff;">
+                    <td>
                         <input type="checkbox">
                     </td>
                     <td>
