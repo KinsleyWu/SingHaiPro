@@ -18,6 +18,9 @@
 	<script src="js/page.js"></script>
 
 	<style type="text/css">
+		body {
+        font-size: 14px;
+    }
 		#div_right_menu span:hover {
 			color: #1a4692;
 		}
@@ -120,6 +123,11 @@
 		.col-label {
 			width: 120px;
 			text-align: right;
+		}
+		
+		.col-nopadding {
+			padding-left: 0px;
+			padding-right: 0px;
 		}
 	</style>
 
@@ -305,35 +313,35 @@
 					<img id="img_show_slideBar" src="img/back.png" style="float: left;">
 				</div>
 			</div>
-			<div id="table_detail" class="col-md-10" style="z-index: -999;padding-left: 40px; margin-top: 20px">
+			<div id="table_detail" class="col-md-10" style="z-index: -999;padding-left: 20px; margin-top: 20px">
 				<div>
 					<div class="col-md-12">
-						<div class="col-md-3">
+						<div class="col-md-3 col-nopadding">
 							<label class="col-label">缴纳时间</label>
 							<input type="text" class="form-control col-inline input-greenbg" />
 						</div>
-						<div class="col-md-3">
+						<div class="col-md-3 col-nopadding">
 							<label class="col-label">社保缴纳险种</label>
 							<select type="text" class="form-control col-inline input-greenbg" style="padding: 0 0;">
 								<option value="">在缴</option>
 								<option value="">停缴</option>
 							</select>
 						</div>
-						<div class="col-md-3">
+						<div class="col-md-3 col-nopadding">
 							<label class="col-label">身份证号</label>
 							<input type="text" class="form-control col-inline input-greenbg" />
 						</div>
-						<div class="col-md-3">
+						<div class="col-md-3 col-nopadding">
 							<label class="col-label">船员姓名</label>
 							<input type="text" class="form-control col-inline input-greenbg" />
 						</div>
 					</div>
 					<div class="col-md-12" style="margin-top: 15px;">
-						<div class="col-md-3">
+						<div class="col-md-3 col-nopadding">
 							<label class="col-label">船员首拼</label>
 							<input type="text" class="form-control col-inline input-greenbg" />
 						</div>
-						<div class="col-md-3">
+						<div class="col-md-3 col-nopadding">
 							<label class="col-label"><input type="checkbox" value="checkbox" style="vertical-align: bottom"/>
 							未缴船员</label>
 						</div>
