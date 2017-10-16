@@ -111,7 +111,12 @@
 			width: 120px;
 			margin-left: 10px;
 		}
-		
+        .col-md-4 {
+            padding-left: 0px;
+        }
+        .col-md-8 {
+            padding-left: 0px;
+        }
 		.input-greenbg {
 			background-color: #e5f0f6;
 			border: 1px solid #91c2d1;
@@ -119,9 +124,12 @@
 		}
 		
 		.col-label {
-			width: 120px;
-			text-align: right;
+            width: 86px;
+			text-align: left;
 		}
+        .col-md-12 {
+            padding-left: 0px;
+        }
 	</style>
 
 	<body style="height: 100%;background: #f7fbff;">
@@ -308,7 +316,7 @@
 			</div>
 			<div id="table_detail" class="col-md-9" style="padding-right: 0; z-index: -999;">
 				<div>
-					<ul class="h-input" style="padding-left: 40px;">
+					<ul class="h-input">
 						<li class="features-btn" style="width: auto;margin-left: 0px;">
 							<button type="button" class="btn btn-info">停缴申请</button>
 						</li>
@@ -355,7 +363,7 @@
 							</select>
 						</div>
 					</div>
-					<div class="col-md-12" style="margin-top: 15px;">
+					<div class="col-md-12" style="margin-top: 15px;margin-bottom: 20px;">
 						<div class="col-md-4">
 							<label class="col-label">商保支付方式</label>
 							<input type="text" class="form-control col-inline input-greenbg" />
