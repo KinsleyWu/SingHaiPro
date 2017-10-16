@@ -54,7 +54,7 @@
     }
     .h-input li {
         float: left;
-        margin-left: 70px;
+        margin-left: 50px;
         width: 180px;
         text-align: right;
         margin-top: 10px;
@@ -76,6 +76,38 @@
     .col-label {
         width: 60px;
         text-align: right;
+    }
+    @media screen and (max-width: 768px) {
+        .content {
+            margin-top: -41px;
+        }
+        .brand {
+            margin-top: 0;
+        }
+        #thediv {
+            margin-top: -20px;
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        .content {
+            margin-top: -12px;
+        }
+        .header-ul {
+            right: 145px;
+        }
+        #thediv {
+            margin-top: -20px;
+        }
+    }
+
+    @media screen and (min-width:768px) and (max-width: 991px) {
+        .header-ul {
+            right: 0px;
+        }
+        #thediv {
+            margin-top: -20px;
+        }
     }
 </style>
 
