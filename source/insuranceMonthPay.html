@@ -322,10 +322,12 @@
 							<input type="text" class="form-control col-inline input-greenbg" disabled="disabled" />
 						</div>
 						<div class="col-md-3 col-nopadding">
-							<label class="col-label">社保缴纳险种</label>
+							<label class="col-label">缴纳险种</label>
 							<select type="text" class="form-control col-inline input-greenbg" style="padding: 0 0;">
-								<option value="">在缴</option>
-								<option value="">停缴</option>
+								<option value="">深圳四险</option>
+								<option value="">深圳五险</option>
+                                <option value="">武汉五险</option>
+                                <option value="">取数据字典表</option>
 							</select>
 						</div>
 						<div class="col-md-3 col-nopadding">
@@ -353,25 +355,19 @@
 							<button type="button" class="btn btn-primary">查询</button>
 						</li>
 						<li class="features-btn" style="width: auto">
-							<button type="button" class="btn btn-primary">查看</button>
+							<button type="button" class="btn btn-primary">确认缴纳</button>
 						</li>
 						<li class="features-btn" style="width: auto">
-							<button type="button" class="btn btn-primary">保险缴纳</button>
+							<button type="button" class="btn btn-primary">缴纳撤销</button>
 						</li>
 						<li class="features-btn" style="width: auto">
-							<button type="button" class="btn btn-primary">残障金缴纳</button>
+							<button type="button" class="btn btn-primary">导出</button>
 						</li>
 						<li class="features-btn" style="width: auto">
-							<button type="button" class="btn btn-primary">商保缴纳</button>
+							<button type="button" class="btn btn-primary">完成</button>
 						</li>
 						<li class="features-btn" style="width: auto">
-							<button type="button" class="btn btn-primary">导出余额</button>
-						</li>
-						<li class="features-btn" style="width: auto">
-							<button type="button" class="btn btn-primary">导出明细</button>
-						</li>
-						<li class="features-btn" style="width: auto">
-							<button type="button" class="btn btn-primary">查看操作记录</button>
+							<button type="button" class="btn btn-primary">返回</button>
 						</li>
 					</ul>
 				</div>
@@ -453,7 +449,7 @@
                                     <select type="text" class="form-control col-inline input-greenbg" style="padding: 0 0;">
                                         <option value="">不交</option>
                                         <option value="">深圳四险</option>
-                                        <option value="">深圳五险</option>
+                                        <option value="" selected>深圳五险</option>
                                         <option value="">武汉五险</option>
                                         <option value="">其他公司缴纳</option>
                                         <option value="">取数据字典表</option>
@@ -462,14 +458,18 @@
 								<td>
                                     <select type="text" class="form-control col-inline input-greenbg" style="padding: 0 0;">
                                         <option value="">个人承担个人，公司承担公司</option>
-                                        <option value="">个人全部承担</option>
+                                        <option value="" selected>个人全部承担</option>
                                         <option value="">公司全部承担</option>
                                         <option value="">其他</option>
                                         <option value="">取配置信息</option>
                                     </select>
                                 </td>
-								<td>160.00</td>
-								<td>120.00</td>
+								<td>
+                                    <input type="text" class="form-control col-inline input-greenbg" value="160.00"/>
+                                </td>
+								<td>
+                                    <input type="text" class="form-control col-inline input-greenbg" value="160.00"/>
+                                </td>
 								<td>
                                     <input type="checkbox">
                                 </td>
@@ -506,7 +506,7 @@
                                     <select type="text" class="form-control col-inline input-greenbg" style="padding: 0 0;">
                                         <option value="">不交</option>
                                         <option value="">深圳四险</option>
-                                        <option value="">深圳五险</option>
+                                        <option value="" selected>深圳五险</option>
                                         <option value="">武汉五险</option>
                                         <option value="">其他公司缴纳</option>
                                         <option value="">取数据字典表</option>
@@ -521,8 +521,12 @@
                                         <option value="">取配置信息</option>
                                     </select>
                                 </td>
-                                <td>160.00</td>
-                                <td>120.00</td>
+                                <td>
+                                    <input type="text" class="form-control col-inline input-greenbg" value="320.00"/>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control col-inline input-greenbg" value="0.00"/>
+                                </td>
                                 <td>
                                     <input type="checkbox">
                                 </td>
