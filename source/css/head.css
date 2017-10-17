@@ -13,12 +13,6 @@ body{
     z-index: 900;
     box-shadow: 0 4px 8px 0 rgba(7,17,27,.1);
 }
-i{
-    font-style: normal;
-    font-size: 14px;
-    margin-top: 10px;
-    color: #1a4692;
-}
 
 .header .right{
     float: right;
