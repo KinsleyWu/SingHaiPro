@@ -319,7 +319,7 @@
 					<div class="col-md-12">
 						<div class="col-md-3 col-nopadding">
 							<label class="col-label">缴纳时间</label>
-							<input type="text" class="form-control col-inline input-greenbg" />
+							<input type="text" class="form-control col-inline input-greenbg" disabled="disabled" />
 						</div>
 						<div class="col-md-3 col-nopadding">
 							<label class="col-label">社保缴纳险种</label>
@@ -353,25 +353,25 @@
 							<button type="button" class="btn btn-primary">查询</button>
 						</li>
 						<li class="features-btn" style="width: auto">
-							<button type="button" class="btn btn-info">查看</button>
+							<button type="button" class="btn btn-primary">查看</button>
 						</li>
 						<li class="features-btn" style="width: auto">
-							<button type="button" class="btn btn-info">保险缴纳</button>
+							<button type="button" class="btn btn-primary">保险缴纳</button>
 						</li>
 						<li class="features-btn" style="width: auto">
-							<button type="button" class="btn btn-info">残障金缴纳</button>
+							<button type="button" class="btn btn-primary">残障金缴纳</button>
 						</li>
 						<li class="features-btn" style="width: auto">
-							<button type="button" class="btn btn-info">商保缴纳</button>
+							<button type="button" class="btn btn-primary">商保缴纳</button>
 						</li>
 						<li class="features-btn" style="width: auto">
-							<button type="button" class="btn btn-info">导出余额</button>
+							<button type="button" class="btn btn-primary">导出余额</button>
 						</li>
 						<li class="features-btn" style="width: auto">
-							<button type="button" class="btn btn-info">导出明细</button>
+							<button type="button" class="btn btn-primary">导出明细</button>
 						</li>
 						<li class="features-btn" style="width: auto">
-							<button type="button" class="btn btn-info">查看操作记录</button>
+							<button type="button" class="btn btn-primary">查看操作记录</button>
 						</li>
 					</ul>
 				</div>
@@ -434,57 +434,105 @@
 								<td>
 								</td>
 								<td>
+									张三
 								</td>
 								<td>在缴</td>
 								<td>
+									J/O
 								</td>
 								<td>
+									SHSH
 								</td>
 								<td>
+									Honglam
 								</td>
 								<td>
+									500.00
 								</td>
-								<td></td>
-								<td>个人承担个人，公司承担公司</td>
+								<td>
+                                    <select type="text" class="form-control col-inline input-greenbg" style="padding: 0 0;">
+                                        <option value="">不交</option>
+                                        <option value="">深圳四险</option>
+                                        <option value="">深圳五险</option>
+                                        <option value="">武汉五险</option>
+                                        <option value="">其他公司缴纳</option>
+                                        <option value="">取数据字典表</option>
+                                    </select>
+								</td>
+								<td>
+                                    <select type="text" class="form-control col-inline input-greenbg" style="padding: 0 0;">
+                                        <option value="">个人承担个人，公司承担公司</option>
+                                        <option value="">个人全部承担</option>
+                                        <option value="">公司全部承担</option>
+                                        <option value="">其他</option>
+                                        <option value="">取配置信息</option>
+                                    </select>
+                                </td>
+								<td>160.00</td>
 								<td>120.00</td>
-								<td>120.00</td>
-								<td></td>
 								<td>
+                                    <input type="checkbox">
+                                </td>
+								<td>
+                                    320
 								</td>
 								<td>
+                                    <input type="text" class="form-control col-inline input-greenbg" />
 								</td>
 							</tr>
-							<tr class="tb-content">
-								<td>
-									<input type="checkbox">
-								</td>
-								<td>
-								</td>
-								<td>
-								</td>
-								<td>停缴</td>
-								<td>
-								</td>
-								<td>
-								</td>
-								<td>
-								</td>
-								<td>
-								</td>
-								<td>
-								</td>
-								<td>
-								</td>
-								<td>
-								</td>
-								<td>
-								</td>
-								<td></td>
-								<td>
-								</td>
-								<td>
-								</td>
-							</tr>
+                            <tr class="tb-content">
+                                <td>
+                                    <input type="checkbox">
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    张四
+                                </td>
+                                <td>在缴</td>
+                                <td>
+                                    J/O
+                                </td>
+                                <td>
+                                    SHSH
+                                </td>
+                                <td>
+                                    Honglam
+                                </td>
+                                <td>
+                                    500.00
+                                </td>
+                                <td>
+                                    <select type="text" class="form-control col-inline input-greenbg" style="padding: 0 0;">
+                                        <option value="">不交</option>
+                                        <option value="">深圳四险</option>
+                                        <option value="">深圳五险</option>
+                                        <option value="">武汉五险</option>
+                                        <option value="">其他公司缴纳</option>
+                                        <option value="">取数据字典表</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select type="text" class="form-control col-inline input-greenbg" style="padding: 0 0;">
+                                        <option value="">个人承担个人，公司承担公司</option>
+                                        <option value="">个人全部承担</option>
+                                        <option value="">公司全部承担</option>
+                                        <option value="">其他</option>
+                                        <option value="">取配置信息</option>
+                                    </select>
+                                </td>
+                                <td>160.00</td>
+                                <td>120.00</td>
+                                <td>
+                                    <input type="checkbox">
+                                </td>
+                                <td>
+                                    320
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control col-inline input-greenbg" />
+                                </td>
+                            </tr>
 						</tbody>
 					</table>
 				</div>
@@ -589,10 +637,6 @@
 				}
 			}, 10)
 		};
-		$("#div_right_menu span").on("click", function() {
-			$(this).addClass("span-hover");
-			$(this).siblings().removeClass("span-hover");
-		})
 	</script>
 
 </html>

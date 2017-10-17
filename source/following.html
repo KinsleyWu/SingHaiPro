@@ -291,7 +291,7 @@
                 </div>
                 <div class="col-md-3">
                     <label class="col-label">船员姓名</label>
-                    <input type="text" class="form-control col-inline input-greenbg" disabled="disabled" />
+                    <input type="text" class="form-control col-inline input-greenbg" />
                 </div>
                 <div class="col-md-3">
                     <label class="col-label">船员首拼</label>
@@ -338,13 +338,13 @@
                     <button type="button" class="btn btn-primary">查询</button>
                 </li>
                 <li class="features-btn" style="width: auto" >
-                    <button type="button" class="btn btn-info">新增</button>
+                    <button type="button" class="btn btn-primary">新增</button>
                 </li>
                 <li class="features-btn" style="width: auto" >
-                    <button type="button" class="btn btn-info">编辑</button>
+                    <button type="button" class="btn btn-primary">编辑</button>
                 </li>
                 <li class="features-btn" style="width: auto" >
-                    <button type="button" class="btn btn-info">查看操作记录</button>
+                    <button type="button" class="btn btn-primary">查看操作记录</button>
                 </li>
             </ul>
         </div>
@@ -616,10 +616,6 @@
             }
         },10)
     };
-    $(".features-btn").on("click", function () {
-        $(this).find("button").addClass("btn-primary").removeClass("btn-info");
-        $(this).siblings().find("button").removeClass("btn-primary").addClass("btn-info");
-    })
 
 </script>
 
