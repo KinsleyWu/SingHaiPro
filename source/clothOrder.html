@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>服装订购新增</title>
+</head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/head.css" />
+<link rel="stylesheet" href="css/sidbar.css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/page.js"></script>
+
+<style type="text/css">
+    body {
+        font-size: 14px;
+    }
+    #div_right_menu span:hover {
+        color: #1a4692;
+    }
+
+    #div_right_menu span {
+        cursor: pointer;
+    }
+
+    .calendar-input {
+        padding-right: 20px;
+        background: url(img/icon_calendar.png) no-repeat scroll right center transparent;
+    }
+
+    .table_thead_td {
+        background-color: #96c5df;
+    }
+
+    .table_tbody_th {
+        background-color: #e4f1f5;
+    }
+
+    th {
+        font-size: 12px;
+        border: 1.5px solid #bbe3f3;
+    }
+
+    td {
+        font-size: 12px;
+        border: 1.5px solid #bbe3f3;
+        color: #585858;
+    }
+
+    .btn {
+        font-size: 10px;
+    }
+
+    .h-input {
+        overflow: hidden;
+        clear: both;
+    }
+
+    .h-input li {
+        float: left;
+        margin-left: 50px;
+        width: 180px;
+        text-align: right;
+        margin-top: 10px;
+    }
+    thead .tb-content td {
+        color: #000;
+        font-weight: bold;
+    }
+    .must {
+        color: red;
+    }
+
+    .form-control {
+        display: inline-block;
+        height: auto;
+        padding: 0;
+        border-radius: 0px;
+    }
+
+    .span-hover {
+        color: #1a4692 !important;
+    }
+
+    @media screen and (max-width: 767px) {
+        #thediv {
+            margin-top: -20px;
+        }
+    }
+
+    @media screen and (min-width:768px) and (max-width: 991px) {
+        #thediv {
+            margin-top: -20px;
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        #thediv {
+            margin-top: -20px;
+        }
+    }
+
+    .tb-content {
+        height: 22px;
+    }
+
+    .col-inline {
+        display: inline;
+        width: 120px;
+    }
+    .col-md-4 {
+        padding-left: 0px;
+    }
+    .col-md-8 {
+        padding-left: 0px;
+    }
+    .input-greenbg {
+        background-color: #e5f0f6;
+        border: 1px solid #91c2d1;
+        border-radius: 0;
+    }
+
+    .col-label {
+        width: 86px;
+        text-align: left;
+    }
+    .col-md-12 {
+        padding-left: 0px;
+    }
+</style>
+
+<body style="background: #f7fbff;">
+<div style="clear: both;">
+    <div id="table_detail" class="col-md-10" style=" z-index: -999;text-align: center;width: auto">
+        <div>
+            <div class="col-md-12" style="margin-top: 15px;">
+                <div class="col-md-3">
+                    <label class="col-label">供应商</label>
+                    <select type="text" class="form-control col-inline input-greenbg" style="padding: 0 0;">
+                        <option value="">取类别为【服装代理】的供应商</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">收货日期</label>
+                    <input type="text" class="form-control col-inline input-greenbg" />
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">船东名称</label>
+                    <select type="text" class="form-control col-inline input-greenbg" style="padding: 0 0;">
+                        <option value="">取数据字典表</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">船舶名称</label>
+                    <select type="text" class="form-control col-inline input-greenbg" style="padding: 0 0;">
+                        <option value="">取数据字典表</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-top: 15px;margin-bottom: 15px;">
+                <div class="col-md-3">
+                    <label class="col-label">船员计划编号</label>
+                    <select type="text" class="form-control col-inline input-greenbg" style="padding: 0 0;">
+                        <option value="">船员还未完成的派遣单</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">备注</label>
+                    <input type="text" class="form-control col-inline input-greenbg"/>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary">新增船员</button>
+        </div>
+        <div style="margin-top: 20px;">
+            <table class="table  table-condensed" style="background: #fff;text-align: center;">
+                <thead>
+                <tr class="tb-content" style="background: #97c5df;">
+                    <td>序号</td>
+                    <td>船员姓名</td>
+                    <td>职务</td>
+                    <td>上船日期</td>
+                    <td>工作服码</td>
+                    <td>鞋码</td>
+                    <td colspan="2">收件人</td>
+                    <td>操作</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="tb-content">
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">XS</option>
+                            <option value="">S</option>
+                            <option value="">M</option>
+                            <option value="">L</option>
+                            <option value="">XL</option>
+                            <option value="">取字典表数据</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">35</option>
+                            <option value="">36</option>
+                            <option value="">37</option>
+                            <option value="">38</option>
+                            <option value="">39</option>
+                            <option value="">40</option>
+                            <option value="">取字典表数据</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">公司地址</option>
+                            <option value="">家庭地址</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control  input-greenbg"/>
+                    </td>
+                    <td>
+                        删除
+                    </td>
+                </tr>
+                <tr class="tb-content">
+                    <td>2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">XS</option>
+                            <option value="">S</option>
+                            <option value="">M</option>
+                            <option value="">L</option>
+                            <option value="">XL</option>
+                            <option value="">取字典表数据</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">35</option>
+                            <option value="">36</option>
+                            <option value="">37</option>
+                            <option value="">38</option>
+                            <option value="">39</option>
+                            <option value="">40</option>
+                            <option value="">取字典表数据</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">公司地址</option>
+                            <option value="">家庭地址</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control  input-greenbg"/>
+                    </td>
+                    <td>
+                        删除
+                    </td>
+                </tr>
+                <tr class="tb-content">
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">XS</option>
+                            <option value="">S</option>
+                            <option value="">M</option>
+                            <option value="">L</option>
+                            <option value="">XL</option>
+                            <option value="">取字典表数据</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">35</option>
+                            <option value="">36</option>
+                            <option value="">37</option>
+                            <option value="">38</option>
+                            <option value="">39</option>
+                            <option value="">40</option>
+                            <option value="">取字典表数据</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">公司地址</option>
+                            <option value="">家庭地址</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control  input-greenbg"/>
+                    </td>
+                    <td>
+                        删除
+                    </td>
+                </tr>
+                <tr class="tb-content">
+                    <td>4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">XS</option>
+                            <option value="">S</option>
+                            <option value="">M</option>
+                            <option value="">L</option>
+                            <option value="">XL</option>
+                            <option value="">取字典表数据</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">35</option>
+                            <option value="">36</option>
+                            <option value="">37</option>
+                            <option value="">38</option>
+                            <option value="">39</option>
+                            <option value="">40</option>
+                            <option value="">取字典表数据</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">公司地址</option>
+                            <option value="">家庭地址</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control  input-greenbg"/>
+                    </td>
+                    <td>
+                        删除
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-primary" style="margin-bottom: 15px">新增订购服装</button>
+            <table class="table  table-condensed" style="background: #fff;text-align: center;">
+                <thead>
+                <tr class="tb-content" style="background: #97c5df;">
+                    <td>序号</td>
+                    <td>类别</td>
+                    <td colspan="3">服装项目</td>
+                    <td>数量/人</td>
+                    <td>数量(合计)</td>
+                    <td>单位</td>
+                    <td>操作</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="tb-content">
+                    <td>1</td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="" selected>连体工作服</option>
+                            <option value="">工作鞋</option>
+                            <option value="">手套</option>
+                            <option value="">安全帽</option>
+                            <option value="">棉袄</option>
+                            <option value="">取字典表数据</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">白色</option>
+                            <option value="">蓝色</option>
+                            <option value="">黄色</option>
+                            <option value="">取字典表数据</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">立体口袋</option>
+                            <option value="">非立体口袋</option>
+                            <option value="">取字典表数据</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">带反光带</option>
+                            <option value="">不带反光带</option>
+                            <option value="">取字典表数据</option>
+                        </select>
+                    <td>
+                    <input type="text" class="form-control  input-greenbg" value="2"/>
+                    </td>
+                    <td>
+                        8
+                    </td>
+                    <td>
+                        套
+                    </td>
+                    <td>
+                        删除
+                    </td>
+                </tr>
+                <tr class="tb-content">
+                    <td>1</td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">连体工作服</option>
+                            <option value="" selected>工作鞋</option>
+                            <option value="">手套</option>
+                            <option value="">安全帽</option>
+                            <option value="">棉袄</option>
+                            <option value="">取字典表数据</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">Kings</option>
+                            <option value="">普通</option>
+                            <option value="">取字典表数据</option>
+                        </select>
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+
+                    <td>
+                        <input type="text" class="form-control  input-greenbg" value="1"/>
+                    </td>
+                    <td>
+                        4
+                    </td>
+                    <td>
+                        双
+                    </td>
+                    <td>
+                        删除
+                    </td>
+                </tr>
+                <tr class="tb-content">
+                    <td>1</td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">连体工作服</option>
+                            <option value="" >工作鞋</option>
+                            <option value="" selected>手套</option>
+                            <option value="">安全帽</option>
+                            <option value="">棉袄</option>
+                            <option value="">取字典表数据</option>
+                        </select>
+                    </td>
+                    <td colspan="3">
+                        <input type="text" class="form-control  input-greenbg" />
+                    </td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        双
+                    </td>
+                    <td>
+                        删除
+                    </td>
+                </tr>
+                <tr class="tb-content">
+                    <td>1</td>
+                    <td>
+                        <select type="text" class="form-control  input-greenbg" style="padding: 0 0;">
+                            <option value="">连体工作服</option>
+                            <option value="" >工作鞋</option>
+                            <option value="" >手套</option>
+                            <option value="">安全帽</option>
+                            <option value="">棉袄</option>
+                            <option value="">取字典表数据</option>
+                        </select>
+                    </td>
+                    <td colspan="3">
+                        <input type="text" class="form-control  input-greenbg" />
+                    </td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        双
+                    </td>
+                    <td>
+                        删除
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+<script type="application/javascript">
+
+</script>
+
+</html>

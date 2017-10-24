@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>船员派遣单新增</title>
+</head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/head.css" />
+<link rel="stylesheet" href="css/sidbar.css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/page.js"></script>
+
+<style type="text/css">
+    body {
+        font-size: 14px;
+    }
+    #div_right_menu span:hover {
+        color: #1a4692;
+    }
+
+    #div_right_menu span {
+        cursor: pointer;
+    }
+
+    .calendar-input {
+        padding-right: 20px;
+        background: url(img/icon_calendar.png) no-repeat scroll right center transparent;
+    }
+
+    .table_thead_td {
+        background-color: #96c5df;
+    }
+    thead .tb-content td {
+        color: #000;
+        font-weight: bold;
+    }
+    .table_tbody_th {
+        background-color: #e4f1f5;
+    }
+
+    th {
+        font-size: 12px;
+        border: 1.5px solid #bbe3f3;
+    }
+
+    td {
+        font-size: 12px;
+        border: 1.5px solid #bbe3f3;
+        color: #585858;
+    }
+
+    .btn {
+        font-size: 10px;
+        padding: 6px 20px;
+    }
+
+    .h-input {
+        overflow: hidden;
+        clear: both;
+    }
+
+    .h-input li {
+        float: left;
+        margin-left: 50px;
+        width: 180px;
+        text-align: right;
+        margin-top: 10px;
+    }
+
+    .must {
+        color: red;
+    }
+
+    .form-control {
+        display: inline-block;
+        height: auto;
+        padding: 0;
+        border-radius: 0px;
+    }
+
+    .span-hover {
+        color: #1a4692 !important;
+    }
+
+    @media screen and (max-width: 767px) {
+        #thediv {
+            margin-top: -20px;
+        }
+    }
+
+    @media screen and (min-width:768px) and (max-width: 991px) {
+        #thediv {
+            margin-top: -20px;
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        #thediv {
+            margin-top: -20px;
+        }
+    }
+
+    .tb-content {
+        height: 22px;
+    }
+
+    .col-inline {
+        display: inline;
+        width: 120px;
+        margin-left: 10px;
+    }
+
+    .input-greenbg {
+        background-color: #e5f0f6;
+        border: 1px solid #91c2d1;
+        border-radius: 0;
+    }
+
+    .col-label {
+        width: 86px;
+        text-align: left;
+    }
+    .col-nopadding {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+</style>
+
+<body style="height: 100%;background: #f7fbff;">
+<div style="clear: both;">
+    <div id="table_detail" class="col-md-10" style="z-index: -999;width: 100%;">
+        <div>
+            <div class="col-md-12" style="margin-top: 15px;">
+                <div class="col-md-3">
+                    <label class="col-label">船员计划编号</label>
+                    <input type="text" class="form-control col-inline input-greenbg" value="SL00382" disabled="disabled"/>
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">船东名称</label>
+                    <input type="text" class="form-control col-inline input-greenbg" value="Giles" disabled="disabled"/>
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">安排船舶</label>
+                    <input type="text" class="form-control col-inline input-greenbg" value="XZ-H0021" disabled="disabled"/>
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">计划上船日期</label>
+                    <input type="text" class="form-control col-inline input-greenbg" value="2017/6/8" disabled="disabled"/>
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-top: 15px;">
+                <div class="col-md-3">
+                    <label class="col-label">计划出境日期</label>
+                    <input type="text" class="form-control col-inline input-greenbg" value="2017/7/8" disabled="disabled"/>
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">备注</label>
+                    <input type="text" class="form-control col-inline input-greenbg"/>
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-top: 15px;margin-bottom: 20px;">
+                <div class="col-md-12">
+                    <label class="col-label">校验确认项</label>
+                    <label class="col-label" style="width: auto;margin-right: 10px;">
+                        <input type="checkbox" value="checkbox" style="vertical-align: top"/> 工作服订购
+                    </label>
+                    <label class="col-label" style="width: auto;margin-right: 10px;">
+                        <input type="checkbox" value="checkbox" style="vertical-align: top"/> 证件检查
+                    </label>
+                    <label class="col-label" style="width: auto;margin-right: 10px;">
+                        <input type="checkbox" value="checkbox" style="vertical-align: top"/> 酒店预订
+                    </label>
+                    <label class="col-label" style="width: auto;margin-right: 10px;">
+                        <input type="checkbox" value="checkbox" style="vertical-align: top"/> 机票预订
+                    </label>
+                    <label class="col-label" style="width: auto;margin-right: 10px;">
+                        <input type="checkbox" value="checkbox" style="vertical-align: top"/> 签证
+                    </label>
+                    <label class="col-label" style="width: auto;margin-right: 10px;">
+                        <input type="checkbox" value="checkbox" style="vertical-align: top"/> 保险办理
+                    </label>
+                    <label class="col-label" style="width: auto;margin-right: 10px;">
+                        <input type="checkbox" value="checkbox" style="vertical-align: top"/> 体检
+                    </label>
+                    <label class="col-label" style="width: auto;margin-right: 10px;">
+                        <input type="checkbox" value="checkbox" style="vertical-align: top"/> 培训
+                    </label>
+                    <label class="col-label" style="width: auto;margin-right: 10px;">
+                        <input type="checkbox" value="checkbox" style="vertical-align: top"/> 通知船员
+                    </label>
+                    <select type="text" class="form-control col-inline input-greenbg">
+                        <option value="">取签证类型证件</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <span>船员列表</span>
+                <button type="button" class="btn btn-primary">添加船员</button>
+            </div>
+            <table class="table  table-condensed" style="background: #fff;text-align: center;">
+                <thead>
+                    <tr class="tb-content" style="background: #97c5df;">
+                    <td>
+                        序号
+                    </td>
+                    <td>
+                        身份证
+                    </td>
+                    <td>
+                        船员姓名
+                    </td>
+                    <td>
+                        职务
+                    </td>
+                    <td>
+                        操作
+                    </td>
+
+                </tr>
+                </thead>
+                <tbody>
+                    <tr class="tb-content">
+                    <td>
+                        1
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        Elijah
+                    </td>
+                    <td>
+                        二副
+                    </td>
+                    <td>
+                        删除
+                    </td>
+
+                </tr>
+                    <tr class="tb-content">
+                    <td>
+                        2
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        Aaron
+                    </td>
+                    <td>
+                        水手长
+                    </td>
+                    <td>
+                        删除
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pageDiv page" style='display:block; text-align:right;'></div>
+    </div>
+</div>
+</body>
+<script type="application/javascript">
+    $(function() {
+        page.createPage({pageSize: 30, searchFunction: search});
+    });
+    function search() {
+        //把pageNo, pageSize和用户填写的查询条件build进pageParam中
+        /* var pageParam = page.buildParams($("form").serializeObject());
+
+         sys.ajax("/servlet/userOpLog/search", {
+             params : pageParam,
+             callback : pageQueryCallback
+         });  */
+    }
+    //开始查找
+    function goSearch() {
+        page.resetPageNo();
+        search();
+    }
+    function pageQueryCallback(result) {
+        var data = result.data;
+
+        page.updatePage(data);
+
+        var html = template('opLogListTpl', data);
+        $("#result").html(html);
+    }
+</script>
+
+</html>

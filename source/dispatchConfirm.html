@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>派遣单确认页面</title>
+</head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/head.css" />
+<link rel="stylesheet" href="css/sidbar.css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/page.js"></script>
+<style type="text/css">
+    body {
+        font-size: 14px;
+    }
+    #div_right_menu span:hover {
+        color: #1a4692;
+    }
+
+    #div_right_menu span {
+        cursor: pointer;
+    }
+
+    .calendar-input {
+        padding-right: 20px;
+        background: url(img/icon_calendar.png) no-repeat scroll right center transparent;
+    }
+
+    .table_thead_td {
+        background-color: #96c5df;
+    }
+
+    .table_tbody_th {
+        background-color: #e4f1f5;
+    }
+
+    th {
+        font-size: 12px;
+        border: 1.5px solid #bbe3f3;
+    }
+
+    td {
+        font-size: 12px;
+        border: 1.5px solid #bbe3f3;
+        color: #585858;
+    }
+
+    .btn {
+        font-size: 10px;
+    }
+
+    .h-input {
+        overflow: hidden;
+        clear: both;
+    }
+
+    .h-input li {
+        float: left;
+        margin-left: 50px;
+        width: 180px;
+        text-align: right;
+        margin-top: 10px;
+    }
+    thead .tb-content td {
+        color: #000;
+        font-weight: bold;
+    }
+    .must {
+        color: red;
+    }
+
+    .form-control {
+        display: inline-block;
+        height: auto;
+        padding: 0;
+        border-radius: 0px;
+    }
+
+    .span-hover {
+        color: #1a4692 !important;
+    }
+
+    .tb-content {
+        height: 22px;
+    }
+
+    .col-inline {
+        display: inline;
+        width: 120px;
+    }
+    .col-md-4 {
+        padding-left: 0px;
+    }
+    .col-md-8 {
+        padding-left: 0px;
+    }
+    .input-greenbg {
+        background-color: #e5f0f6;
+        border: 1px solid #91c2d1;
+        border-radius: 0;
+    }
+
+    .col-label {
+        width: 86px;
+        text-align: left;
+    }
+    .col-md-12 {
+        padding-left: 0px;
+    }
+</style>
+<body style="background: #f7fbff;">
+<div style="clear: both;margin-top: 20px" class="col-md-10" >
+    <div>
+        <label class="col-label" style="width: auto">请问是否立即做以下处理：</label>
+        <div>
+            <label class="col-label">工作服采购：</label>
+            <button type="button" class="btn btn-primary">立即订购</button>
+        </div>
+        <div style="margin-top: 15px">
+            <label class="col-label">酒店订购：</label>
+            <button type="button" class="btn btn-primary">立即订购</button>
+        </div>
+        <div style="margin-top: 15px">
+            <label class="col-label">机票订购：</label>
+            <button type="button" class="btn btn-primary">立即订购</button>
+        </div>
+        <div style="margin-top: 15px">
+            <label class="col-label">保险办理：</label>
+            <button type="button" class="btn btn-primary">立即订购</button>
+        </div>
+        <div style="margin-top: 15px">
+            <label class="col-label">培训：</label>
+            <button type="button" class="btn btn-primary">立即订购</button>
+        </div>
+        <div style="margin-top: 15px">
+            <label class="col-label">签证：</label>
+            <button type="button" class="btn btn-primary">立即订购</button>
+        </div>
+        <div style="margin-top: 15px">
+            <label class="col-label">证件：</label>
+            <table class="table  table-condensed" style="background: #fff;text-align: center;">
+                <thead>
+                <tr class="tb-content" style="background: #97c5df;">
+                    <td>序号</td>
+                    <td>身份证</td>
+                    <td>船员姓名</td>
+                    <td>职务</td>
+                    <td>证件检查</td>
+                    <td>操作</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="tb-content">
+                    <td>1</td>
+                    <td></td>
+                    <td>Elijah</td>
+                    <td>二副</td>
+                    <td>通过</td>
+                    <td><button type="button" class="btn btn-primary">立即申请</button></td>
+                </tr>
+                <tr class="tb-content">
+                    <td>2</td>
+                    <td></td>
+                    <td>Aaron</td>
+                    <td>水手长</td>
+                    <td>需申请</td>
+                    <td><button type="button" class="btn btn-primary">立即申请</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

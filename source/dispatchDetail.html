@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>派遣单详情</title>
+</head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/head.css" />
+<link rel="stylesheet" href="css/sidbar.css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/page.js"></script>
+
+<style type="text/css">
+    body {
+        font-size: 14px;
+    }
+    #div_right_menu span:hover {
+        color: #1a4692;
+    }
+
+    #div_right_menu span {
+        cursor: pointer;
+    }
+
+    .calendar-input {
+        padding-right: 20px;
+        background: url(img/icon_calendar.png) no-repeat scroll right center transparent;
+    }
+
+    .table_thead_td {
+        background-color: #96c5df;
+    }
+
+    .table_tbody_th {
+        background-color: #e4f1f5;
+    }
+
+    th {
+        font-size: 12px;
+        border: 1.5px solid #bbe3f3;
+    }
+
+    td {
+        font-size: 12px;
+        border: 1.5px solid #bbe3f3;
+        color: #585858;
+    }
+
+    .btn {
+        font-size: 10px;
+    }
+
+    .h-input {
+        overflow: hidden;
+        clear: both;
+    }
+
+    .h-input li {
+        float: left;
+        margin-left: 50px;
+        width: 180px;
+        text-align: right;
+        margin-top: 10px;
+    }
+    thead .tb-content td {
+        color: #000;
+        font-weight: bold;
+    }
+    .must {
+        color: red;
+    }
+
+    .form-control {
+        display: inline-block;
+        height: auto;
+        padding: 0;
+        border-radius: 0px;
+    }
+
+    .span-hover {
+        color: #1a4692 !important;
+    }
+
+    @media screen and (max-width: 767px) {
+        #thediv {
+            margin-top: -20px;
+        }
+    }
+
+    @media screen and (min-width:768px) and (max-width: 991px) {
+        #thediv {
+            margin-top: -20px;
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        #thediv {
+            margin-top: -20px;
+        }
+    }
+
+    .tb-content {
+        height: 22px;
+    }
+
+    .col-inline {
+        display: inline;
+        width: 120px;
+    }
+    .input-greenbg {
+        background-color: #e5f0f6;
+        border: 1px solid #91c2d1;
+        border-radius: 0;
+    }
+
+    .col-label {
+        width: 86px;
+        text-align: left;
+    }
+</style>
+
+<body style="background: #f7fbff;">
+<div style="clear: both;">
+    <div id="table_detail" class="col-md-10" style=" z-index: -999;width: auto">
+        <div>
+            <div class="col-md-12" style="margin-top: 15px;">
+                <div class="col-md-3">
+                    <label class="col-label">船员计划编号</label>
+                    <input type="text" class="form-control col-inline input-greenbg" value="SL00382" disabled="disabled" />
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">派遣单编号</label>
+                    <input type="text" class="form-control col-inline input-greenbg" value="PQD001" disabled="disabled"/>
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">船东名称</label>
+                    <input type="text" class="form-control col-inline input-greenbg" value="Giles" disabled="disabled"/>
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">安排船舶</label>
+                    <input type="text" class="form-control col-inline input-greenbg" value="XZ-H0021" disabled="disabled"/>
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-top: 15px;">
+                <div class="col-md-3">
+                    <label class="col-label">计划上船日期</label>
+                    <input type="text" class="form-control col-inline input-greenbg" value="2017/6/8" disabled="disabled"/>
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">计划出境日期</label>
+                    <input type="text" class="form-control col-inline input-greenbg" value="2017/7/8" disabled="disabled"/>
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">船员编号</label>
+                    <input type="text" class="form-control col-inline input-greenbg"/>
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">船员姓名</label>
+                    <input type="text" class="form-control col-inline input-greenbg"/>
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-top: 15px;">
+                <div class="col-md-3">
+                    <label class="col-label">职位</label>
+                    <select type="text" class="form-control col-inline  input-greenbg" style="padding: 0 0;">
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="col-label">备注</label>
+                    <input type="text" class="form-control col-inline input-greenbg"/>
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-top: 15px;margin-bottom: 20px;padding-top: 5px;border-top: 1px dashed;border-bottom: 1px dashed;">
+                <div class="col-md-12">
+                    <label class="col-label">校验确认项</label>
+                    <label class="col-label" style="width: auto;margin-right: 10px;">
+                        <input type="checkbox" value="checkbox" style="vertical-align: top"/> 证件检查
+                    </label>
+                    <label class="col-label" style="width: auto;margin-right: 10px;">
+                        <input type="checkbox" value="checkbox" style="vertical-align: top"/> 工作服订购
+                    </label>
+                    <label class="col-label" style="width: auto;margin-right: 10px;">
+                        <input type="checkbox" value="checkbox" style="vertical-align: top"/> 机票预订
+                    </label>
+                    <label class="col-label" style="width: auto;margin-right: 10px;">
+                        <input type="checkbox" value="checkbox" style="vertical-align: top"/> 酒店预订
+                    </label>
+                    <label class="col-label" style="width: auto;margin-right: 10px;">
+                        <input type="checkbox" value="checkbox" style="vertical-align: top"/> 保险办理
+                    </label>
+                    <label class="col-label" style="width: auto;margin-right: 10px;">
+                        <input type="checkbox" value="checkbox" style="vertical-align: top"/> 体检
+                    </label>
+                    <label class="col-label" style="width: auto;margin-right: 10px;">
+                        <input type="checkbox" value="checkbox" style="vertical-align: top"/> 培训
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 20px;">
+            <div style="margin-bottom: 20px;">
+                <button type="button" class="btn btn-primary">订购工作服</button>
+                <button type="button" class="btn btn-primary" style="margin-left: 15px">订购机票</button>
+                <label class="col-label" style="margin-left: 15px">派遣单状态</label>
+                <input type="text" class="form-control col-inline input-greenbg"/>
+            </div>
+            <table class="table  table-condensed" style="background: #fff;text-align: center;">
+                <thead>
+                <tr class="tb-content" style="background: #97c5df;">
+                    <td>校验项</td>
+                    <td>证件</td>
+                    <td>工作服</td>
+                    <td>机票</td>
+                    <td>酒店</td>
+                    <td>体检</td>
+                    <td>保险办理</td>
+                    <td>培训</td>
+                    <td>通知船员</td>
+                    <td>签证</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="tb-content">
+                    <td>详情</td>
+                    <td>全部在有效期且未到达预警</td>
+                    <td>GZF_001</td>
+                    <td>JP_001</td>
+                    <td>JD_001</td>
+                    <td><button type="button" class="btn btn-primary">上传报告</button></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td><button type="button" class="btn btn-primary">已通知</button></td>
+                    <td>泰国签证</td>
+                </tr>
+                <tr class="tb-content">
+                    <td>结果</td>
+                    <td>通过</td>
+                    <td>通过</td>
+                    <td>通过</td>
+                    <td>通过</td>
+                    <td>通过</td>
+                    <td>通过</td>
+                    <td>通过</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+           <div style="text-align: center">
+               <button type="button" class="btn btn-primary">保存</button>
+               <button type="button" class="btn btn-primary" style="margin-left: 15px">取消</button>
+           </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="application/javascript">
+
+</script>
+
+</html>
